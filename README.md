@@ -32,7 +32,7 @@ Ready-to-use messages for sharing:
 
 **Instagram/Facebook**
 ```
-💝 Make Valentine's Day 2025 unforgettable!
+💝 Make Valentine's Day 2026 unforgettable!
 Create your own interactive Valentine's website in minutes - completely FREE!
 ✨ No coding required
 🎨 Fully customizable
@@ -86,7 +86,7 @@ Note: Make sure you're logged into your GitHub account. If you don't have one, y
 Here's what you can customize in `config.js`:
 ```javascript
 // Basic Information
-valentineName: "Jade"                    // Your Valentine's name
+valentineName: "HONEY"                    // Your Valentine's name
 pageTitle: "Will You Be My Valentine? 💝" // Browser tab title
 
 // Floating Background Elements
