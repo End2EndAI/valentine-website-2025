@@ -221,7 +221,7 @@ music: {
 
 ## 🎨 Want Different Colors?
 Use these tools to find beautiful colors:
-- [Coolors](https://coolors.co/) - Color palette generator
+- [Coolors](https://coolors.co/) - Color palette 
 - [ColorHunt](https://colorhunt.co/) - Color palettes
 
 ## 🔍 Need More Emojis?
