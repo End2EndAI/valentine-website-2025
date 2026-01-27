@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CUSTOMIZE: Browser tab title -->
-    <title>Will You Be My Valentine? 💝</title>
+    <title>Pour Artemis, l'amour de ma vie 💝✨</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Styles -->
@@ -13,8 +12,14 @@
 <body>
     <!-- Floating Background Elements -->
     <div class="floating-elements">
-        <!-- Hearts and bears will be added here by JavaScript -->
+        <!-- Hearts, stars, and special emojis will be added here by JavaScript -->
     </div>
+
+    <!-- Compte à rebours (sera ajouté par JS si activé) -->
+    <div id="countdownContainer"></div>
+
+    <!-- Faits mignons (sera ajouté par JS si activé) -->
+    <div id="cuteFactContainer"></div>
 
     <!-- Main Content Container -->
     <div class="container">
@@ -22,7 +27,7 @@
         
         <!-- Music Player -->
         <div id="musicControls" class="music-controls">
-            <button id="musicToggle" class="music-btn">🎵 Play Music</button>
+            <button id="musicToggle" class="music-btn">🎵 Musique romantique</button>
             <audio id="bgMusic" loop>
                 <source id="musicSource" type="audio/mpeg">
                 Your browser does not support the audio element.
@@ -34,7 +39,7 @@
             <h2 id="question1Text"></h2>
             <button class="cute-btn" onclick="moveButton(this)" id="yesBtn1"></button>
             <button class="cute-btn" onclick="moveButton(this)" id="noBtn1"></button>
-            <!-- CUSTOMIZE: Secret answer text -->
+            <!-- Secret answer text -->
             <div class="secret-answer">
                 <button class="cute-btn special" onclick="showNextQuestion(2)" id="secretAnswerBtn"></button>
             </div>
@@ -61,17 +66,23 @@
             <button class="cute-btn" onclick="moveButton(this)" id="noBtn3"></button>
         </div>
 
-        <!-- CUSTOMIZE: Celebration message -->
+        <!-- Celebration message -->
         <div class="celebration hidden" id="celebration">
             <h2 id="celebrationTitle"></h2>
             <p class="celebration-text" id="celebrationMessage"></p>
-            <p class="celebration-text" id="celebrationEmojis"></p>
+            <p class="celebration-text celebration-emojis" id="celebrationEmojis"></p>
+            <div class="celebration-gif">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWJ5dDZidnB5ZHFvbGZtYXNrZnBxcWRvcXU0ZHR4bjZ6eGF6ZWJidiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26u4cqiYI30juCOGY/giphy.gif" alt="Celebration" />
+            </div>
         </div>
     </div>
+
+    <!-- Container pour les messages flottants d'amour (ajoutés par JS) -->
+    <div id="floatingMessagesContainer"></div>
 
     <!-- Scripts -->
     <script src="config.js"></script>
     <script src="theme.js"></script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
