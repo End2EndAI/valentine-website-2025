@@ -87,29 +87,29 @@ Here's what you can customize in `config.js`:
 ```javascript
 // Basic Information
 valentineName: "Jade"                    // Your Valentine's name
-pageTitle: "Will You Be My Valentine? 💝" // Browser tab title
+pageTitle: "💝" // Browser tab title
 
 // Floating Background Elements
 floatingEmojis: {
     hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis in background
-    bears: ['🧸', '🐻']                       // Bear emojis in background
+    bears: ['👅', '🐙']                       // Bear emojis in background
 }
 
 // Questions and Buttons
 questions: {
     first: {
-        text: "Do you like me?",                   // First question
+        text: "Te iubescccc ❤️",                   // First question
         yesBtn: "Yes",                             // Yes button text
         noBtn: "No",                               // No button text
-        secretAnswer: "I don't like you, I love you! ❤️"  // Hidden message
+        secretAnswer:  "❤️"  // Hidden message
     },
     second: {
-        text: "How much do you love me?",          // Second question
-        startText: "This much!",                   // Text before percentage
-        nextBtn: "Next ❤️"                         // Next button text
+        text: " ",          // Second question
+        startText: "",                   // Text before percentage
+        nextBtn: "Next "                         // Next button text
     },
     third: {
-        text: "Will you be my Valentine...?",      // Final question
+        text: " ma iubesti ?",      // Final question
         yesBtn: "Yes!",                            // Yes button text
         noBtn: "No"                                // No button text
     }
@@ -118,14 +118,14 @@ questions: {
 // Love Meter Messages
 loveMessages: {
     extreme: "WOOOOW You love me that much?? 🥰🚀💝",  // Shows above 5000%
-    high: "To infinity and beyond! 🚀💝",              // Shows above 1000%
-    normal: "And beyond! 🥰"                           // Shows above 100%
+    high: "🚀💝",              // Shows above 1000%
+    normal: "🥰"                           // Shows above 100%
 }
 
 // Final Celebration
 celebration: {
-    title: "Yay! I'm the luckiest person...",     // Celebration title
-    message: "Now come get your gift...",          // Celebration message
+    title: " 🫶🏼🫶🏼🫶🏼🫶🏼",     // Celebration title
+    message:           // Celebration message
     emojis: "🎁💖🤗💝💋❤️💕"                        // Celebration emojis
 }
 
@@ -147,17 +147,17 @@ animations: {
 }
 
 // Music Settings
-music: {
+music: {https://open.spotify.com/track/5pClmo7Su4lXAzDOE5MSPA?si=MGXNTZejRE-vOgJvE5eXHQ
     enabled: true, // Music feature is enabled
     autoplay: true, // Try to autoplay (note: some browsers may block this)
-    musicUrl: "YOUR_CLOUDINARY_URL_HERE", // Paste your music URL here
+    musicUrl: "YOUR_CLOUDINARY_URL_HERE", // Paste your music URL here https://open.spotify.com/track/5pClmo7Su4lXAzDOE5MSPA?si=MGXNTZejRE-vOgJvE5eXHQ
     startText: "🎵 Play Music", // Button text to start music
     stopText: "🔇 Stop Music", // Button text to stop music
     volume: 0.5 // Volume level (0.0 to 1.0)
 }
 ```
 
-### 3. Adding Your Own Background Music 🎵
+### 3. Adding Your Own Background Music 🎵https://open.spotify.com/track/5pClmo7Su4lXAzDOE5MSPA?si=MGXNTZejRE-vOgJvE5eXHQ
 
 Want to make it extra special with your own romantic song? Follow these steps to add background music:
 
