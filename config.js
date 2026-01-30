@@ -76,7 +76,7 @@ const CONFIG = {
     music: {
         enabled: true,                     // Music feature is enabled
         autoplay: true,                    // Try to autoplay (note: some browsers may block this)
-        musicUrl: "https://youtu.be/1zQXPyo6WDw?si=kYxS1rjVa6S1bp0g", // Music streaming URL
+        musicUrl: "https://res.cloudinary.com/dgaxl1pxj/video/upload/v1769773255/Lee_Hi_-_ONLY_Official_audio_128KBPS_noafk5.mp4", // Music streaming URL
         startText: "🎵 Play Music",        // Button text to start music
         stopText: "🔇 Stop Music",         // Button text to stop music
         volume: 0.5                        // Volume level (0.0 to 1.0)
