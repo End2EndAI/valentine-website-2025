@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, var(--background-color-1), var(--background-color-2));
-    font-family: Arial, sans-serif;
+    font-family: Hubballi;
     overflow-x: hidden;
 }
 
@@ -88,8 +88,8 @@ body {
 
 .secret-answer {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 30px;
     margin-top: 0;
     opacity: 0.2;
     transition: opacity 0.3s;
