@@ -44,7 +44,7 @@ function getDefaultColor(key) {
         backgroundEnd: "#ffc3a0",
         buttonBackground: "#ff6b6b",
         buttonHover: "#ff8787",
-        textColor: "#ff4757"
+        textColor: "#000000"
     };
     return defaults[key];
 }
