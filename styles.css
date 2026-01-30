@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, var(--background-color-1), var(--background-color-2));
-    font-family: Arial, sans seriff;
+    font-family: Arial, sans serif;
     overflow-x: hidden;
 }
 
