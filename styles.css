@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, var(--background-color-1), var(--background-color-2));
-    font-family: Hubballi;
+    font-family: Arial, sans seriff;
     overflow-x: hidden;
 }
 
