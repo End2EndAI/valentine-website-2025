@@ -86,22 +86,22 @@ Note: Make sure you're logged into your GitHub account. If you don't have one, y
 Here's what you can customize in `config.js`:
 ```javascript
 // Basic Information
-valentineName: "Jade"                    // Your Valentine's name
-pageTitle: "Will You Be My Valentine? 💝" // Browser tab title
+valentineName: "Meggi"                    // Your Valentine's name
+pageTitle: "Just a normal questionnaire" // Browser tab title
 
 // Floating Background Elements
 floatingEmojis: {
-    hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis in background
-    bears: ['🧸', '🐻']                       // Bear emojis in background
+    hearts: ['❤️', '💖', '🎀', '💛', '🤍'],  // Heart emojis in background
+    bears: ['🦋', '🌻']                       // Bear emojis in background
 }
 
 // Questions and Buttons
 questions: {
     first: {
-        text: "Do you like me?",                   // First question
+        text: "Are we more than friends?",                   // First question
         yesBtn: "Yes",                             // Yes button text
         noBtn: "No",                               // No button text
-        secretAnswer: "I don't like you, I love you! ❤️"  // Hidden message
+        secretAnswer: "REALLY?! ❤️"  // Hidden message
     },
     second: {
         text: "How much do you love me?",          // Second question
@@ -109,7 +109,7 @@ questions: {
         nextBtn: "Next ❤️"                         // Next button text
     },
     third: {
-        text: "Will you be my Valentine...?",      // Final question
+        text: "Will... you be my Valentine...? 🥺🙏",      // Final question
         yesBtn: "Yes!",                            // Yes button text
         noBtn: "No"                                // No button text
     }
@@ -117,9 +117,10 @@ questions: {
 
 // Love Meter Messages
 loveMessages: {
-    extreme: "WOOOOW You love me that much?? 🥰🚀💝",  // Shows above 5000%
-    high: "To infinity and beyond! 🚀💝",              // Shows above 1000%
-    normal: "And beyond! 🥰"                           // Shows above 100%
+    extreme: "OMG SHE LITERALLY WANTS ME LIKE SO BAD TEHEHE",  // Shows above 5000%
+    high: "Oh really? You love me that much!?",              // Shows above 1000%
+    normal: "Really? I don't believe you..."                           // Shows above 100%
+            secretAnswer: "Eat me."  // Hidden message
 }
 
 // Final Celebration
