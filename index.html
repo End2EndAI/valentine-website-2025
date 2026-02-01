@@ -15,7 +15,6 @@
     <div class="floating-elements">
         <!-- Hearts and bears will be added here by JavaScript -->
     </div>
-
     <!-- Main Content Container -->
     <div class="container">
         <h1 id="valentineTitle"></h1>
@@ -28,18 +27,12 @@
                 Your browser does not support the audio element.
             </audio>
         </div>
-
         <!-- First Question -->
         <div class="question-section" id="question1">
             <h2 id="question1Text"></h2>
-            <button class="cute-btn" onclick="moveButton(this)" id="yesBtn1"></button>
-            <button class="cute-btn" onclick="moveButton(this)" id="noBtn1"></button>
-            <!-- CUSTOMIZE: Secret answer text -->
-            <div class="secret-answer">
-                <button class="cute-btn special" onclick="showNextQuestion(2)" id="secretAnswerBtn"></button>
-            </div>
+            <button class="cute-btn" onclick="handleYesClick()" id="yesBtn1"></button>
+            <button class="cute-btn" onmouseover="handleNoHover(this)" onclick="handleNoClick(this)" id="noBtn1"></button>
         </div>
-
         <!-- Second Question (Love Meter) -->
         <div class="question-section hidden" id="question2">
             <h2 id="question2Text"></h2>
@@ -53,14 +46,16 @@
             </div>
             <button class="cute-btn" onclick="showNextQuestion(3)" id="nextBtn"></button>
         </div>
-
         <!-- Final Question -->
         <div class="question-section hidden" id="question3">
             <h2 id="question3Text"></h2>
+            <!-- Photo Gallery -->
+            <div class="photo-gallery" id="photoGallery">
+                <!-- Photos will be displayed here -->
+            </div>
             <button class="cute-btn final-yes" onclick="celebrate()" id="yesBtn3"></button>
             <button class="cute-btn" onclick="moveButton(this)" id="noBtn3"></button>
         </div>
-
         <!-- CUSTOMIZE: Celebration message -->
         <div class="celebration hidden" id="celebration">
             <h2 id="celebrationTitle"></h2>
@@ -68,10 +63,9 @@
             <p class="celebration-text" id="celebrationEmojis"></p>
         </div>
     </div>
-
     <!-- Scripts -->
     <script src="config.js"></script>
     <script src="theme.js"></script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
