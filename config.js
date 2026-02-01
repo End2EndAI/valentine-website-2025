@@ -25,7 +25,6 @@ const CONFIG = {
             text: "Do you like me?",                                    // First interaction
             yesBtn: "Yes",                                             // Text for "Yes" button
             noBtn: "No",                                               // Text for "No" button
-            secretAnswer: "I don't like you, I love you! ❤️"           // Secret hover message
         },
         second: {
             text: "How much do you love me?",                          // For the love meter
@@ -50,8 +49,41 @@ const CONFIG = {
     // Messages that appear after they say "Yes!"
     celebration: {
         title: "Yay! I'm the luckiest man in the world! 🎉💝💖💝💓",
-        message: "Now come get your gift, a big  hug and a cheeky kiss ;)",
+        message: "Now come get your gift, a big hug and a cheeky kiss ;)",
         emojis: "💖❤️❤️❤️❤️❤️"  // These will bounce around
+    },
+
+    // NEW: Photo Gallery Configuration
+    // Add your special photos to the third page
+    photos: {
+        enabled: true,  // Set to false to hide photo gallery
+        images: [
+            // Add your photos here
+            // Example format:
+            {
+                url: "https://via.placeholder.com/300x200/ffafbd/ffffff?text=Our+First+Date+💕",
+                caption: "Our first date 💕"
+            },
+            {
+                url: "https://via.placeholder.com/300x200/ffc3a0/ffffff?text=That+Special+Moment+💖",
+                caption: "That special moment 💖"
+            },
+            {
+                url: "https://via.placeholder.com/300x200/ff6b6b/ffffff?text=Always+Together+💝",
+                caption: "Always together 💝"
+            },
+            {
+                url: "https://via.placeholder.com/300x200/ff8787/ffffff?text=My+Favorite+Memory+❤️",
+                caption: "My favorite memory ❤️"
+            }
+            // To add your own photos:
+            // 1. Upload photos to an image hosting service like Imgur, Cloudinary, or GitHub
+            // 2. Copy the direct image URL
+            // 3. Replace the placeholder URLs above with your photo URLs
+            // 4. Update the captions to match your memories
+            // 
+            // You can add as many photos as you want!
+        ]
     },
 
     // Color scheme for the website
@@ -86,4 +118,4 @@ const CONFIG = {
 };
 
 // Don't modify anything below this line unless you know what you're doing
-window.VALENTINE_CONFIG = CONFIG; 
+window.VALENTINE_CONFIG = CONFIG;
