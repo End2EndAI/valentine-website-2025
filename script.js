@@ -1,6 +1,10 @@
 // Initialize configuration
 const config = window.VALENTINE_CONFIG;
 
+// Track the current size of the Yes button
+let yesBtnScale = 1;
+let noButtonAttempts = 0;
+
 // Validate configuration
 function validateConfig() {
     const warnings = [];
@@ -65,7 +69,6 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('question1Text').textContent = config.questions.first.text;
     document.getElementById('yesBtn1').textContent = config.questions.first.yesBtn;
     document.getElementById('noBtn1').textContent = config.questions.first.noBtn;
-    document.getElementById('secretAnswerBtn').textContent = config.questions.first.secretAnswer;
     
     // Set second question texts
     document.getElementById('question2Text').textContent = config.questions.second.text;
@@ -82,6 +85,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Setup music player
     setupMusicPlayer();
+    
+    // Setup photo gallery (if photos are provided in config)
+    setupPhotoGallery();
 });
 
 // Create floating hearts and bears
@@ -120,7 +126,73 @@ function showNextQuestion(questionNumber) {
     document.getElementById(`question${questionNumber}`).classList.remove('hidden');
 }
 
-// Function to move the "No" button when clicked
+// NEW: Handle Yes button click on first question
+function handleYesClick() {
+    // Move to next question when Yes is clicked
+    showNextQuestion(2);
+}
+
+// NEW: Handle No button hover - move it away
+function handleNoHover(button) {
+    moveNoButton(button);
+    growYesButton();
+}
+
+// NEW: Handle No button click - also move it away
+function handleNoClick(button) {
+    moveNoButton(button);
+    growYesButton();
+}
+
+// NEW: Move the No button to a random position
+function moveNoButton(button) {
+    noButtonAttempts++;
+    
+    // Get button dimensions
+    const buttonRect = button.getBoundingClientRect();
+    const buttonWidth = buttonRect.width;
+    const buttonHeight = buttonRect.height;
+    
+    // Calculate available space (with some margin from edges)
+    const margin = 50;
+    const maxX = window.innerWidth - buttonWidth - margin;
+    const maxY = window.innerHeight - buttonHeight - margin;
+    
+    // Generate random position
+    const x = Math.random() * maxX + margin;
+    const y = Math.random() * maxY + margin;
+    
+    // Apply position
+    button.style.position = 'fixed';
+    button.style.left = x + 'px';
+    button.style.top = y + 'px';
+    button.style.transition = 'all 0.3s ease';
+    
+    // Add a fun shake animation
+    button.style.animation = 'shake 0.3s';
+    setTimeout(() => {
+        button.style.animation = '';
+    }, 300);
+}
+
+// NEW: Grow the Yes button each time No is attempted
+function growYesButton() {
+    const yesBtn = document.getElementById('yesBtn1');
+    
+    // Increase scale by 0.15 each time, up to a maximum of 3x
+    yesBtnScale = Math.min(yesBtnScale + 0.15, 3);
+    
+    yesBtn.style.transform = `scale(${yesBtnScale})`;
+    yesBtn.style.transition = 'transform 0.3s ease';
+    
+    // Add a bounce effect
+    yesBtn.style.animation = 'bounce 0.5s';
+    setTimeout(() => {
+        yesBtn.style.animation = '';
+    }, 500);
+}
+
+// Function to move button (used for final question's No button)
 function moveButton(button) {
     const x = Math.random() * (window.innerWidth - button.offsetWidth);
     const y = Math.random() * (window.innerHeight - button.offsetHeight);
@@ -172,6 +244,39 @@ loveMeter.addEventListener('input', () => {
 // Initialize love meter
 window.addEventListener('DOMContentLoaded', setInitialPosition);
 window.addEventListener('load', setInitialPosition);
+
+// NEW: Setup photo gallery
+function setupPhotoGallery() {
+    // Check if photos are configured
+    if (!config.photos || !config.photos.enabled || !config.photos.images || config.photos.images.length === 0) {
+        return; // No photos to display
+    }
+    
+    const gallery = document.getElementById('photoGallery');
+    
+    // Create photo elements
+    config.photos.images.forEach((photo, index) => {
+        const photoWrapper = document.createElement('div');
+        photoWrapper.className = 'photo-item';
+        
+        const img = document.createElement('img');
+        img.src = photo.url;
+        img.alt = photo.caption || `Memory ${index + 1}`;
+        img.className = 'gallery-photo';
+        
+        photoWrapper.appendChild(img);
+        
+        // Add caption if provided
+        if (photo.caption) {
+            const caption = document.createElement('p');
+            caption.className = 'photo-caption';
+            caption.textContent = photo.caption;
+            photoWrapper.appendChild(caption);
+        }
+        
+        gallery.appendChild(photoWrapper);
+    });
+}
 
 // Celebration function
 function celebrate() {
@@ -239,4 +344,4 @@ function setupMusicPlayer() {
             musicToggle.textContent = config.music.startText;
         }
     });
-} 
+}
