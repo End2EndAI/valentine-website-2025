@@ -86,29 +86,6 @@ body {
     pointer-events: none;
 }
 
-.secret-answer {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    margin-top: 0;
-    opacity: 0.2;
-    transition: opacity 0.3s;
-    transform: scale(0.7);
-    z-index: 2;
-    animation: subtle-hint 2s infinite alternate;
-    animation-delay: 5s;
-}
-
-.secret-answer .cute-btn {
-    font-size: 0.8rem;
-    padding: 5px 10px;
-}
-
-.secret-answer:hover {
-    opacity: 1;
-    animation: none;
-}
-
 .love-meter {
     position: relative;
     width: 100%;
@@ -237,6 +214,13 @@ body {
     }
 }
 
+/* NEW: Shake animation for No button */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px) rotate(-5deg); }
+    75% { transform: translateX(10px) rotate(5deg); }
+}
+
 .hearts-explosion {
     font-size: 2rem;
     animation: explode 1s ease-out forwards;
@@ -278,7 +262,6 @@ h2 {
     text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.3);
 }
 
-
 .celebration-text {
     font-size: 3em;
     color: #ff4757;
@@ -286,11 +269,6 @@ h2 {
     margin: 30px 0;
     animation: bounce var(--bounce-speed) infinite alternate;
     text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.3);
-}
-
-@keyframes subtle-hint {
-    0% { opacity: 0.2; }
-    100% { opacity: 0.3; }
 }
 
 .music-controls {
@@ -301,7 +279,7 @@ h2 {
 }
 
 .music-btn {
-    background: var(--primary-color);
+    background: var(--button-color);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -314,5 +292,58 @@ h2 {
 
 .music-btn:hover {
     transform: scale(1.05);
-    background: var(--secondary-color);
-} 
+    background: var(--button-hover);
+}
+
+/* NEW: Photo Gallery Styles */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+}
+
+.gallery-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px 15px 0 0;
+}
+
+.photo-caption {
+    padding: 10px;
+    font-size: 0.9em;
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 0 0 15px 15px;
+}
+
+/* Responsive design for photo gallery */
+@media (max-width: 600px) {
+    .photo-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+    
+    .gallery-photo {
+        height: 150px;
+    }
+}
