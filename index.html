@@ -18,7 +18,7 @@
 
     <!-- Main Content Container -->
     <div class="container">
-        <h1 id="valentineTitle"></h1>
+        <h1 id="Amanda, My Love..."></h1>
         
         <!-- Music Player -->
         <div id="musicControls" class="music-controls">
@@ -31,10 +31,10 @@
 
         <!-- First Question -->
         <div class="question-section" id="question1">
-            <h2 id="question1Text"></h2>
+            <h2 id="Do you like me?"></h2>
             <button class="cute-btn" onclick="moveButton(this)" id="yesBtn1"></button>
             <button class="cute-btn" onclick="moveButton(this)" id="noBtn1"></button>
-            <!-- CUSTOMIZE: Secret answer text -->
+            <!-- I don't like you, I love you! -->
             <div class="secret-answer">
                 <button class="cute-btn special" onclick="showNextQuestion(2)" id="secretAnswerBtn"></button>
             </div>
@@ -42,7 +42,7 @@
 
         <!-- Second Question (Love Meter) -->
         <div class="question-section hidden" id="question2">
-            <h2 id="question2Text"></h2>
+            <h2 id="How much do you love me?"></h2>
             <!-- Love meter settings: min="0" max="10000" -->
             <div class="love-meter">
                 <input type="range" min="0" max="10000" value="100" class="slider" id="loveMeter">
@@ -55,7 +55,7 @@
         </div>
 
         <!-- Final Question -->
-        <div class="question-section hidden" id="question3">
+        <div class="Will you be my Valentine on february 14th 2026?" id="question3">
             <h2 id="question3Text"></h2>
             <button class="cute-btn final-yes" onclick="celebrate()" id="yesBtn3"></button>
             <button class="cute-btn" onclick="moveButton(this)" id="noBtn3"></button>
@@ -63,9 +63,9 @@
 
         <!-- CUSTOMIZE: Celebration message -->
         <div class="celebration hidden" id="celebration">
-            <h2 id="celebrationTitle"></h2>
-            <p class="celebration-text" id="celebrationMessage"></p>
-            <p class="celebration-text" id="celebrationEmojis"></p>
+            <h2 id="YAYYY! I'm so lucky fr"></h2>
+            <p class="celebration-text" id="as a thank you let me take you out today"></p>
+            <p class="celebration-text" id="💖♥️🥰😘💘💓💗😻💝💗"></p>
         </div>
     </div>
 
