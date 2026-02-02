@@ -1,14 +1,16 @@
 const CONFIG = {
     // Your Valentine's name that will appear in the title
     // Example: "Jade", "Sarah", "Mike"
+        personalPhoto: {
+        enabled: true,
+        imageUrl: "https://imgur.com/a/HmVgdQO",
+        style: "polaroid",
+        caption: "My fav person",
+        position: "top-right",  // Options: top-left, top-right, bottom-left, bottom-right
+        size: "medium" 
+    },
     valentineName: "Jason",
-    personalPhoto: {
-    enabled: true,
-    imageUrl: "YOUR_IMAGE_URL_HERE",
-    style: "polaroid",
-    caption: "My fav person"
-    }
-
+    
     // The title that appears in the browser tab
     // You can use emojis!
     pageTitle: "Will You Be My Valentine?💝",
