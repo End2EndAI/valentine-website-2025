@@ -4,7 +4,7 @@ const CONFIG = {
     pageTitle: "Will You Be My Valentine?💝",
 
     personalPhoto: {
-        enabled: true,
+        enabled: false,
         imageUrl: "https://i.imgur.com/7nRk9zP.jpeg",
         style: "polaroid",
         caption: "My fav person",
