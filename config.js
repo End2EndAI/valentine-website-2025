@@ -32,7 +32,14 @@ const CONFIG = {
             startText: "This muchieee!",                                   // Text before the percentage
             nextBtn: "Next ❤️"                                         // Text for the next button
         },
-        third: {
+
+           // ⭐ NEW QUESTION 3
+    third: {
+        text: "Do you promise to always be mine? 🥺💍",
+        yesBtn: "I promise 💖",
+        noBtn: "Hmm..."
+    },
+            fourth: {
             text: "Will you be my Valentine? 🌹", // The big question!
             yesBtn: "Yes!",                                             // Text for "Yes" button
             noBtn: "No"                                                 // Text for "No" button
