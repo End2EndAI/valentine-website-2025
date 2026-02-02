@@ -1,7 +1,13 @@
 const CONFIG = {
     // Your Valentine's name that will appear in the title
     // Example: "Jade", "Sarah", "Mike"
-        personalPhoto: {
+    valentineName: "Jason",
+    
+    // The title that appears in the browser tab
+    // You can use emojis!
+    pageTitle: "Will You Be My Valentine?💝",
+
+    personalPhoto: {
         enabled: true,
         imageUrl: "https://imgur.com/7nRk9zP",
         style: "polaroid",
@@ -9,11 +15,6 @@ const CONFIG = {
         position: "top-right",  // Options: top-left, top-right, bottom-left, bottom-right
         size: "medium" 
     },
-    valentineName: "Jason",
-    
-    // The title that appears in the browser tab
-    // You can use emojis!
-    pageTitle: "Will You Be My Valentine?💝",
 
     // Floating emojis that appear in the background
     // Find more emojis at: https://emojipedia.org
