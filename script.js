@@ -156,6 +156,12 @@ window.addEventListener("DOMContentLoaded", () => {
   createFloatingElements();
   setupMusicPlayer();
 
+  // Q3 YES button: go to Question 4
+const yesBtn3 = document.getElementById("yesBtn3");
+if (yesBtn3) {
+  yesBtn3.addEventListener("click", () => showNextQuestion(4));
+}
+
   // Q3 NO button: shake + dodge
   const noBtn3 = document.getElementById("noBtn3");
   if (noBtn3) {
