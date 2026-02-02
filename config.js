@@ -2,6 +2,12 @@ const CONFIG = {
     // Your Valentine's name that will appear in the title
     // Example: "Jade", "Sarah", "Mike"
     valentineName: "Jason",
+    personalPhoto: {
+    enabled: true,
+    imageUrl: "YOUR_IMAGE_URL_HERE",
+    style: "polaroid",
+    caption: "My fav person"
+    }
 
     // The title that appears in the browser tab
     // You can use emojis!
