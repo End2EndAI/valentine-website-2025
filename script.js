@@ -87,6 +87,30 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Setup music player
     setupMusicPlayer();
+
+    window.addEventListener('DOMContentLoaded', () => {
+    validateConfig();
+    // ... your existing setup code ...
+
+    // ===== STEP 3: Q3 NO BUTTON SHAKE + DODGE =====
+    const noBtn3 = document.getElementById('noBtn3');
+
+    if (noBtn3) {
+        // Dodge on hover
+        noBtn3.addEventListener('mouseover', () => {
+            const x = Math.random() * 200 - 100;
+            const y = Math.random() * 200 - 100;
+            noBtn3.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        // Shake on click
+        noBtn3.addEventListener('click', () => {
+            noBtn3.classList.add('shake');
+            setTimeout(() => {
+                noBtn3.classList.remove('shake');
+            }, 300);
+        });
+    }
 });
 
 // Create floating hearts and bears
