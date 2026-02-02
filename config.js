@@ -26,7 +26,7 @@ const CONFIG = {
         },
         second: {
             text: "How much do you love me?",
-            startText: " much!",
+            startText: "this much!",
             nextBtn: "Next "
         },
         third: {
