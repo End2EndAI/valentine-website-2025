@@ -9,7 +9,7 @@ const CONFIG = {
 
     personalPhoto: {
         enabled: true,
-        imageUrl: "https://i.imgur.com/7nRk9zP.jpg",
+        imageUrl: "https://i.imgur.com/7nRk9zP.jpeg",
         style: "polaroid",
         caption: "My fav person",
         position: "top-right",  // Options: top-left, top-right, bottom-left, bottom-right
