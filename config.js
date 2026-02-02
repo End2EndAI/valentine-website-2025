@@ -35,7 +35,7 @@ const CONFIG = {
 
            // ⭐ NEW QUESTION 3
     third: {
-        text: "Are you free February 14th, 2026? 🥺💍",
+        text: "Are you free February 14th, 2026? 🥺",
         yesBtn: "Do you wanna watcha movie with me???👉👈 ",
         noBtn: "Hmmm maybe not..."
     },
