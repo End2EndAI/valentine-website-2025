@@ -71,11 +71,16 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('question2Text').textContent = config.questions.second.text;
     document.getElementById('startText').textContent = config.questions.second.startText;
     document.getElementById('nextBtn').textContent = config.questions.second.nextBtn;
-    
-    // Set third question texts
+
+    // Set third question texts (NEW Q3)
     document.getElementById('question3Text').textContent = config.questions.third.text;
     document.getElementById('yesBtn3').textContent = config.questions.third.yesBtn;
     document.getElementById('noBtn3').textContent = config.questions.third.noBtn;
+
+    // Set fourth question texts
+    document.getElementById('question4Text').textContent = config.questions.fourth.text;
+    document.getElementById('yesBtn4').textContent = config.questions.fourth.yesBtn;
+    document.getElementById('noBtn4').textContent = config.questions.fourth.noBtn;
 
     // Create initial floating elements
     createFloatingElements();
