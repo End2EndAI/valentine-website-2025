@@ -13,6 +13,7 @@ document.title = config.pageTitle || document.title;
 // Show/hide question sections
 function showNextQuestion(questionNumber) {
   document.querySelectorAll(".question-section").forEach(q => q.classList.add("hidden"));
+
   const next = document.getElementById(`question${questionNumber}`);
   if (next) next.classList.remove("hidden");
 
@@ -20,9 +21,6 @@ function showNextQuestion(questionNumber) {
   if (questionNumber === 3) {
     const noBtn3 = document.getElementById("noBtn3");
     if (noBtn3) noBtn3.style.transform = "";
-const yesBtn3 = document.getElementById("yesBtn3");
-if (yesBtn3) {
-  yesBtn3.addEventListener("click", () => showNextQuestion(4));
   }
 }
 
