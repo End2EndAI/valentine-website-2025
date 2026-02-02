@@ -3,7 +3,7 @@ const CONFIG = {
     // Example: "Jade", "Sarah", "Mike"
         personalPhoto: {
         enabled: true,
-        imageUrl: "https://imgur.com/a/HmVgdQO",
+        imageUrl: "https://imgur.com/7nRk9zP",
         style: "polaroid",
         caption: "My fav person",
         position: "top-right",  // Options: top-left, top-right, bottom-left, bottom-right
