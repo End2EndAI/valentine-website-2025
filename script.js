@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Create initial floating elements
     createFloatingElements();
-    setupPolaroidPhoto();
+    //setupPolaroidPhoto();
 
     // Setup music player
     setupMusicPlayer();
