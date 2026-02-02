@@ -1,6 +1,4 @@
-// ============================================
-// 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE HERE 💝
-// ============================================
+
 
 const CONFIG = {
     // Your Valentine's name that will appear in the title
