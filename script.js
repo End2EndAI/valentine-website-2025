@@ -79,6 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Create initial floating elements
     createFloatingElements();
+    setupPolaroidPhoto();
 
     // Setup music player
     setupMusicPlayer();
@@ -198,6 +199,32 @@ function createHeartExplosion() {
         document.querySelector('.floating-elements').appendChild(heart);
         setRandomPosition(heart);
     }
+}
+
+// Setup Polaroid Photo
+function setupPolaroidPhoto() {
+    if (!config.personalPhoto || !config.personalPhoto.enabled) {
+        return;
+    }
+
+    const container = document.createElement('div');
+    container.className = `polaroid-container ${config.personalPhoto.position}`;
+
+    const polaroid = document.createElement('div');
+    polaroid.className = `polaroid ${config.personalPhoto.size}`;
+
+    const img = document.createElement('img');
+    img.src = config.personalPhoto.imageUrl;
+    img.alt = config.personalPhoto.caption;
+
+    const caption = document.createElement('div');
+    caption.className = 'polaroid-caption';
+    caption.textContent = config.personalPhoto.caption;
+
+    polaroid.appendChild(img);
+    polaroid.appendChild(caption);
+    container.appendChild(polaroid);
+    document.body.appendChild(container);
 }
 
 // Music Player Setup
