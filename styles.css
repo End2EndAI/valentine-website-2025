@@ -316,3 +316,69 @@ h2 {
     transform: scale(1.05);
     background: var(--secondary-color);
 } 
+
+/* Polaroid Photo */
+.polaroid-container {
+    position: fixed;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.polaroid-container.top-right {
+    top: 80px;
+    right: 20px;
+}
+
+.polaroid-container.top-left {
+    top: 80px;
+    left: 20px;
+}
+
+.polaroid-container.bottom-right {
+    bottom: 80px;
+    right: 20px;
+}
+
+.polaroid-container.bottom-left {
+    bottom: 80px;
+    left: 20px;
+}
+
+.polaroid {
+    background: white;
+    padding: 15px 15px 45px 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    transform: rotate(-5deg);
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.1);
+    z-index: 100;
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+}
+
+.polaroid-caption {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    color: #333;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.polaroid.small { width: 120px; }
+.polaroid.medium { width: 180px; }
+.polaroid.large { width: 240px; }
+
+@media (max-width: 768px) {
+    .polaroid.medium { width: 120px; }
+    .polaroid-container.top-right { top: 60px; right: 10px; }
+}
