@@ -1,11 +1,10 @@
 // script.js — replace your existing file with this
-
-// Read config from global exported by config.js
-const config = window.VALENTINE_CONFIG || window.config || {};
-
 // Validate configuration
 function validateConfig() {
     const warnings = [];
+    
+    // Read config from global exported by config.js
+const config = window.VALENTINE_CONFIG || window.config || {};
 
     // Basic required
     if (!config.valentineName) {
