@@ -130,6 +130,10 @@ window.addEventListener("DOMContentLoaded", () => {
   // Q4 text (final)
   document.getElementById("question4Text").textContent = config.questions.fourth.text;
   document.getElementById("yesBtn4").textContent = config.questions.fourth.yesBtn;
+  const yesBtn4 = document.getElementById("yesBtn4");
+if (yesBtn4) {
+  yesBtn4.addEventListener("click", celebrate);
+}
   document.getElementById("noBtn4").textContent = config.questions.fourth.noBtn;
 
   // Love meter
