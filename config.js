@@ -1,7 +1,7 @@
 const CONFIG = {
     valentineName: "Jason",
 
-    pageTitle: "Will You Be My Valentine?💝",
+    pageTitle: "Will You Be My Valentine?",
 
     //imageUrl: "https://i.imgur.com/7nRk9zP.jpeg",
 
@@ -61,7 +61,7 @@ const CONFIG = {
         autoplay: true,
         musicUrl: "https://res.cloudinary.com/dqfa0ps78/video/upload/v1770057896/Dave_-_Raindance_ft._Tems_-_AudioTrimmer.com_nkb3q3.mp3",
         startText: "🎵 Play Music",
-        stopText: "🔇 Stop Music",
+        stopText: "Stop Music",
         volume: 0.5
     }
 };
