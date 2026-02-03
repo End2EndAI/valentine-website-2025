@@ -34,9 +34,9 @@ const CONFIG = {
     },
 
     loveMessages: {
-        extreme: "MMHM THAT'S WHAT I THOUGHT 🙂‍↔️",
-        high: "NOT MORE THAN VIDEO GAMES?? 😔",
-        normal: "YOU CAN DO BETTER"
+        extreme: "mmhm that's what I thought 🙂‍↔️",
+        high: "not more than video games?? 😔",
+        normal: "you can do better"
     },
 
     celebration: {
