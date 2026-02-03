@@ -6,7 +6,7 @@ const CONFIG = {
     //imageUrl: "https://i.imgur.com/7nRk9zP.jpeg",
     personalPhoto: {
         enabled: true,
-        imageUrl: "https://i.imgur.com/7nRk9zP.jpeg"
+        imageUrl: "https://i.imgur.com/gWkR90b.png"
     },
     
     floatingEmojis: {
