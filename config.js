@@ -4,7 +4,11 @@ const CONFIG = {
     pageTitle: "Will You Be My Valentine?",
 
     //imageUrl: "https://i.imgur.com/7nRk9zP.jpeg",
-
+    personalPhoto: {
+        enabled: true,
+        imageUrl: "https://i.imgur.com/7nRk9zP.jpeg"
+    },
+    
     floatingEmojis: {
         hearts: ['🤍', '🫧', '🪩'],
         bears: []
