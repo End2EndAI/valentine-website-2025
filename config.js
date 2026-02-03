@@ -6,7 +6,7 @@ const CONFIG = {
     //imageUrl: "https://i.imgur.com/7nRk9zP.jpeg",
 
     floatingEmojis: {
-        hearts: ['🤍', '🌀', '🫧', '🪩'],
+        hearts: ['🤍', '🫧', '🪩'],
         bears: []
     },
 
