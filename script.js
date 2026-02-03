@@ -211,7 +211,6 @@ function createHeartExplosion() {
         setRandomPosition(heart);
     }
 }
-
 // Music Player Setup
 function setupMusicPlayer() {
     const musicControls = document.getElementById('musicControls');
@@ -230,16 +229,8 @@ function setupMusicPlayer() {
     bgMusic.volume = config.music.volume || 0.5;
     bgMusic.load();
 
-    // Try autoplay if enabled
-    //if (config.music.autoplay) {
-     //   const playPromise = bgMusic.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(error => {
-                console.log("Autoplay prevented by browser");
-                musicToggle.textContent = config.music.startText;
-            });
-        }
-    //}
+    // Music will start when secret button is clicked
+    // Autoplay is disabled
 
     // Toggle music on button click
     musicToggle.addEventListener('click', () => {
@@ -251,4 +242,4 @@ function setupMusicPlayer() {
             musicToggle.textContent = config.music.startText;
         }
     });
-} 
+}
