@@ -67,16 +67,16 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('noBtn1').textContent = config.questions.first.noBtn;
     document.getElementById('secretAnswerBtn').textContent = config.questions.first.secretAnswer;
 
-// Add click event to play music when secret button is clicked
-document.getElementById('secretAnswerBtn').addEventListener('click', () => {
-    const bgMusic = document.getElementById('bgMusic');
-    if (bgMusic && bgMusic.paused) {
-        bgMusic.play().catch(error => {
-            console.log("Music play prevented:", error);
-        });
-    }
-    showNextQuestion(2);
-});
+    // Add click event to play music when secret button is clicked
+    document.getElementById('secretAnswerBtn').addEventListener('click', () => {
+        const bgMusic = document.getElementById('bgMusic');
+        if (bgMusic && bgMusic.paused) {
+            bgMusic.play().catch(error => {
+                console.log("Music play prevented:", error);
+            });
+        }
+        showNextQuestion(2);
+    });
     
     // Set second question texts
     document.getElementById('question2Text').textContent = config.questions.second.text;
