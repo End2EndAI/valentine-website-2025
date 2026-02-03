@@ -66,6 +66,17 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('yesBtn1').textContent = config.questions.first.yesBtn;
     document.getElementById('noBtn1').textContent = config.questions.first.noBtn;
     document.getElementById('secretAnswerBtn').textContent = config.questions.first.secretAnswer;
+
+// Add click event to play music when secret button is clicked
+document.getElementById('secretAnswerBtn').addEventListener('click', () => {
+    const bgMusic = document.getElementById('bgMusic');
+    if (bgMusic && bgMusic.paused) {
+        bgMusic.play().catch(error => {
+            console.log("Music play prevented:", error);
+        });
+    }
+    showNextQuestion(2);
+});
     
     // Set second question texts
     document.getElementById('question2Text').textContent = config.questions.second.text;
@@ -220,8 +231,8 @@ function setupMusicPlayer() {
     bgMusic.load();
 
     // Try autoplay if enabled
-    if (config.music.autoplay) {
-        const playPromise = bgMusic.play();
+    //if (config.music.autoplay) {
+     //   const playPromise = bgMusic.play();
         if (playPromise !== undefined) {
             playPromise.catch(error => {
                 console.log("Autoplay prevented by browser");
