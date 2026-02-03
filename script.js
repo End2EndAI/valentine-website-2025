@@ -75,12 +75,12 @@ window.addEventListener('DOMContentLoaded', () => {
         if (bgMusic && bgMusic.paused) {
             bgMusic.play().then(() => {
                 musicToggle.textContent = config.music.stopText;
-                )}.catch(error => {
-                    console.log("Music play prevented:", error);
-                });
-            }
-            showNextQuestion(2);
-        });
+            )}.catch(error => {
+                console.log("Music play prevented:", error);
+            });
+        }
+        showNextQuestion(2);
+    });
     
     // Set second question texts
     document.getElementById('question2Text').textContent = config.questions.second.text;
