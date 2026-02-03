@@ -1,5 +1,5 @@
 const CONFIG = {
-    valentineName: "Jason",
+    valentineName: "JASON",
 
     pageTitle: "Will You Be My Valentine?",
 
@@ -12,32 +12,32 @@ const CONFIG = {
 
     questions: {
         first: {
-            text: "Do you like me? ",
-            yesBtn: "Yes",
+            text: "DO YOU LIKE ME? ",
+            yesBtn: "YES",
             noBtn: "🦔",
-            secretAnswer: "I don't like you, I bub you!"
+            secretAnswer: "I DON'T LIKE YOU, I BUB YOU!"
         },
         second: {
-            text: "How much do you fw me?",
-            startText: "you can do better",
-            nextBtn: "Lock in"
+            text: "HOW MUCH DO U FW ME?",
+            startText: "YOU CAN DO BETTER!",
+            nextBtn: "LOCK IN"
         },
         third: {
-            text: "Be my Valentine? 🐧 ",
-            yesBtn: "hell yeah",
-            noBtn: "yes"
+            text: "BE MY VALENTINE? 🐧 ",
+            yesBtn: "HELL YEAH",
+            noBtn: "YES"
         }
     },
 
     loveMessages: {
-        extreme: "mmhm that's what I thought 🙂‍↔️",
-        high: "not more than video games? 😔",
-        normal: "you can do better "
+        extreme: "MMHM THAT'S WHAT I THOUGHT 🙂‍↔️",
+        high: "NOT MORE THAN VIDEO GAMES?? 😔",
+        normal: "YOU CAN DO BETTER"
     },
 
     celebration: {
-        title: "I'm so luck you're mine",
-        message: "oki pu, we got plans",
+        title: "I'M SO LUCKY TOU'RE MINE",
+        message: "OKI PU, WE GOT PLANS",
         emojis: "💋"
     },
 
@@ -60,8 +60,8 @@ const CONFIG = {
         enabled: true,
         autoplay: false,
         musicUrl: "https://res.cloudinary.com/dqfa0ps78/video/upload/v1770057896/Dave_-_Raindance_ft._Tems_-_AudioTrimmer.com_nkb3q3.mp3",
-        startText: "🎧 Play Music",
-        stopText: "Stop Music",
+        startText: "💿 Play Music",
+        stopText: "𝄞 Stop Music",
         volume: 0.5
     }
 };
