@@ -19,7 +19,7 @@ const CONFIG = {
         },
         second: {
             text: "How much do you fw me?",
-            startText: "down bad level:",
+            startText: "you can do better",
             nextBtn: "Lock in"
         },
         third: {
@@ -30,9 +30,9 @@ const CONFIG = {
     },
 
     loveMessages: {
-        extreme: "you can do better",
-        high: "W fr",
-        normal: "ymmhm that's what I thought "
+        extreme: "mmhm that's what I thought 🙂‍↔️",
+        high: "not more than video games? 😔",
+        normal: "you can do better "
     },
 
     celebration: {
@@ -60,7 +60,7 @@ const CONFIG = {
         enabled: true,
         autoplay: false,
         musicUrl: "https://res.cloudinary.com/dqfa0ps78/video/upload/v1770057896/Dave_-_Raindance_ft._Tems_-_AudioTrimmer.com_nkb3q3.mp3",
-        startText: "🎵 Play Music",
+        startText: "🎧 Play Music",
         stopText: "Stop Music",
         volume: 0.5
     }
