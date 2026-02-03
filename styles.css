@@ -137,13 +137,13 @@ body {
     outline: none;
     position: relative;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+    box-shadow: 0 4px 15px rgba(108, 145, 194, 0.3);  /* Blue shadow */
     transition: all 0.3s ease;
 }
 
 .slider:hover {
     transform: scale(1.02);
-    box-shadow: 0 6px 20px rgba(108, 145, 194, 0.4); 
+    box-shadow: 0 6px 20px rgba(108, 145, 194, 0.4);  /* Blue glow */
 }
 
 /* Ensure track is visible */
@@ -153,7 +153,7 @@ body {
     height: 25px;
     background: l linear-gradient(to right, #6C91C2, #8B8982, #C3C9E9);
     border-radius: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border:  2px solid rgba(195, 201, 233, 0.5);
 }
 
 /* Ensure thumb is properly styled */
@@ -164,7 +164,7 @@ body {
     background: #6C91C2;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(255, 71, 87, 0.3);
+    box-shadow:0 2px 10px rgba(108, 145, 194, 0.4);
     position: relative;
     z-index: 10;
     margin-top: -5px;
