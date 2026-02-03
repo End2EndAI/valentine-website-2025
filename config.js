@@ -16,18 +16,18 @@ const CONFIG = {
 
     questions: {
         first: {
-            text: "DO YOU LIKE ME? ",
+            text: "Do you like me? ",
             yesBtn: "YES",
             noBtn: "🦔",
             secretAnswer: "I DON'T LIKE YOU, I BUB YOU!"
         },
         second: {
             text: "How much do u fw me?",
-            startText: "YOU CAN DO BETTER!",
+            startText: "you can do better",
             nextBtn: "LOCK IN"
         },
         third: {
-            text: "will you be my valentine? 🐧 ",
+            text: "Will you be my valentine? 🐧 ",
             yesBtn: "HELL YEAH",
             noBtn: "YES"
         }
@@ -41,7 +41,7 @@ const CONFIG = {
 
     celebration: {
         title: "I'm so lucky you're mine",
-        message: "OKI PU, WE GOT PLANS",
+        message: "SEE YOU VERY SOON!!",
         emojis: "💋"
     },
 
