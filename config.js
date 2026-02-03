@@ -64,8 +64,8 @@ const CONFIG = {
         enabled: true,
         autoplay: false,
         musicUrl: "https://res.cloudinary.com/dqfa0ps78/video/upload/v1770057896/Dave_-_Raindance_ft._Tems_-_AudioTrimmer.com_nkb3q3.mp3",
-        startText: "💿 Play Music",
-        stopText: "𝄞 Stop Music",
+        startText: "💿 PLAY MUSIC",
+        stopText: "STOP MUSIC",
         volume: 0.5
     }
 };
