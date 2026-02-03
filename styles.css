@@ -258,12 +258,13 @@ body {
 h1, h2 {
     font-family: Arial, sans-serif;
     font-weight: 700;
-    text-transform: uppercase;
 }
 
 h1 {
     color: #ffffff;
     margin-bottom: 2rem;
+    text-transform: uppercase;
+
 }
 
 h2 {
