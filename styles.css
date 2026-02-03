@@ -131,7 +131,7 @@ body {
 .slider {
     width: 100%;
     height: 25px;
-    background: linear-gradient(to right, #6C91C2, #8B8982, #C3C9E9);
+    background: l linear-gradient(to right, #6C91C2, #AAABBC, #C3C9E9);
     -webkit-appearance: none;
     appearance: none;
     outline: none;
@@ -151,7 +151,7 @@ body {
 .slider::-moz-range-track {
     width: 100%;
     height: 25px;
-    background: l linear-gradient(to right, #6C91C2, #8B8982, #C3C9E9);
+    background:  linear-gradient(to right, #6C91C2, #AAABBC, #C3C9E9);
     border-radius: 15px;
     border:  2px solid rgba(195, 201, 233, 0.5);
 }
