@@ -15,29 +15,29 @@ const CONFIG = {
             text: "Do you like me? ",
             yesBtn: "Yes",
             noBtn: "🦔",
-            secretAnswer: "I don't like you, I love you!"
+            secretAnswer: "I don't like you, I bub you!"
         },
         second: {
-            text: "How much do you love me?",
-            startText: "this much!",
-            nextBtn: "Next "
+            text: "How much do you fw me?",
+            startText: "down bad level:",
+            nextBtn: "Lock in"
         },
         third: {
-            text: "Will you be my Valentine on February 14th, 2026? ",
-            yesBtn: "Yes!",
-            noBtn: "No"
+            text: "Be my Valentine? 🐧 ",
+            yesBtn: "hell yeah",
+            noBtn: "yes"
         }
     },
 
     loveMessages: {
-        extreme: "WOOOOW You love me that much?? ",
-        high: "To infinity and beyond! ",
-        normal: "And beyond! "
+        extreme: "you can do better",
+        high: "W fr",
+        normal: "ymmhm that's what I thought "
     },
 
     celebration: {
-        title: "Yay, I'm so luck you're mine",
-        message: "Now come get big warm hug and a huge kiss!",
+        title: "I'm so luck you're mine",
+        message: "oki pu, we got plans",
         emojis: "💋"
     },
 
