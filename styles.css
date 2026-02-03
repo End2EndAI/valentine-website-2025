@@ -180,7 +180,7 @@ body {
 .slider::-moz-range-thumb {
     width: 35px;
     height: 35px;
-    background: linear-gradient(135deg, #ff4757, #ff6b6b);
+    background: #6C91C2;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 2px 10px rgba(255, 71, 87, 0.3);
@@ -196,7 +196,7 @@ body {
 }
 
 #extraLove {
-    color: #ff6b6b;
+    color: #ffffff;
     font-weight: bold;
     animation: bounce 0.5s infinite alternate;
     display: block;
@@ -217,7 +217,7 @@ body {
 
 #loveValue {
     font-weight: bold;
-    color: #ff4757;
+    color: #ffffff;
     font-size: 1.3em;
     transition: all 0.3s ease;
 }
