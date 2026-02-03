@@ -75,7 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (bgMusic && bgMusic.paused) {
             bgMusic.play().then(() => {
                 musicToggle.textContent = config.music.stopText;
-            )}.catch(error => {
+            }).catch(error => {
                 console.log("Music play prevented:", error);
             });
         }
