@@ -322,18 +322,19 @@ h2 {
 /* Simple Photo in Corner */
 .corner-photo {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    bottom: 60px;
+    left: 60px;
     width: 150px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 0px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     z-index: 5;
+    transform: rotate(-8deg);
     transition: transform 0.3s ease;
 }
 
 .corner-photo:hover {
-    transform: scale(1.05);
+    transform: rotate(0deg) scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -341,5 +342,6 @@ h2 {
         width: 100px;
         bottom: 10px;
         left: 10px;
+        transform: rotate(-5deg);
     }
 }
