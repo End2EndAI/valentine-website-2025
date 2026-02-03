@@ -316,3 +316,28 @@ h2 {
     transform: scale(1.05);
     background: var(--secondary-color);
 } 
+
+/* Simple Photo in Corner */
+.corner-photo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    transition: transform 0.3s ease;
+}
+
+.corner-photo:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .corner-photo {
+        width: 100px;
+        bottom: 10px;
+        left: 10px;
+    }
+}
