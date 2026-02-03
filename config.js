@@ -22,12 +22,12 @@ const CONFIG = {
             secretAnswer: "I DON'T LIKE YOU, I BUB YOU!"
         },
         second: {
-            text: "HOW MUCH DO U FW ME?",
+            text: "How much do u fw me?",
             startText: "YOU CAN DO BETTER!",
             nextBtn: "LOCK IN"
         },
         third: {
-            text: "BE MY VALENTINE? 🐧 ",
+            text: "will you be my valentine? 🐧 ",
             yesBtn: "HELL YEAH",
             noBtn: "YES"
         }
@@ -40,7 +40,7 @@ const CONFIG = {
     },
 
     celebration: {
-        title: "I'M SO LUCKY TOU'RE MINE",
+        title: "I'm so lucky you're mine",
         message: "OKI PU, WE GOT PLANS",
         emojis: "💋"
     },
