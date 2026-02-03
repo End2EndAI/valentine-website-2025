@@ -91,6 +91,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Create initial floating elements
     createFloatingElements();
     //setupPolaroidPhoto();
+    setupPhoto();  // Add this line
 
     // Setup music player
     setupMusicPlayer();
@@ -242,4 +243,16 @@ function setupMusicPlayer() {
             musicToggle.textContent = config.music.startText;
         }
     });
+}
+
+function setupPhoto() {
+    if (!config.personalPhoto || !config.personalPhoto.enabled) {
+        return;
+    }
+
+    const img = document.createElement('img');
+    img.src = config.personalPhoto.imageUrl;
+    img.className = 'corner-photo';
+    img.alt = 'Photo';
+    document.body.appendChild(img);
 }
