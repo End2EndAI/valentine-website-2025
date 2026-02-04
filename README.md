@@ -188,7 +188,7 @@ Find more emojis at:
 - [Emojipedia](https://emojipedia.org/)
 
 ## 💖 Credits
-Created with love for Valentine's Day 2025.
+Created with love for Valentine's Day 2026.
 Feel free to use and modify for your special someone!
 
 \- Louis Fontaine -
