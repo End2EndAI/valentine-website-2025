@@ -77,11 +77,31 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('yesBtn3').textContent = config.questions.third.yesBtn;
     document.getElementById('noBtn3').textContent = config.questions.third.noBtn;
 
+    // Set celebration and waffle order texts
+    document.getElementById('celebrationNextBtn').textContent = config.celebration.nextBtn;
+    document.getElementById('orderTitle').textContent = config.waffleOrder.title;
+    document.getElementById('orderSubtitle').textContent = config.waffleOrder.subtitle;
+    document.getElementById('orderItem').textContent = config.waffleOrder.itemName;
+    document.getElementById('orderStore').textContent = config.waffleOrder.storeQuery;
+    document.getElementById('orderDelivery').textContent = config.waffleOrder.deliveryLabel;
+    document.getElementById('orderLink').textContent = config.waffleOrder.linkText;
+    document.getElementById('orderPartner').textContent = config.waffleOrder.api.provider.toUpperCase();
+
+    // Set video modal texts
+    document.getElementById('orderModalTitle').textContent = config.video.modalTitle;
+    document.getElementById('orderModalText').textContent = config.video.modalText;
+    document.getElementById('orderNowBtn').textContent = config.video.orderButtonText;
+    document.getElementById('upiFallbackBtn').textContent = config.video.upiButtonText;
+    document.getElementById('orderDisclaimer').textContent = config.video.disclaimer;
+
     // Create initial floating elements
     createFloatingElements();
 
     // Setup music player
     setupMusicPlayer();
+
+    // Setup video flow
+    setupVideoFlow();
 });
 
 // Create floating hearts and bears
@@ -178,6 +198,7 @@ function celebrate() {
     document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
     const celebration = document.getElementById('celebration');
     celebration.classList.remove('hidden');
+    document.getElementById('orderSection').classList.add('hidden');
     
     // Set celebration messages
     document.getElementById('celebrationTitle').textContent = config.celebration.title;
@@ -186,6 +207,226 @@ function celebrate() {
     
     // Create heart explosion effect
     createHeartExplosion();
+}
+
+function showOrderSection() {
+    document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
+    document.getElementById('celebration').classList.add('hidden');
+    const orderSection = document.getElementById('orderSection');
+    orderSection.classList.remove('hidden');
+    startWaffleOrder();
+}
+
+function setupVideoFlow() {
+    const video = document.getElementById('memoryVideo');
+    const skipButton = document.getElementById('skipVideoBtn');
+    const upiButton = document.getElementById('upiFallbackBtn');
+
+    video.src = config.video.url;
+    video.autoplay = config.video.autoplay;
+    video.playsInline = true;
+    video.muted = true;
+
+    skipButton.textContent = config.video.skipButtonText;
+    skipButton.classList.add('hidden');
+
+    if (config.video.allowSkipAfterSeconds > 0) {
+        setTimeout(() => {
+            skipButton.classList.remove('hidden');
+        }, config.video.allowSkipAfterSeconds * 1000);
+    }
+
+    skipButton.addEventListener('click', () => {
+        video.pause();
+        showOrderModal();
+    });
+
+    video.addEventListener('ended', () => {
+        showOrderModal();
+    });
+
+    if (config.video.autoplay) {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                skipButton.classList.remove('hidden');
+            });
+        }
+    }
+
+    if (!config.orderFlow.upi.enabled) {
+        upiButton.classList.add('hidden');
+    }
+
+    document.getElementById('orderNowBtn').addEventListener('click', () => {
+        redirectToDeliveryPartner();
+    });
+
+    upiButton.addEventListener('click', () => {
+        redirectToUpi();
+    });
+}
+
+function showOrderModal() {
+    const modal = document.getElementById('orderModal');
+    modal.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+}
+
+function getProviderConfig() {
+    const provider = config.orderFlow.provider;
+    return provider === "zomato" ? config.orderFlow.zomato : config.orderFlow.swiggy;
+}
+
+function buildProviderUrl() {
+    const providerConfig = getProviderConfig();
+    const query = encodeURIComponent(config.orderFlow.searchQuery || config.orderFlow.itemName);
+    return providerConfig.web.replace("{{query}}", query);
+}
+
+function buildProviderAppUrl() {
+    const providerConfig = getProviderConfig();
+    const query = encodeURIComponent(config.orderFlow.searchQuery || config.orderFlow.itemName);
+    return providerConfig.app.replace("{{query}}", query);
+}
+
+function redirectToDeliveryPartner() {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const webUrl = buildProviderUrl();
+
+    if (isMobile) {
+        const appUrl = buildProviderAppUrl();
+        window.location.href = appUrl;
+        setTimeout(() => {
+            window.location.href = webUrl;
+        }, 800);
+    } else {
+        window.open(webUrl, "_blank", "noopener,noreferrer");
+    }
+}
+
+function buildUpiUrl() {
+    const upi = config.orderFlow.upi;
+    const params = new URLSearchParams({
+        pa: upi.upiId,
+        pn: upi.payeeName,
+        am: upi.amount,
+        tn: upi.note,
+        cu: upi.currency
+    });
+    return `upi://pay?${params.toString()}`;
+}
+
+function redirectToUpi() {
+    if (!config.orderFlow.upi.enabled) {
+        return;
+    }
+    const upiUrl = buildUpiUrl();
+    window.location.href = upiUrl;
+}
+
+function buildWaffleDirectionsUrl(coords) {
+    const destination = encodeURIComponent(config.waffleOrder.storeQuery);
+    return `https://www.google.com/maps/dir/?api=1&origin=${coords.lat},${coords.lng}&destination=${destination}&travelmode=walking`;
+}
+
+function buildOrderPayload(coords) {
+    return {
+        item: config.waffleOrder.itemName,
+        storeQuery: config.waffleOrder.storeQuery,
+        coordinates: coords,
+        provider: config.waffleOrder.api.provider
+    };
+}
+
+async function placeWaffleOrder(coords) {
+    const apiConfig = config.waffleOrder.api;
+    const payload = buildOrderPayload(coords);
+
+    if (apiConfig.mode === "mock") {
+        await new Promise(resolve => setTimeout(resolve, 900));
+        return { ok: true, payload };
+    }
+
+    if (!apiConfig.endpoint || !apiConfig.apiKey) {
+        throw new Error("Missing API configuration");
+    }
+
+    const response = await fetch(apiConfig.endpoint, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${apiConfig.apiKey}`
+        },
+        body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+        throw new Error("Order request failed");
+    }
+
+    return response.json();
+}
+
+function startWaffleOrder() {
+    const orderStatus = document.getElementById('orderStatus');
+    const orderDelivery = document.getElementById('orderDelivery');
+    const orderLink = document.getElementById('orderLink');
+    const statusMessages = config.waffleOrder.statusMessages;
+
+    if (!config.waffleOrder.enabled) {
+        orderStatus.textContent = "Waffle ordering is turned off in the configuration.";
+        orderLink.classList.add('hidden');
+        return;
+    }
+
+    orderStatus.textContent = statusMessages.locating;
+    orderLink.classList.add('hidden');
+
+    const handleCoordinates = async (coords, statusText) => {
+        const directionsUrl = buildWaffleDirectionsUrl(coords);
+        orderDelivery.textContent = `Lat ${coords.lat.toFixed(4)}, Lng ${coords.lng.toFixed(4)}`;
+        orderStatus.textContent = statusText;
+        orderLink.href = directionsUrl;
+        orderLink.classList.remove('hidden');
+
+        try {
+            orderStatus.textContent = statusMessages.apiPending;
+            await placeWaffleOrder(coords);
+            orderStatus.textContent = `${statusMessages.apiSuccess} ${statusMessages.complete}`;
+        } catch (error) {
+            console.warn(error);
+            orderStatus.textContent = statusMessages.apiFailure;
+        }
+    };
+
+    if (!navigator.geolocation) {
+        orderStatus.textContent = statusMessages.unavailable;
+        if (config.waffleOrder.fallbackCoordinates) {
+            orderStatus.textContent = statusMessages.fallback;
+            handleCoordinates(config.waffleOrder.fallbackCoordinates, statusMessages.ordering);
+        }
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            const coords = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            handleCoordinates(coords, statusMessages.ordering);
+        },
+        () => {
+            if (config.waffleOrder.fallbackCoordinates) {
+                orderStatus.textContent = statusMessages.fallback;
+                handleCoordinates(config.waffleOrder.fallbackCoordinates, statusMessages.ordering);
+            } else {
+                orderStatus.textContent = statusMessages.unavailable;
+            }
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+    );
 }
 
 // Create heart explosion animation
