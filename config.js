@@ -39,6 +39,18 @@ const CONFIG = {
         }
     },
 
+    video: {
+        url: "https://res.cloudinary.com/demo/video/upload/sample.mp4",
+        autoplay: true,
+        allowSkipAfterSeconds: 3,
+        skipButtonText: "Skip Video",
+        modalTitle: "Let’s bring these sweet memories into taste",
+        modalText: "Ready to order a Kikki & Oreo Cream Waffle?",
+        orderButtonText: "Order Now",
+        upiButtonText: "Pay via UPI",
+        disclaimer: "Ordering is handled by Swiggy/Zomato. You will confirm the order and payment there."
+    },
+
     // Love meter messages
     // They show up depending on how far they slide the meter
     loveMessages: {
@@ -59,18 +71,53 @@ const CONFIG = {
     waffleOrder: {
         enabled: true,
         title: "Waffle order in motion! 🧇💌",
-
-        itemName: "Kikki & oreo Cream waffle",
+        subtitle: "We'll auto-detect your location and place the order without opening another app.",
+        itemName: "Kikki & Oreo Cream Waffle",
         storeQuery: "Belgian waffle store",
         deliveryLabel: "Auto-detecting Google coordinates...",
         linkText: "Open directions",
         statusMessages: {
             locating: "Finding your Google coordinates…",
-
+            ordering: "Sending the order request now…",
+            apiPending: "Submitting the order with your delivery partner…",
+            apiSuccess: "Order placed! Your waffles are on the way. 🧇",
+            apiFailure: "Order request failed. Please try again or use the directions link.",
+            fallback: "Location access denied. Using the default coordinates instead.",
+            unavailable: "Location access unavailable. Please enable it and try again.",
+            complete: "Order prepared! If you need directions, use the link below."
+        },
+        api: {
+            mode: "mock", // "mock" simulates order placement. Switch to "live" with a real endpoint.
+            provider: "swiggy", // or "zomato"
+            endpoint: "",
+            apiKey: ""
         },
         fallbackCoordinates: {
             lat: 40.7128,
             lng: -74.006
+        }
+    },
+
+    orderFlow: {
+        provider: "swiggy", // "swiggy" or "zomato"
+        itemName: "Kikki & Oreo Cream Waffle",
+        quantity: 1,
+        searchQuery: "waffle",
+        swiggy: {
+            app: "swiggy://search?query={{query}}",
+            web: "https://www.swiggy.com/search?query={{query}}"
+        },
+        zomato: {
+            app: "zomato://search?query={{query}}",
+            web: "https://www.zomato.com/search?query={{query}}"
+        },
+        upi: {
+            enabled: true,
+            upiId: "your-upi@bank",
+            payeeName: "Waffle Treats",
+            amount: "0",
+            note: "Waffle order payment",
+            currency: "INR"
         }
     },
 

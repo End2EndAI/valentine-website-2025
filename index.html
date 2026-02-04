@@ -19,6 +19,11 @@
     <!-- Main Content Container -->
     <div class="container">
         <h1 id="valentineTitle"></h1>
+
+        <section class="video-section" id="videoSection">
+            <video id="memoryVideo" class="memory-video" playsinline muted></video>
+            <button class="cute-btn skip-btn hidden" id="skipVideoBtn" type="button"></button>
+        </section>
         
         <!-- Music Player -->
         <div id="musicControls" class="music-controls">
@@ -76,10 +81,22 @@
                 <p><strong>Order:</strong> <span id="orderItem"></span></p>
                 <p><strong>Store:</strong> <span id="orderStore"></span></p>
                 <p><strong>Delivery:</strong> <span id="orderDelivery"></span></p>
-
+                <p><strong>Partner:</strong> <span id="orderPartner"></span></p>
             </div>
             <p class="order-status" id="orderStatus"></p>
             <a class="cute-btn" id="orderLink" target="_blank" rel="noopener"></a>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+        <div class="modal-content">
+            <h2 id="orderModalTitle"></h2>
+            <p id="orderModalText"></p>
+            <div class="modal-actions">
+                <button class="cute-btn" id="orderNowBtn" type="button"></button>
+                <button class="cute-btn secondary" id="upiFallbackBtn" type="button"></button>
+            </div>
+            <p class="modal-disclaimer" id="orderDisclaimer"></p>
         </div>
     </div>
 

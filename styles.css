@@ -36,6 +36,23 @@ body {
     overflow: visible !important;
 }
 
+.video-section {
+    margin: 20px 0;
+    position: relative;
+}
+
+.memory-video {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.skip-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+
 .floating-elements {
     position: fixed;
     width: 100%;
@@ -78,6 +95,48 @@ body {
 
 .hidden {
     display: none;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.modal-disclaimer {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 16px;
+}
+
+.cute-btn.secondary {
+    background: #6c757d;
 }
 
 .disabled-btn {

@@ -87,11 +87,21 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('orderLink').textContent = config.waffleOrder.linkText;
     document.getElementById('orderPartner').textContent = config.waffleOrder.api.provider.toUpperCase();
 
+    // Set video modal texts
+    document.getElementById('orderModalTitle').textContent = config.video.modalTitle;
+    document.getElementById('orderModalText').textContent = config.video.modalText;
+    document.getElementById('orderNowBtn').textContent = config.video.orderButtonText;
+    document.getElementById('upiFallbackBtn').textContent = config.video.upiButtonText;
+    document.getElementById('orderDisclaimer').textContent = config.video.disclaimer;
+
     // Create initial floating elements
     createFloatingElements();
 
     // Setup music player
     setupMusicPlayer();
+
+    // Setup video flow
+    setupVideoFlow();
 });
 
 // Create floating hearts and bears
@@ -205,6 +215,114 @@ function showOrderSection() {
     const orderSection = document.getElementById('orderSection');
     orderSection.classList.remove('hidden');
     startWaffleOrder();
+}
+
+function setupVideoFlow() {
+    const video = document.getElementById('memoryVideo');
+    const skipButton = document.getElementById('skipVideoBtn');
+    const upiButton = document.getElementById('upiFallbackBtn');
+
+    video.src = config.video.url;
+    video.autoplay = config.video.autoplay;
+    video.playsInline = true;
+    video.muted = true;
+
+    skipButton.textContent = config.video.skipButtonText;
+    skipButton.classList.add('hidden');
+
+    if (config.video.allowSkipAfterSeconds > 0) {
+        setTimeout(() => {
+            skipButton.classList.remove('hidden');
+        }, config.video.allowSkipAfterSeconds * 1000);
+    }
+
+    skipButton.addEventListener('click', () => {
+        video.pause();
+        showOrderModal();
+    });
+
+    video.addEventListener('ended', () => {
+        showOrderModal();
+    });
+
+    if (config.video.autoplay) {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                skipButton.classList.remove('hidden');
+            });
+        }
+    }
+
+    if (!config.orderFlow.upi.enabled) {
+        upiButton.classList.add('hidden');
+    }
+
+    document.getElementById('orderNowBtn').addEventListener('click', () => {
+        redirectToDeliveryPartner();
+    });
+
+    upiButton.addEventListener('click', () => {
+        redirectToUpi();
+    });
+}
+
+function showOrderModal() {
+    const modal = document.getElementById('orderModal');
+    modal.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+}
+
+function getProviderConfig() {
+    const provider = config.orderFlow.provider;
+    return provider === "zomato" ? config.orderFlow.zomato : config.orderFlow.swiggy;
+}
+
+function buildProviderUrl() {
+    const providerConfig = getProviderConfig();
+    const query = encodeURIComponent(config.orderFlow.searchQuery || config.orderFlow.itemName);
+    return providerConfig.web.replace("{{query}}", query);
+}
+
+function buildProviderAppUrl() {
+    const providerConfig = getProviderConfig();
+    const query = encodeURIComponent(config.orderFlow.searchQuery || config.orderFlow.itemName);
+    return providerConfig.app.replace("{{query}}", query);
+}
+
+function redirectToDeliveryPartner() {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const webUrl = buildProviderUrl();
+
+    if (isMobile) {
+        const appUrl = buildProviderAppUrl();
+        window.location.href = appUrl;
+        setTimeout(() => {
+            window.location.href = webUrl;
+        }, 800);
+    } else {
+        window.open(webUrl, "_blank", "noopener,noreferrer");
+    }
+}
+
+function buildUpiUrl() {
+    const upi = config.orderFlow.upi;
+    const params = new URLSearchParams({
+        pa: upi.upiId,
+        pn: upi.payeeName,
+        am: upi.amount,
+        tn: upi.note,
+        cu: upi.currency
+    });
+    return `upi://pay?${params.toString()}`;
+}
+
+function redirectToUpi() {
+    if (!config.orderFlow.upi.enabled) {
+        return;
+    }
+    const upiUrl = buildUpiUrl();
+    window.location.href = upiUrl;
 }
 
 function buildWaffleDirectionsUrl(coords) {
