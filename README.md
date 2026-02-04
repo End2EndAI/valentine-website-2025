@@ -1,4 +1,4 @@
-# 💝 Valentine's Day Website 2025 💝
+# 💝 Valentine's Day Website 2026 💝
 
 [![Stars](https://img.shields.io/github/stars/End2EndAI/valentine-website-2025?style=social)](https://github.com/End2EndAI/valentine-website-2025/stargazers)
 [![Fork](https://img.shields.io/github/forks/End2EndAI/valentine-website-2025?style=social)](https://github.com/End2EndAI/valentine-website-2025/fork)
@@ -6,61 +6,20 @@
 [![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FEnd2EndAI%2Fvalentine-website-2025)](https://twitter.com/intent/tweet?text=%F0%9F%92%9D%20Create%20your%20own%20Valentine%27s%20website%20for%20free%21%20No%20coding%20required%21%0A%F0%9F%8E%81%20Fully%20customizable%2C%20easy%20to%20deploy%20with%20your%20own%20website%20name%0A%E2%9C%A8%20Try%20it%20now%3A%20https%3A%2F%2Fgithub.com%2FEnd2EndAI%2Fvalentine-website-2025%0A%23ValentinesDay2025%20%23WebDev%20%23GitHub%20%23Love)
 
 A beautiful, interactive Valentine's Day website generator to ask your special someone to be your Valentine! Create your own personalized version in minutes. Perfect for Valentine's Day 2025! 💝
+Follow below the tutorial how to custom the website and get your custom URL and access your website on the internet from everywhere !
 
 🌟 **[Live Demo](https://end2endai.github.io/valentine-website-2025)** | 🚀 **[Quick Start](#-quick-start-guide)** | 🌐 **[Deploy Your Website](#4-make-it-live-get-your-online-website-url)**
 
 ## 🌟 Share The Love
 
-Help others find this project:
-- 🔥 Follow on instagram for more websites or share other ideas : [Instagram](https://www.instagram.com/ai_cute_apps/)
+If you liked it, please :
 - ⭐ Star this repository if you like it
 - 🔄 Fork it to create your own version
-- 📢 Share on your social media
-- 📱 Show your creation to friends
-
-### 📣 Share on Social Media
-
-Ready-to-use messages for sharing:
-
-**Twitter/X**
-```
-💝 Create your own Valentine's website for free! No coding required!
-🎁 Fully customizable, easy to deploy with your own website name
-✨ Try it now: https://github.com/End2EndAI/valentine-website-2025
-#ValentinesDay2025 #WebDev #GitHub #Love
-```
-
-**Instagram/Facebook**
-```
-💝 Make Valentine's Day 2025 unforgettable!
-Create your own interactive Valentine's website in minutes - completely FREE!
-✨ No coding required
-🎨 Fully customizable
-🌐 Get your own website link
-
-Try it now: https://github.com/End2EndAI/valentine-website-2025
-#ValentinesDay2025 #Love #WebDev #CodingWithLove
-```
-
-**Reddit (r/webdev, r/coding)**
-```
-[Project] 💝 Valentine's Website Generator - Free & Open Source
-
-I created a free, open-source Valentine's website generator that lets anyone create their own interactive Valentine's proposal website. No coding required!
-
-- 🎨 Fully customizable
-- 💝 Interactive elements
-- 🚀 Easy deployment
-- 📱 Mobile-friendly
-- 💯 Free forever
-
-Demo: https://end2endai.github.io/valentine-website-2025
-GitHub: https://github.com/End2EndAI/valentine-website-2025
-```
+- 🔥 Like and follow on instagram for more websites : [Instagram]([https://www.instagram.com/ai_cute_apps/](https://www.instagram.com/reel/DFh3ZaxtrYX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==))
 
 ## ✨ Features
 - 💖 Floating hearts and bears
-- 🎯 Interactive questions
+- 🎵 Custom music
 - 📏 Love meter that goes beyond 100%
 - 🏃‍♂️ Playful buttons that run away
 - 🎁 Hidden answer for the first question, "Do you like me?"
@@ -69,7 +28,7 @@ GitHub: https://github.com/End2EndAI/valentine-website-2025
 ## 🚀 Quick Start Guide
 
 ### 1. Get Your Own Copy
-1. Click the "Fork" button at the top right of this page
+1. Click the "Fork" button at the top right of this page or [click here](https://github.com/End2EndAI/valentine-website-2025/fork)
 2. Wait a few seconds while GitHub creates your copy
 3. You now have your own version of the code!
 
@@ -217,7 +176,6 @@ music: {
 - Test the website before sending it to your Valentine
 - Try all the buttons and interactions
 - Check how it looks on mobile phones
-- Keep the secret message subtle (bottom-right corner)
 
 ## 🎨 Want Different Colors?
 Use these tools to find beautiful colors:
@@ -228,11 +186,6 @@ Use these tools to find beautiful colors:
 Find more emojis at:
 - [EmojiKeyboard](https://emojikeyboard.top/fr/)
 - [Emojipedia](https://emojipedia.org/)
-
-## 🤝 Need Help?
-- Create an issue in this repository
-- Check existing issues for solutions
-- Contact me through GitHub
 
 ## 💖 Credits
 Created with love for Valentine's Day 2025.
