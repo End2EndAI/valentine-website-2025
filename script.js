@@ -85,6 +85,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('orderStore').textContent = config.waffleOrder.storeQuery;
     document.getElementById('orderDelivery').textContent = config.waffleOrder.deliveryLabel;
     document.getElementById('orderLink').textContent = config.waffleOrder.linkText;
+    document.getElementById('orderPartner').textContent = config.waffleOrder.api.provider.toUpperCase();
 
     // Create initial floating elements
     createFloatingElements();
@@ -211,6 +212,44 @@ function buildWaffleDirectionsUrl(coords) {
     return `https://www.google.com/maps/dir/?api=1&origin=${coords.lat},${coords.lng}&destination=${destination}&travelmode=walking`;
 }
 
+function buildOrderPayload(coords) {
+    return {
+        item: config.waffleOrder.itemName,
+        storeQuery: config.waffleOrder.storeQuery,
+        coordinates: coords,
+        provider: config.waffleOrder.api.provider
+    };
+}
+
+async function placeWaffleOrder(coords) {
+    const apiConfig = config.waffleOrder.api;
+    const payload = buildOrderPayload(coords);
+
+    if (apiConfig.mode === "mock") {
+        await new Promise(resolve => setTimeout(resolve, 900));
+        return { ok: true, payload };
+    }
+
+    if (!apiConfig.endpoint || !apiConfig.apiKey) {
+        throw new Error("Missing API configuration");
+    }
+
+    const response = await fetch(apiConfig.endpoint, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${apiConfig.apiKey}`
+        },
+        body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+        throw new Error("Order request failed");
+    }
+
+    return response.json();
+}
+
 function startWaffleOrder() {
     const orderStatus = document.getElementById('orderStatus');
     const orderDelivery = document.getElementById('orderDelivery');
@@ -226,14 +265,21 @@ function startWaffleOrder() {
     orderStatus.textContent = statusMessages.locating;
     orderLink.classList.add('hidden');
 
-    const handleCoordinates = (coords, statusText) => {
+    const handleCoordinates = async (coords, statusText) => {
         const directionsUrl = buildWaffleDirectionsUrl(coords);
         orderDelivery.textContent = `Lat ${coords.lat.toFixed(4)}, Lng ${coords.lng.toFixed(4)}`;
         orderStatus.textContent = statusText;
         orderLink.href = directionsUrl;
         orderLink.classList.remove('hidden');
-        window.open(directionsUrl, "_blank", "noopener,noreferrer");
-        orderStatus.textContent = statusMessages.complete;
+
+        try {
+            orderStatus.textContent = statusMessages.apiPending;
+            await placeWaffleOrder(coords);
+            orderStatus.textContent = `${statusMessages.apiSuccess} ${statusMessages.complete}`;
+        } catch (error) {
+            console.warn(error);
+            orderStatus.textContent = statusMessages.apiFailure;
+        }
     };
 
     if (!navigator.geolocation) {
