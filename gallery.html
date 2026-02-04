@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery-page-container {
+             max-width: 800px;
+             padding: 2rem;
+             width: 90%;
+        }
+        
+        .gallery-grid {
+            margin-top: 30px;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+            color: var(--button-color);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .gallery-img {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements"></div>
+    
+    <div class="container gallery-page-container">
+        <h1 id="galleryTitle">Our Beautiful Memories</h1>
+        
+        <!-- Music Player -->
+        <div id="musicControls" class="music-controls">
+            <button id="musicToggle" class="music-btn">🎵 Play Music</button>
+            <audio id="bgMusic" loop>
+                <source id="musicSource" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+
+        <button class="cute-btn" onclick="window.location.href='index.html'" style="margin-top: 30px;">
+            ⬅️ Back to Home
+        </button>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

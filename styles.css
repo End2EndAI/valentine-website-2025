@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, var(--background-color-1), var(--background-color-2));
-    font-family: Arial, sans-serif;
+    font-family: 'Outfit', sans-serif;
     overflow-x: hidden;
 }
 
@@ -44,7 +44,8 @@ body {
     z-index: 1;
 }
 
-.heart, .bear {
+.heart,
+.bear {
     position: absolute;
     font-size: 2rem;
     animation: float var(--float-duration) linear infinite;
@@ -54,6 +55,7 @@ body {
     0% {
         transform: translateY(100vh) translateX(0);
     }
+
     100% {
         transform: translateY(-100px) translateX(var(--float-distance));
     }
@@ -91,9 +93,9 @@ body {
     bottom: 20px;
     right: 20px;
     margin-top: 0;
-    opacity: 0.2;
+    opacity: 0.0;
     transition: opacity 0.3s;
-    transform: scale(0.7);
+    transform: scale(0.9);
     z-index: 2;
     animation: subtle-hint 2s infinite alternate;
     animation-delay: 5s;
@@ -232,6 +234,7 @@ body {
     from {
         transform: scale(1);
     }
+
     to {
         transform: scale(1.2);
     }
@@ -247,16 +250,19 @@ body {
     0% {
         transform: scale(0);
     }
+
     50% {
         transform: scale(var(--heart-explosion-size));
     }
+
     100% {
         transform: scale(1);
     }
 }
 
-h1, h2 {
-    font-family: Arial, sans-serif;
+h1,
+h2 {
+    font-family: 'Outfit', sans-serif;
     font-weight: 700;
 }
 
@@ -278,19 +284,133 @@ h2 {
     text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.3);
 }
 
-
 .celebration-text {
     font-size: 3em;
     color: #ff4757;
     font-weight: bold;
     margin: 30px 0;
-    animation: bounce var(--bounce-speed) infinite alternate;
+    /* animation: bounce var(--bounce-speed) infinite alternate; */
     text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.3);
 }
 
-@keyframes subtle-hint {
-    0% { opacity: 0.2; }
-    100% { opacity: 0.3; }
+
+/* Secret Message Styles */
+.secret-message {
+    filter: blur(15px);
+    cursor: pointer;
+    transition: all 1s ease;
+    user-select: none;
+    background: rgba(255, 107, 107, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.secret-message:hover {
+    filter: blur(12px);
+    background: rgba(255, 107, 107, 0.2);
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+}
+
+.secret-message.revealed {
+    filter: blur(0);
+    cursor: default;
+    background: transparent;
+    animation: magic-pop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.secret-message.revealed::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.8),
+            transparent);
+    animation: shine 1.5s ease-in-out;
+}
+
+@keyframes magic-pop {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Magic Sparkles */
+.magic-sparkle {
+    position: absolute;
+    pointer-events: none;
+    animation: sparkle-float 1s ease-out forwards;
+    z-index: 10;
+}
+
+@keyframes sparkle-float {
+    0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.click-hint {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    color: #ff8787;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    animation: pulse 2s infinite;
+    pointer-events: none;
+    /* Let clicks pass through to the message container if they overlap */
+}
+
+.click-hint.hidden {
+    display: none;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
 }
 
 .music-controls {
@@ -301,7 +421,7 @@ h2 {
 }
 
 .music-btn {
-    background: var(--primary-color);
+    background: var(--button-color);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -309,10 +429,10 @@ h2 {
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .music-btn:hover {
     transform: scale(1.05);
-    background: var(--secondary-color);
-} 
+    background: var(--button-hover);
+}
