@@ -59,26 +59,14 @@ const CONFIG = {
     waffleOrder: {
         enabled: true,
         title: "Waffle order in motion! 🧇💌",
-        subtitle: "We'll auto-detect your location and place the order without opening another app.",
+
         itemName: "Kikki & oreo Cream waffle",
         storeQuery: "Belgian waffle store",
         deliveryLabel: "Auto-detecting Google coordinates...",
         linkText: "Open directions",
         statusMessages: {
             locating: "Finding your Google coordinates…",
-            ordering: "Sending the order request now…",
-            apiPending: "Submitting the order with your delivery partner…",
-            apiSuccess: "Order placed! Your waffles are on the way. 🧇",
-            apiFailure: "Order request failed. Please try again or use the directions link.",
-            fallback: "Location access denied. Using the default coordinates instead.",
-            unavailable: "Location access unavailable. Please enable it and try again.",
-            complete: "Order prepared! If you need directions, use the link below."
-        },
-        api: {
-            mode: "mock", // "mock" simulates order placement. Switch to "live" with a real endpoint.
-            provider: "swiggy", // or "zomato"
-            endpoint: "",
-            apiKey: ""
+
         },
         fallbackCoordinates: {
             lat: 40.7128,
