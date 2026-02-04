@@ -77,6 +77,16 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('yesBtn3').textContent = config.questions.third.yesBtn;
     document.getElementById('noBtn3').textContent = config.questions.third.noBtn;
 
+    // Set celebration and waffle order texts
+    document.getElementById('celebrationNextBtn').textContent = config.celebration.nextBtn;
+    document.getElementById('orderTitle').textContent = config.waffleOrder.title;
+    document.getElementById('orderSubtitle').textContent = config.waffleOrder.subtitle;
+    document.getElementById('orderItem').textContent = config.waffleOrder.itemName;
+    document.getElementById('orderStore').textContent = config.waffleOrder.storeQuery;
+    document.getElementById('orderDelivery').textContent = config.waffleOrder.deliveryLabel;
+    document.getElementById('orderLink').textContent = config.waffleOrder.linkText;
+    document.getElementById('orderPartner').textContent = config.waffleOrder.api.provider.toUpperCase();
+
     // Create initial floating elements
     createFloatingElements();
 
@@ -178,6 +188,7 @@ function celebrate() {
     document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
     const celebration = document.getElementById('celebration');
     celebration.classList.remove('hidden');
+    document.getElementById('orderSection').classList.add('hidden');
     
     // Set celebration messages
     document.getElementById('celebrationTitle').textContent = config.celebration.title;
@@ -186,6 +197,118 @@ function celebrate() {
     
     // Create heart explosion effect
     createHeartExplosion();
+}
+
+function showOrderSection() {
+    document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
+    document.getElementById('celebration').classList.add('hidden');
+    const orderSection = document.getElementById('orderSection');
+    orderSection.classList.remove('hidden');
+    startWaffleOrder();
+}
+
+function buildWaffleDirectionsUrl(coords) {
+    const destination = encodeURIComponent(config.waffleOrder.storeQuery);
+    return `https://www.google.com/maps/dir/?api=1&origin=${coords.lat},${coords.lng}&destination=${destination}&travelmode=walking`;
+}
+
+function buildOrderPayload(coords) {
+    return {
+        item: config.waffleOrder.itemName,
+        storeQuery: config.waffleOrder.storeQuery,
+        coordinates: coords,
+        provider: config.waffleOrder.api.provider
+    };
+}
+
+async function placeWaffleOrder(coords) {
+    const apiConfig = config.waffleOrder.api;
+    const payload = buildOrderPayload(coords);
+
+    if (apiConfig.mode === "mock") {
+        await new Promise(resolve => setTimeout(resolve, 900));
+        return { ok: true, payload };
+    }
+
+    if (!apiConfig.endpoint || !apiConfig.apiKey) {
+        throw new Error("Missing API configuration");
+    }
+
+    const response = await fetch(apiConfig.endpoint, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${apiConfig.apiKey}`
+        },
+        body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+        throw new Error("Order request failed");
+    }
+
+    return response.json();
+}
+
+function startWaffleOrder() {
+    const orderStatus = document.getElementById('orderStatus');
+    const orderDelivery = document.getElementById('orderDelivery');
+    const orderLink = document.getElementById('orderLink');
+    const statusMessages = config.waffleOrder.statusMessages;
+
+    if (!config.waffleOrder.enabled) {
+        orderStatus.textContent = "Waffle ordering is turned off in the configuration.";
+        orderLink.classList.add('hidden');
+        return;
+    }
+
+    orderStatus.textContent = statusMessages.locating;
+    orderLink.classList.add('hidden');
+
+    const handleCoordinates = async (coords, statusText) => {
+        const directionsUrl = buildWaffleDirectionsUrl(coords);
+        orderDelivery.textContent = `Lat ${coords.lat.toFixed(4)}, Lng ${coords.lng.toFixed(4)}`;
+        orderStatus.textContent = statusText;
+        orderLink.href = directionsUrl;
+        orderLink.classList.remove('hidden');
+
+        try {
+            orderStatus.textContent = statusMessages.apiPending;
+            await placeWaffleOrder(coords);
+            orderStatus.textContent = `${statusMessages.apiSuccess} ${statusMessages.complete}`;
+        } catch (error) {
+            console.warn(error);
+            orderStatus.textContent = statusMessages.apiFailure;
+        }
+    };
+
+    if (!navigator.geolocation) {
+        orderStatus.textContent = statusMessages.unavailable;
+        if (config.waffleOrder.fallbackCoordinates) {
+            orderStatus.textContent = statusMessages.fallback;
+            handleCoordinates(config.waffleOrder.fallbackCoordinates, statusMessages.ordering);
+        }
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            const coords = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            handleCoordinates(coords, statusMessages.ordering);
+        },
+        () => {
+            if (config.waffleOrder.fallbackCoordinates) {
+                orderStatus.textContent = statusMessages.fallback;
+                handleCoordinates(config.waffleOrder.fallbackCoordinates, statusMessages.ordering);
+            } else {
+                orderStatus.textContent = statusMessages.unavailable;
+            }
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+    );
 }
 
 // Create heart explosion animation

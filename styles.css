@@ -288,6 +288,33 @@ h2 {
     text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.3);
 }
 
+.order-section {
+    margin-top: 20px;
+    color: var(--text-color);
+}
+
+.order-subtitle {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.order-details {
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 16px 0;
+    text-align: left;
+}
+
+.order-details p {
+    margin: 8px 0;
+}
+
+.order-status {
+    font-weight: bold;
+    margin: 12px 0 20px;
+}
+
 @keyframes subtle-hint {
     0% { opacity: 0.2; }
     100% { opacity: 0.3; }
