@@ -51,7 +51,30 @@ const CONFIG = {
     celebration: {
         title: "Yay! I'm the luckiest person in the world! 🎉💝💖💝💓",
         message: "Now come get your gift, a big warm hug and a huge kiss!",
-        emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
+        emojis: "🎁💖🤗💝💋❤️💕",  // These will bounce around
+        nextBtn: "Next ➜ Order waffles"
+    },
+
+    // Waffle order flow
+    waffleOrder: {
+        enabled: true,
+        title: "Waffle order in motion! 🧇💌",
+        subtitle: "We'll auto-detect your location and send the order to the nearest Belgian waffle store.",
+        itemName: "Kikki & oreo Cream waffle",
+        storeQuery: "Belgian waffle store",
+        deliveryLabel: "Auto-detecting Google coordinates...",
+        linkText: "Open directions",
+        statusMessages: {
+            locating: "Finding your Google coordinates…",
+            ordering: "Ordering now and routing to the closest Belgian waffle store…",
+            fallback: "Location access denied. Using the default coordinates instead.",
+            unavailable: "Location access unavailable. Please enable it and try again.",
+            complete: "Order sent! Follow the directions to the waffle shop. 🧇"
+        },
+        fallbackCoordinates: {
+            lat: 40.7128,
+            lng: -74.006
+        }
     },
 
     // Color scheme for the website

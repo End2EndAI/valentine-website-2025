@@ -66,6 +66,19 @@
             <h2 id="celebrationTitle"></h2>
             <p class="celebration-text" id="celebrationMessage"></p>
             <p class="celebration-text" id="celebrationEmojis"></p>
+            <button class="cute-btn" id="celebrationNextBtn" onclick="showOrderSection()"></button>
+        </div>
+
+        <div class="order-section hidden" id="orderSection">
+            <h2 id="orderTitle"></h2>
+            <p class="order-subtitle" id="orderSubtitle"></p>
+            <div class="order-details">
+                <p><strong>Order:</strong> <span id="orderItem"></span></p>
+                <p><strong>Store:</strong> <span id="orderStore"></span></p>
+                <p><strong>Delivery:</strong> <span id="orderDelivery"></span></p>
+            </div>
+            <p class="order-status" id="orderStatus"></p>
+            <a class="cute-btn" id="orderLink" target="_blank" rel="noopener"></a>
         </div>
     </div>
 
