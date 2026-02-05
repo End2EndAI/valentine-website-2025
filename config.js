@@ -148,6 +148,34 @@ const CONFIG = {
         startText: "🎵 Play Music",        // Button text to start music
         stopText: "🔇 Stop Music",         // Button text to stop music
         volume: 0.5                        // Volume level (0.0 to 1.0)
+    },
+
+    // Portrait slideshow feature configuration
+    portraitSlideshow: {
+        googleDrive: {
+            folderLink: "", // Example: https://drive.google.com/drive/folders/YOUR_FOLDER_ID
+            apiKey: "YOUR_GOOGLE_DRIVE_API_KEY"
+        },
+        ai: {
+            enabled: false,
+            provider: "gemini", // "gemini" or "openai"
+            apiKey: "YOUR_AI_API_KEY",
+            model: "gemini-1.5-flash",
+            prompt: "Write a short, sweet, romantic one-liner expressing love and appreciation."
+        },
+        animation: {
+            holdMs: 3800
+        },
+        portraitRatio: 0.8, // 4:5 ratio
+        maxStackCards: 8,
+        cacheKeyPrefix: "valentine-portrait-v1",
+        fallbackCompliments: [
+            "You make every ordinary second feel magical and deeply cherished.",
+            "Your laughter is my favorite melody and my calmest place.",
+            "I fall in love with your heart a little more each day.",
+            "Your kindness paints my world with warmth, hope, and wonder.",
+            "With you, even silence feels like the sweetest love song."
+        ]
     }
 };
 

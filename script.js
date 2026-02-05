@@ -51,6 +51,14 @@ function getDefaultColor(key) {
 }
 
 // Set page title
+function setTextIfExists(id, value) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.textContent = value;
+    }
+}
+
+// Set page title
 document.title = config.pageTitle;
 
 // Initialize the page content when DOM is loaded
@@ -59,40 +67,40 @@ window.addEventListener('DOMContentLoaded', () => {
     validateConfig();
 
     // Set texts from config
-    document.getElementById('valentineTitle').textContent = `${config.valentineName}, my love...`;
+    setTextIfExists('valentineTitle', `${config.valentineName}, my love...`);
     
     // Set first question texts
-    document.getElementById('question1Text').textContent = config.questions.first.text;
-    document.getElementById('yesBtn1').textContent = config.questions.first.yesBtn;
-    document.getElementById('noBtn1').textContent = config.questions.first.noBtn;
-    document.getElementById('secretAnswerBtn').textContent = config.questions.first.secretAnswer;
+    setTextIfExists('question1Text', config.questions.first.text);
+    setTextIfExists('yesBtn1', config.questions.first.yesBtn);
+    setTextIfExists('noBtn1', config.questions.first.noBtn);
+    setTextIfExists('secretAnswerBtn', config.questions.first.secretAnswer);
     
     // Set second question texts
-    document.getElementById('question2Text').textContent = config.questions.second.text;
-    document.getElementById('startText').textContent = config.questions.second.startText;
-    document.getElementById('nextBtn').textContent = config.questions.second.nextBtn;
+    setTextIfExists('question2Text', config.questions.second.text);
+    setTextIfExists('startText', config.questions.second.startText);
+    setTextIfExists('nextBtn', config.questions.second.nextBtn);
     
     // Set third question texts
-    document.getElementById('question3Text').textContent = config.questions.third.text;
-    document.getElementById('yesBtn3').textContent = config.questions.third.yesBtn;
-    document.getElementById('noBtn3').textContent = config.questions.third.noBtn;
+    setTextIfExists('question3Text', config.questions.third.text);
+    setTextIfExists('yesBtn3', config.questions.third.yesBtn);
+    setTextIfExists('noBtn3', config.questions.third.noBtn);
 
     // Set celebration and waffle order texts
-    document.getElementById('celebrationNextBtn').textContent = config.celebration.nextBtn;
-    document.getElementById('orderTitle').textContent = config.waffleOrder.title;
-    document.getElementById('orderSubtitle').textContent = config.waffleOrder.subtitle;
-    document.getElementById('orderItem').textContent = config.waffleOrder.itemName;
-    document.getElementById('orderStore').textContent = config.waffleOrder.storeQuery;
-    document.getElementById('orderDelivery').textContent = config.waffleOrder.deliveryLabel;
-    document.getElementById('orderLink').textContent = config.waffleOrder.linkText;
-    document.getElementById('orderPartner').textContent = config.waffleOrder.api.provider.toUpperCase();
+    setTextIfExists('celebrationNextBtn', config.celebration.nextBtn);
+    setTextIfExists('orderTitle', config.waffleOrder.title);
+    setTextIfExists('orderSubtitle', config.waffleOrder.subtitle);
+    setTextIfExists('orderItem', config.waffleOrder.itemName);
+    setTextIfExists('orderStore', config.waffleOrder.storeQuery);
+    setTextIfExists('orderDelivery', config.waffleOrder.deliveryLabel);
+    setTextIfExists('orderLink', config.waffleOrder.linkText);
+    setTextIfExists('orderPartner', config.waffleOrder.api.provider.toUpperCase());
 
     // Set video modal texts
-    document.getElementById('orderModalTitle').textContent = config.video.modalTitle;
-    document.getElementById('orderModalText').textContent = config.video.modalText;
-    document.getElementById('orderNowBtn').textContent = config.video.orderButtonText;
-    document.getElementById('upiFallbackBtn').textContent = config.video.upiButtonText;
-    document.getElementById('orderDisclaimer').textContent = config.video.disclaimer;
+    setTextIfExists('orderModalTitle', config.video.modalTitle);
+    setTextIfExists('orderModalText', config.video.modalText);
+    setTextIfExists('orderNowBtn', config.video.orderButtonText);
+    setTextIfExists('upiFallbackBtn', config.video.upiButtonText);
+    setTextIfExists('orderDisclaimer', config.video.disclaimer);
 
     // Create initial floating elements
     createFloatingElements();
@@ -155,11 +163,15 @@ const loveValue = document.getElementById('loveValue');
 const extraLove = document.getElementById('extraLove');
 
 function setInitialPosition() {
+    if (!loveMeter || !loveValue) {
+        return;
+    }
     loveMeter.value = 100;
     loveValue.textContent = 100;
     loveMeter.style.width = '100%';
 }
 
+if (loveMeter && loveValue && extraLove) {
 loveMeter.addEventListener('input', () => {
     const value = parseInt(loveMeter.value);
     loveValue.textContent = value;
@@ -188,6 +200,7 @@ loveMeter.addEventListener('input', () => {
         loveMeter.style.width = '100%';
     }
 });
+}
 
 // Initialize love meter
 window.addEventListener('DOMContentLoaded', setInitialPosition);
@@ -204,7 +217,7 @@ function celebrate() {
     document.getElementById('celebrationTitle').textContent = config.celebration.title;
     document.getElementById('celebrationMessage').textContent = config.celebration.message;
     document.getElementById('celebrationEmojis').textContent = config.celebration.emojis;
-    document.getElementById('celebrationNextBtn').textContent = config.celebration.nextBtn;
+    setTextIfExists('celebrationNextBtn', config.celebration.nextBtn);
     
 
 }
@@ -238,13 +251,16 @@ function setupVideoFlow() {
 
 
 
-document.getElementById("memoryVideo").addEventListener('click', ()=>{
-    const video = document.getElementById('memoryVideo');
-    video.src = config.video.url;
-    video.autoplay = config.video.autoplay;
-    video.playsInline = true;
-    video.muted = true;
-})
+const memoryVideoElement = document.getElementById('memoryVideo');
+if (memoryVideoElement) {
+    memoryVideoElement.addEventListener('click', ()=>{
+        const video = document.getElementById('memoryVideo');
+        video.src = config.video.url;
+        video.autoplay = config.video.autoplay;
+        video.playsInline = true;
+        video.muted = true;
+    });
+}
 
 function potraits() {
 
