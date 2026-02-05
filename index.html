@@ -71,6 +71,40 @@
             <button class="cute-btn" id="celebrationNextBtn" onclick="setupVideoFlow()"></button>
         </div>
 
+        <section class="portrait-feature" id="portraitFeature" aria-live="polite">
+            <div class="portrait-feature__header">
+                <h2>Reasons I Love You, One Portrait at a Time 💞</h2>
+                <p>Paste a public Google Drive folder link, then press start.</p>
+            </div>
+
+            <div class="portrait-feature__controls">
+                <label for="driveFolderInput">Google Drive Folder Link</label>
+                <input
+                    id="driveFolderInput"
+                    type="url"
+                    placeholder="https://drive.google.com/drive/folders/YOUR_FOLDER_ID"
+                    autocomplete="off"
+                >
+                <div class="portrait-feature__buttons">
+                    <button class="cute-btn" id="startPortraitBtn" type="button">Start Story</button>
+                    <button class="cute-btn" id="pausePortraitBtn" type="button" disabled>Pause</button>
+                    <button class="cute-btn" id="resumePortraitBtn" type="button" disabled>Resume</button>
+                </div>
+            </div>
+
+            <p id="portraitStatus" class="portrait-status">Waiting for your memories…</p>
+
+            <div class="portrait-stage" id="portraitStage">
+                <div class="portrait-stack" id="portraitStack"></div>
+                <article class="portrait-card" id="activePortraitCard">
+                    <img id="activePortraitImage" alt="Current portrait">
+                    <p id="activePortraitCompliment"></p>
+                </article>
+            </div>
+
+            <p id="portraitFinalMessage" class="portrait-final-message hidden">Every memory, every reason, always you ❤️</p>
+        </section>
+
        
     </div>
 
@@ -96,6 +130,7 @@
     <!-- Scripts -->
     <script src="config.js"></script>
     <script src="theme.js"></script>
+    <script src="portrait-slideshow.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

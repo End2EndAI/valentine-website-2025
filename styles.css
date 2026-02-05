@@ -404,3 +404,148 @@ h2 {
     transform: scale(1.05);
     background: var(--secondary-color);
 } 
+
+/* Portrait slideshow feature */
+.portrait-feature {
+    margin-top: 28px;
+    padding: 20px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,230,236,0.75));
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.portrait-feature__header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.portrait-feature__header p {
+    margin: 8px 0 18px;
+    color: #8f4568;
+    font-size: 0.95rem;
+}
+
+.portrait-feature__controls {
+    display: grid;
+    gap: 10px;
+    text-align: left;
+}
+
+.portrait-feature__controls label {
+    font-weight: 600;
+    color: #b13d67;
+}
+
+.portrait-feature__controls input {
+    border: 1px solid rgba(255, 107, 107, 0.35);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+}
+
+.portrait-feature__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.portrait-status {
+    min-height: 1.4em;
+    color: #9e2d5b;
+    margin: 14px 0;
+    font-weight: 600;
+}
+
+.portrait-stage {
+    position: relative;
+    width: min(100%, 320px);
+    margin: 0 auto;
+    min-height: 460px;
+    display: grid;
+    place-items: center;
+    transform: translateZ(0);
+}
+
+.portrait-stack,
+.portrait-card {
+    position: absolute;
+    inset: 0;
+}
+
+.portrait-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 20;
+    will-change: transform, opacity, filter;
+}
+
+.portrait-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(131, 40, 77, 0.25);
+}
+
+.portrait-card p {
+    margin-top: 14px;
+    min-height: 2.6em;
+    color: #7c2e52;
+    font-weight: 600;
+}
+
+.portrait-stack-card {
+    position: absolute;
+    inset: 20px 16px 70px;
+    opacity: calc(0.42 - (var(--stack-index, 0) * 0.04));
+    transform:
+        translateY(calc(8px + (var(--stack-index, 0) * 5px)))
+        scale(calc(0.92 - (var(--stack-index, 0) * 0.035)))
+        rotate(calc((var(--stack-index, 0) - 1) * 1.6deg));
+    filter: blur(calc(0.5px + var(--stack-index, 0) * 0.6px));
+    transition: transform 400ms ease, opacity 400ms ease, filter 400ms ease;
+    z-index: calc(10 - var(--stack-index, 0));
+}
+
+.portrait-stack-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.portrait-enter {
+    animation: portraitIn 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.portrait-fade-out {
+    animation: portraitFade 700ms ease forwards;
+}
+
+@keyframes portraitIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0) scale(0.94);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes portraitFade {
+    to {
+        opacity: 0;
+        transform: translate3d(0, -14px, 0) scale(0.94);
+        filter: blur(2px);
+    }
+}
+
+.portrait-final-message {
+    color: #a72558;
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin-top: 16px;
+}
