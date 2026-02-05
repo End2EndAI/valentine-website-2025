@@ -40,10 +40,9 @@ const CONFIG = {
     },
 
     video: {
-        url: "https://res.cloudinary.com/demo/video/upload/sample.mp4",
+        url: "./video/anjuAndme.mp4",
         autoplay: true,
         allowSkipAfterSeconds: 3,
-        skipButtonText: "Skip Video",
         modalTitle: "Let’s bring these sweet memories into taste",
         modalText: "Ready to order a Kikki & Oreo Cream Waffle?",
         orderButtonText: "Order Now",
@@ -64,7 +63,7 @@ const CONFIG = {
         title: "Yay! I'm the luckiest person in the world! 🎉💝💖💝💓",
         message: "Now come get your gift, a big warm hug and a huge kiss!",
         emojis: "🎁💖🤗💝💋❤️💕",  // These will bounce around
-        nextBtn: "Next ➜ Order waffles"
+        nextBtn: "Poke me!!😘"
     },
 
     // Waffle order flow
@@ -104,16 +103,16 @@ const CONFIG = {
         quantity: 1,
         searchQuery: "waffle",
         swiggy: {
-            app: "swiggy://search?query={{query}}",
+            app: "swiggy://search?query={{waffle}}",
             web: "https://www.swiggy.com/search?query={{query}}"
         },
         zomato: {
-            app: "zomato://search?query={{query}}",
-            web: "https://www.zomato.com/search?query={{query}}"
+            app: "zomato://search?query={{waffle}}",
+            web: "https://www.zomato.com/search?query={{waffle}}"
         },
         upi: {
             enabled: true,
-            upiId: "your-upi@bank",
+            upiId: "9167652399@yescred",
             payeeName: "Waffle Treats",
             amount: "0",
             note: "Waffle order payment",
@@ -145,7 +144,7 @@ const CONFIG = {
     music: {
         enabled: true,                     // Music feature is enabled
         autoplay: true,                    // Try to autoplay (note: some browsers may block this)
-        musicUrl: "https://res.cloudinary.com/dncywqfpb/video/upload/v1738399057/music_qrhjvy.mp3", // Music streaming URL
+        musicUrl: "", // Music streaming URL
         startText: "🎵 Play Music",        // Button text to start music
         stopText: "🔇 Stop Music",         // Button text to stop music
         volume: 0.5                        // Volume level (0.0 to 1.0)

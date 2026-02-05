@@ -19,12 +19,7 @@
     <!-- Main Content Container -->
     <div class="container">
         <h1 id="valentineTitle"></h1>
-
-        <section class="video-section" id="videoSection">
-            <video id="memoryVideo" class="memory-video" playsinline muted></video>
-            <button class="cute-btn skip-btn hidden" id="skipVideoBtn" type="button"></button>
-        </section>
-        
+  
         <!-- Music Player -->
         <div id="musicControls" class="music-controls">
             <button id="musicToggle" class="music-btn">🎵 Play Music</button>
@@ -66,38 +61,36 @@
             <button class="cute-btn" onclick="moveButton(this)" id="noBtn3"></button>
         </div>
 
+
+
         <!-- CUSTOMIZE: Celebration message -->
         <div class="celebration hidden" id="celebration">
             <h2 id="celebrationTitle"></h2>
             <p class="celebration-text" id="celebrationMessage"></p>
             <p class="celebration-text" id="celebrationEmojis"></p>
-            <button class="cute-btn" id="celebrationNextBtn" onclick="showOrderSection()"></button>
+            <button class="cute-btn" id="celebrationNextBtn" onclick="setupVideoFlow()"></button>
         </div>
 
-        <div class="order-section hidden" id="orderSection">
-            <h2 id="orderTitle"></h2>
-            <p class="order-subtitle" id="orderSubtitle"></p>
-            <div class="order-details">
-                <p><strong>Order:</strong> <span id="orderItem"></span></p>
-                <p><strong>Store:</strong> <span id="orderStore"></span></p>
-                <p><strong>Delivery:</strong> <span id="orderDelivery"></span></p>
-                <p><strong>Partner:</strong> <span id="orderPartner"></span></p>
-            </div>
-            <p class="order-status" id="orderStatus"></p>
-            <a class="cute-btn" id="orderLink" target="_blank" rel="noopener"></a>
-        </div>
+       
     </div>
 
-    <div class="modal hidden" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+    <div class="hidden" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
         <div class="modal-content">
+                    
+        <section class="video-section" id="videoSection">
+            <video id="memoryVideo" class="memory-video" playsinline autoplay muted></video>
+            
+        </section>
+        <div class="hidden" id="order-Modal">
             <h2 id="orderModalTitle"></h2>
             <p id="orderModalText"></p>
             <div class="modal-actions">
-                <button class="cute-btn" id="orderNowBtn" type="button"></button>
-                <button class="cute-btn secondary" id="upiFallbackBtn" type="button"></button>
+                <button class="cute-btn" id="orderNowBtn" type="button" onclick="OrderButton()"></button>
+                
             </div>
             <p class="modal-disclaimer" id="orderDisclaimer"></p>
         </div>
+       
     </div>
 
     <!-- Scripts -->

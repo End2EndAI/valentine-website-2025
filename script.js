@@ -100,7 +100,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Setup music player
     setupMusicPlayer();
 
-    // Setup video flow
+    // // Setup video flow
     setupVideoFlow();
 });
 
@@ -198,15 +198,15 @@ function celebrate() {
     document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
     const celebration = document.getElementById('celebration');
     celebration.classList.remove('hidden');
-    document.getElementById('orderSection').classList.add('hidden');
+    // document.getElementById('orderSection').classList.add('hidden');
     
     // Set celebration messages
     document.getElementById('celebrationTitle').textContent = config.celebration.title;
     document.getElementById('celebrationMessage').textContent = config.celebration.message;
     document.getElementById('celebrationEmojis').textContent = config.celebration.emojis;
+    document.getElementById('celebrationNextBtn').textContent = config.celebration.nextBtn;
     
-    // Create heart explosion effect
-    createHeartExplosion();
+
 }
 
 function showOrderSection() {
@@ -217,229 +217,44 @@ function showOrderSection() {
     startWaffleOrder();
 }
 
+
 function setupVideoFlow() {
     const video = document.getElementById('memoryVideo');
-    const skipButton = document.getElementById('skipVideoBtn');
     const upiButton = document.getElementById('upiFallbackBtn');
+    const showModal =   document.getElementById('celebrationNextBtn')
 
+  
+
+    showModal.addEventListener('click',()=>{
+        document.getElementById("orderModal").classList.add("modal")
+        video.src = config.video.url;
+        video.autoplay = config.video.autoplay;
+        video.playsInline = true;
+        video.muted = false;
+    })
+   
+}
+
+
+
+
+document.getElementById("memoryVideo").addEventListener('click', ()=>{
+    const video = document.getElementById('memoryVideo');
     video.src = config.video.url;
     video.autoplay = config.video.autoplay;
     video.playsInline = true;
     video.muted = true;
+})
 
-    skipButton.textContent = config.video.skipButtonText;
-    skipButton.classList.add('hidden');
+function potraits() {
 
-    if (config.video.allowSkipAfterSeconds > 0) {
-        setTimeout(() => {
-            skipButton.classList.remove('hidden');
-        }, config.video.allowSkipAfterSeconds * 1000);
-    }
 
-    skipButton.addEventListener('click', () => {
-        video.pause();
-        showOrderModal();
-    });
 
-    video.addEventListener('ended', () => {
-        showOrderModal();
-    });
-
-    if (config.video.autoplay) {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(() => {
-                skipButton.classList.remove('hidden');
-            });
-        }
-    }
-
-    if (!config.orderFlow.upi.enabled) {
-        upiButton.classList.add('hidden');
-    }
-
-    document.getElementById('orderNowBtn').addEventListener('click', () => {
-        redirectToDeliveryPartner();
-    });
-
-    upiButton.addEventListener('click', () => {
-        redirectToUpi();
-    });
+    
 }
 
-function showOrderModal() {
-    const modal = document.getElementById('orderModal');
-    modal.classList.remove('hidden');
-    document.body.classList.add('modal-open');
-}
 
-function getProviderConfig() {
-    const provider = config.orderFlow.provider;
-    return provider === "zomato" ? config.orderFlow.zomato : config.orderFlow.swiggy;
-}
 
-function buildProviderUrl() {
-    const providerConfig = getProviderConfig();
-    const query = encodeURIComponent(config.orderFlow.searchQuery || config.orderFlow.itemName);
-    return providerConfig.web.replace("{{query}}", query);
-}
-
-function buildProviderAppUrl() {
-    const providerConfig = getProviderConfig();
-    const query = encodeURIComponent(config.orderFlow.searchQuery || config.orderFlow.itemName);
-    return providerConfig.app.replace("{{query}}", query);
-}
-
-function redirectToDeliveryPartner() {
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    const webUrl = buildProviderUrl();
-
-    if (isMobile) {
-        const appUrl = buildProviderAppUrl();
-        window.location.href = appUrl;
-        setTimeout(() => {
-            window.location.href = webUrl;
-        }, 800);
-    } else {
-        window.open(webUrl, "_blank", "noopener,noreferrer");
-    }
-}
-
-function buildUpiUrl() {
-    const upi = config.orderFlow.upi;
-    const params = new URLSearchParams({
-        pa: upi.upiId,
-        pn: upi.payeeName,
-        am: upi.amount,
-        tn: upi.note,
-        cu: upi.currency
-    });
-    return `upi://pay?${params.toString()}`;
-}
-
-function redirectToUpi() {
-    if (!config.orderFlow.upi.enabled) {
-        return;
-    }
-    const upiUrl = buildUpiUrl();
-    window.location.href = upiUrl;
-}
-
-function buildWaffleDirectionsUrl(coords) {
-    const destination = encodeURIComponent(config.waffleOrder.storeQuery);
-    return `https://www.google.com/maps/dir/?api=1&origin=${coords.lat},${coords.lng}&destination=${destination}&travelmode=walking`;
-}
-
-function buildOrderPayload(coords) {
-    return {
-        item: config.waffleOrder.itemName,
-        storeQuery: config.waffleOrder.storeQuery,
-        coordinates: coords,
-        provider: config.waffleOrder.api.provider
-    };
-}
-
-async function placeWaffleOrder(coords) {
-    const apiConfig = config.waffleOrder.api;
-    const payload = buildOrderPayload(coords);
-
-    if (apiConfig.mode === "mock") {
-        await new Promise(resolve => setTimeout(resolve, 900));
-        return { ok: true, payload };
-    }
-
-    if (!apiConfig.endpoint || !apiConfig.apiKey) {
-        throw new Error("Missing API configuration");
-    }
-
-    const response = await fetch(apiConfig.endpoint, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${apiConfig.apiKey}`
-        },
-        body: JSON.stringify(payload)
-    });
-
-    if (!response.ok) {
-        throw new Error("Order request failed");
-    }
-
-    return response.json();
-}
-
-function startWaffleOrder() {
-    const orderStatus = document.getElementById('orderStatus');
-    const orderDelivery = document.getElementById('orderDelivery');
-    const orderLink = document.getElementById('orderLink');
-    const statusMessages = config.waffleOrder.statusMessages;
-
-    if (!config.waffleOrder.enabled) {
-        orderStatus.textContent = "Waffle ordering is turned off in the configuration.";
-        orderLink.classList.add('hidden');
-        return;
-    }
-
-    orderStatus.textContent = statusMessages.locating;
-    orderLink.classList.add('hidden');
-
-    const handleCoordinates = async (coords, statusText) => {
-        const directionsUrl = buildWaffleDirectionsUrl(coords);
-        orderDelivery.textContent = `Lat ${coords.lat.toFixed(4)}, Lng ${coords.lng.toFixed(4)}`;
-        orderStatus.textContent = statusText;
-        orderLink.href = directionsUrl;
-        orderLink.classList.remove('hidden');
-
-        try {
-            orderStatus.textContent = statusMessages.apiPending;
-            await placeWaffleOrder(coords);
-            orderStatus.textContent = `${statusMessages.apiSuccess} ${statusMessages.complete}`;
-        } catch (error) {
-            console.warn(error);
-            orderStatus.textContent = statusMessages.apiFailure;
-        }
-    };
-
-    if (!navigator.geolocation) {
-        orderStatus.textContent = statusMessages.unavailable;
-        if (config.waffleOrder.fallbackCoordinates) {
-            orderStatus.textContent = statusMessages.fallback;
-            handleCoordinates(config.waffleOrder.fallbackCoordinates, statusMessages.ordering);
-        }
-        return;
-    }
-
-    navigator.geolocation.getCurrentPosition(
-        (position) => {
-            const coords = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
-            handleCoordinates(coords, statusMessages.ordering);
-        },
-        () => {
-            if (config.waffleOrder.fallbackCoordinates) {
-                orderStatus.textContent = statusMessages.fallback;
-                handleCoordinates(config.waffleOrder.fallbackCoordinates, statusMessages.ordering);
-            } else {
-                orderStatus.textContent = statusMessages.unavailable;
-            }
-        },
-        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
-    );
-}
-
-// Create heart explosion animation
-function createHeartExplosion() {
-    for (let i = 0; i < 50; i++) {
-        const heart = document.createElement('div');
-        const randomHeart = config.floatingEmojis.hearts[Math.floor(Math.random() * config.floatingEmojis.hearts.length)];
-        heart.innerHTML = randomHeart;
-        heart.className = 'heart';
-        document.querySelector('.floating-elements').appendChild(heart);
-        setRandomPosition(heart);
-    }
-}
 
 // Music Player Setup
 function setupMusicPlayer() {
