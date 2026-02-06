@@ -20,7 +20,7 @@ const CONFIG = {
     celebration: {
         title: "You chose correctly! 🎉💝",
         message: "I knew you couldn't say no!",
-        gifUrl: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGNid3B0Z3JmdnFmZ3R4bmZ0Z3R4bmZ0Z3R4bmZ0Z3R4bmZ0ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNwSULPk77/giphy.gif" 
+        gifUrl: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmlodmpzazQycGpldjJ2bXcyOThvYXE0eDNlZjg5ejlkNndrZDF1MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/blSTtZehjAZ8I/giphy.gif" 
     },
 
     colors: {
