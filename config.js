@@ -14,9 +14,9 @@ const CONFIG = {
     // Questions and answers
     questions: {
         first: {
-            text: "Do you guys like me?",                                   
+            text: "Do you love me?",                                   
             yesBtn: "Yes",                                             
-            noBtn: "No",                                                
+            noBtn: "No",                                                 
             secretAnswer: "I don't like you, I love you all! ❤️"          
         },
         second: {
