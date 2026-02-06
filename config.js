@@ -12,7 +12,7 @@ const CONFIG = {
             text: "Bella, will you be my valentine?",
             yesBtn: "Yes",
             noBtn: "No",
-            subText: "No seems a bit shy"
+            subText: "'No' seems a bit shy 😏"
         }
     },
 
