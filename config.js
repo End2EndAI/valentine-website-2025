@@ -4,6 +4,7 @@
 
 const CONFIG = {
     valentineName: "Bella",
+    mainImage: "https://giphy.com/gifs/LINEFRIENDS-brown-line-friends-minini-c76IJLufpNwSULPk77",
     pageTitle: "Will You Be My Valentine? 💝",
     
     // Logic for the interaction
