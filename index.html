@@ -3,75 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CUSTOMIZE: Browser tab title -->
-    <title>Will You Be My Valentine? 💝</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Styles -->
+    <title>For Bella 💝</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; background: #ffafbd; }
+        .container { text-align: center; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 10; max-width: 90%; }
+        h2 { color: #ff4757; margin-bottom: 20px; }
+        .btn-container { display: flex; justify-content: center; gap: 20px; align-items: center; min-height: 100px; }
+        button { padding: 15px 30px; font-size: 18px; border: none; border-radius: 10px; cursor: pointer; transition: all 0.2s; }
+        #yesBtn { background-color: #ff4b2b; color: white; }
+        #noBtn { background-color: #8e8e8e; color: white; position: relative; }
+        .subtext { margin-top: 20px; color: #666; font-size: 14px; }
+        .hidden { display: none; }
+        img { max-width: 100%; border-radius: 15px; margin-top: 20px; }
+    </style>
 </head>
 <body>
-    <!-- Floating Background Elements -->
-    <div class="floating-elements">
-        <!-- Hearts and bears will be added here by JavaScript -->
+    <div class="container" id="mainContainer">
+        <h2 id="questionText">Bella, will you be my valentine?</h2>
+        <div class="btn-container">
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+        <p class="subtext" id="subtext">No seems a bit shy</p>
     </div>
 
-    <!-- Main Content Container -->
-    <div class="container">
-        <h1 id="valentineTitle"></h1>
-        
-        <!-- Music Player -->
-        <div id="musicControls" class="music-controls">
-            <button id="musicToggle" class="music-btn">🎵 Play Music</button>
-            <audio id="bgMusic" loop>
-                <source id="musicSource" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <!-- First Question -->
-        <div class="question-section" id="question1">
-            <h2 id="question1Text"></h2>
-            <button class="cute-btn" onclick="moveButton(this)" id="yesBtn1"></button>
-            <button class="cute-btn" onclick="moveButton(this)" id="noBtn1"></button>
-            <!-- CUSTOMIZE: Secret answer text -->
-            <div class="secret-answer">
-                <button class="cute-btn special" onclick="showNextQuestion(2)" id="secretAnswerBtn"></button>
-            </div>
-        </div>
-
-        <!-- Second Question (Love Meter) -->
-        <div class="question-section hidden" id="question2">
-            <h2 id="question2Text"></h2>
-            <!-- Love meter settings: min="0" max="10000" -->
-            <div class="love-meter">
-                <input type="range" min="0" max="10000" value="100" class="slider" id="loveMeter">
-                <p>
-                    <span class="love-value-container"><span id="startText"></span> (<span id="loveValue">100</span>%)</span>
-                    <span id="extraLove" class="hidden"></span>
-                </p>
-            </div>
-            <button class="cute-btn" onclick="showNextQuestion(3)" id="nextBtn"></button>
-        </div>
-
-        <!-- Final Question -->
-        <div class="question-section hidden" id="question3">
-            <h2 id="question3Text"></h2>
-            <button class="cute-btn final-yes" onclick="celebrate()" id="yesBtn3"></button>
-            <button class="cute-btn" onclick="moveButton(this)" id="noBtn3"></button>
-        </div>
-
-        <!-- CUSTOMIZE: Celebration message -->
-        <div class="celebration hidden" id="celebration">
-            <h2 id="celebrationTitle"></h2>
-            <p class="celebration-text" id="celebrationMessage"></p>
-            <p class="celebration-text" id="celebrationEmojis"></p>
-        </div>
+    <div class="container hidden" id="celebrationContainer">
+        <h2 id="celebrationTitle">You chose correctly! 🎉💝</h2>
+        <img id="celebrationGif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGNid3B0Z3R4bmZ0Z3R4bmZ0Z3R4bmZ0Z3R4bmZ0ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNwSULPk77/giphy.gif" alt="Celebration">
     </div>
 
-    <!-- Scripts -->
-    <script src="config.js"></script>
-    <script src="theme.js"></script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
