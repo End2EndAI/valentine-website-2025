@@ -1,10 +1,6 @@
-// ============================================
-// 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE HERE 💝
-// ============================================
-
 const CONFIG = {
     // Your Valentine's name that will appear in the title
-    valentineName: "Charmaine, Palesa, and Makwa Langa",
+    valentineName: "Charmaine",
 
     // The title that appears in the browser tab
     pageTitle: "Will You Be My Valentines? 💝",
@@ -20,11 +16,11 @@ const CONFIG = {
         first: {
             text: "Do you guys like me?",                                   
             yesBtn: "Yes",                                             
-            noBtn: "No",                                               
+            noBtn: "No",                                                
             secretAnswer: "I don't like you, I love you all! ❤️"          
         },
         second: {
-            text: "How much do you love me?",                          
+            text: "How much do you love me?",                           
             startText: "This much!",                                   
             nextBtn: "Next ❤️"                                         
         },
@@ -63,7 +59,7 @@ const CONFIG = {
         floatDuration: "15s",           
         floatDistance: "50px",          
         bounceSpeed: "0.5s",            
-        heartExplosionSize: 1.5         
+        heartExplosionSize: 1.5          
     },
 
     // Background Music
