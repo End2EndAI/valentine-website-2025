@@ -9,7 +9,7 @@ const CONFIG = {
 
     // The title that appears in the browser tab
     // You can use emojis! 💝 💖 💗 💓 💞 💕
-    pageTitle: "Thermo 2 Pathan Rodriguez",
+    pageTitle: "Thermo 2 HW Pathan Rodriguez",
 
     // Floating emojis that appear in the background
     // Find more emojis at: https://emojipedia.org
