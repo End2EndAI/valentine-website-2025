@@ -1,0 +1,78 @@
+// Basic Information
+valentineName: "Jade 💘",                 
+pageTitle: "Jade… Will You Be My Forever? 💝",
+
+// Floating Background Elements
+floatingEmojis: {
+    hearts: ['❤️', '💖', '💝', '💗', '💓', '🥰', '💕'],
+    bears: ['🧸', '🐻']
+},
+
+// Questions and Buttons
+questions: {
+    first: {
+        text: "Since the day I met you… do you feel something special too?", 
+        yesBtn: "Yes, so much 💞", 
+        noBtn: "I’m scared 💔",
+        secretAnswer: "I knew it! My heart already chose you ❤️"
+    },
+    second: {
+        text: "How much do you love me?",
+        startText: "This much! 💓 ",
+        nextBtn: "Next ❤️"
+    },
+    third: {
+        text: "If you could stay with me forever… would you?",
+        yesBtn: "Forever & Always 💍",
+        noBtn: "I wish… 💔"
+    }
+},
+
+// Love Meter Messages (romantic)
+loveMessages: {
+    extreme: "You love me beyond stars & time! 🥹💫❤️",
+    high: "So deep… deeper than oceans 🌊💞",
+    normal: "Sweetest love I’ve ever known 💘"
+},
+
+// Final Celebration
+celebration: {
+    title: "YAY! You’re my forever 💍💕",
+    message: "Thank you for loving me… Let’s write our story 💌",
+    emojis: "🎁💖🤗💝💋❤️💕✨"
+},
+
+// Website Colors
+colors: {
+    backgroundStart: "#ffe3e3",
+    backgroundEnd: "#ffb3b3",
+    buttonBackground: "#ff7f7f",
+    buttonHover: "#ff8f8f",
+    textColor: "#d62839"
+},
+
+// Animation Settings
+animations: {
+    floatDuration: "14s",
+    floatDistance: "60px",
+    bounceSpeed: "0.4s",
+    heartExplosionSize: 1.7
+},
+
+// Music Settings (Pasilyo 🎶)
+music: {
+    enabled: true,
+    autoplay: false,  // safer — browsers block autoplay
+    musicUrl: "YOUR_PASILYO_DIRECT_MP3_URL_HERE",
+    startText: "🎵 Play Pasilyo",
+    stopText: "🔇 Stop Music",
+    volume: 0.6
+},
+
+// Extra Sweet Messages (when clicking ♥)
+extraLoveNotes: [
+    "Your smile is my favorite sunrise ☀️",
+    "Whenever I think of you… my heart races 💓",
+    "You’re my favorite chapter in life 📖❤️",
+    "With you — everything feels like magic ✨"
+]
