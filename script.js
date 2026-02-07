@@ -6,8 +6,8 @@ function validateConfig() {
     const warnings = [];
 
     // Check required fields
-    document.getElementById('valentineTitle').textContent =
-  `${config.valentineName}`;
+    document.getElementById("title").textContent = CONFIG.valentineName;
+
 
     // Validate colors
     const isValidHex = (hex) => /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(hex);
