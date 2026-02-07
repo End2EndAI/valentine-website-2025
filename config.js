@@ -43,15 +43,14 @@ const CONFIG = {
     // They show up depending on how far they slide the meter
     loveMessages: {
         extreme: "Rahhhh you love me that much?? 🥰🚀💝",  // Shows when they go past 6000%
-        mad: "Love you too bby ! 🥰🚀💝",  // Shows when they go past 4000%
-        high: "Keep going! 🚀💝",              // Shows when they go past 2500%
-        normal: "Cmon! 🥰"                           // Shows when they go past 50%
+        high: "Keep going! 🚀💝",         // Shows when they go past 2500%
+        normal: "Cmon! 🥰"               // Shows when they go past 50%
     },
 
     // Messages that appear after they say "Yes!"
     celebration: {
         title: "i'm the luckiest man ever!",
-        message: "Meet Me on Greenwhich @ The Cloud One Hotel, by 6:30pm",
+        message: "Meet Me on Greenwhich @ The Cloud One Hotel à 6:30",
         emojis: "🎁💖😏😈🤗💝💋❤️💕"  // These will bounce around
     },
 
