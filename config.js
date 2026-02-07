@@ -50,8 +50,8 @@ const CONFIG = {
 
     // Messages that appear after they say "Yes!"
     celebration: {
-        title: "BMT I'm the luckiest man in the world! 🎉💝💖💝💓",
-        message: "Feb, 14 - Get Sexy & Come n See Me on Greenwhich @ The Cloud One Hotel, by 6:30pm",
+        title: "yh i'm the luckiest man ever!",
+        message: "Meet Me on Greenwhich @ The Cloud One Hotel, by 6:30pm, 2.14.2026",
         emojis: "🎁💖😏😈🤗💝💋❤️💕"  // These will bounce around
     },
 
