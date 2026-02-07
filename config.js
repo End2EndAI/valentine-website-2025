@@ -9,7 +9,7 @@ const CONFIG = {
 
     // The title that appears in the browser tab
     // You can use emojis! 💝 💖 💗 💓 💞 💕
-    pageTitle: "Will You Be My Valentine? 💝",
+    pageTitle: "Thermo 2 Pathan Rodriguez",
 
     // Floating emojis that appear in the background
     // Find more emojis at: https://emojipedia.org
@@ -28,7 +28,7 @@ const CONFIG = {
             secretAnswer: "I don't like you, I love you baby boy! ❤️"           // Secret hover message
         },
         second: {
-            text: "Baby, how much do you love me?",                          // For the love meter
+            text: "Well how much do you love me?",                          // For the love meter
             startText: "This much!",                                   // Text before the percentage
             nextBtn: "Next ❤️"                                         // Text for the next button
         },
