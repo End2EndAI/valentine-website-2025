@@ -22,7 +22,7 @@ const CONFIG = {
     // Customize each question and its possible responses
     questions: {
         first: {
-            text: "Who;s the most lovely girl in the World?",                                    // First interaction
+            text: "Who's the most lovely girl in the World?",                                    // First interaction
             yesBtn: "Yasmeen",                                             // Text for "Yes" button
             noBtn: "Yasmeen",                                               // Text for "No" button
             secretAnswer: "Bet you thought this would be a different answer... Sike its still Yasmeen  ❤️"           // Secret hover message
@@ -32,7 +32,22 @@ const CONFIG = {
             startText: "This much!",                                   // Text before the percentage
             nextBtn: "Next ❤️"                                         // Text for the next button
         },
-        third: {
+        third: { 
+            text: "Am I your favorite person?",
+                yesBtn: "Yes",
+                noBtn: " Nah your fucking wack",
+                secretAnswer: " Of course I am, would be kind of wild if you chose that other answer!!!
+        },
+        fourth: {
+            text: "Do I make you laugh?", 
+            yesBtn: "Your freaking hilarous!",
+            noBtn: "No your a cornball",
+            secretAnswer: "We both know what the right answer is but I think your pretty funny too!
+        },
+        
+                
+        
+        fifth: {
             text: "Will you make my year and be my Valentine? 🌹", // The big question!
             yesBtn: "Yes!",                                             // Text for "Yes" button
             noBtn: "No"                                                 // Text for "No" button
@@ -78,7 +93,7 @@ const CONFIG = {
     music: {
         enabled: true,                     // Music feature is enabled
         autoplay: true,                    // Try to autoplay (note: some browsers may block this)
-        musicUrl: "https://res.cloudinary.com/dncywqfpb/video/upload/v1738399057/music_qrhjvy.mp3", // Music streaming URL
+        musicUrl: "https://res.cloudinary.com/dqjviftao/video/upload/v1770492174/n06bf16f1f0372a63d520eac6cf7c5af7-c047879292bd8bf3f6c02e0afd65b333_whexsx.mp3", // Music streaming URL
         startText: "🎵 Play Music",        // Button text to start music
         stopText: "🔇 Stop Music",         // Button text to stop music
         volume: 0.5                        // Volume level (0.0 to 1.0)
