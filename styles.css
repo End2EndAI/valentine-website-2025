@@ -316,3 +316,29 @@ h2 {
     transform: scale(1.05);
     background: var(--secondary-color);
 } 
+
+.disclaimer {
+    position: fixed;
+    inset: 0;
+    background: #140814;
+    color: #ffd6e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    z-index: 9999;
+    font-size: 1.2rem;
+}
+
+.disclaimer button {
+    margin-top: 25px;
+    padding: 12px 24px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
