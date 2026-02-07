@@ -63,7 +63,6 @@ const CONFIG = {
   buttonBackground: "#ff4d6d",
   buttonHover: "#ff758f",
   textColor: "#ffd6e0"
-}
     },
 
     // Animation settings
