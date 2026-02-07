@@ -51,7 +51,9 @@ const CONFIG = {
     celebration: {
         title: "Yay! I'm the luckiest guy in the world! 🎉💝💖💝💓",
         message: "See you soon! Part 3 is the best one yet ;)",
-        emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
+        emojis: "🎁💖🤗💝💋❤️💕",  // These will bounce around
+        gifUrl: "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif",
+        closingMessage: "P.S. You just made my whole year 💌"
     },
 
     // Color scheme for the website

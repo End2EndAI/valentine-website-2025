@@ -288,6 +288,20 @@ h2 {
     text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.3);
 }
 
+.celebration-gif {
+    display: block;
+    width: min(320px, 70%);
+    margin: 20px auto 10px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(255, 71, 87, 0.2);
+}
+
+.celebration-closing {
+    font-size: 1.4em;
+    color: var(--text-color);
+    margin: 10px 0 0;
+}
+
 @keyframes subtle-hint {
     0% { opacity: 0.2; }
     100% { opacity: 0.3; }
@@ -301,7 +315,7 @@ h2 {
 }
 
 .music-btn {
-    background: var(--primary-color);
+    background: var(--button-color);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -314,5 +328,5 @@ h2 {
 
 .music-btn:hover {
     transform: scale(1.05);
-    background: var(--secondary-color);
-} 
+    background: var(--button-hover);
+}

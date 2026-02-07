@@ -183,6 +183,9 @@ function celebrate() {
     document.getElementById('celebrationTitle').textContent = config.celebration.title;
     document.getElementById('celebrationMessage').textContent = config.celebration.message;
     document.getElementById('celebrationEmojis').textContent = config.celebration.emojis;
+    document.getElementById('celebrationGif').src = config.celebration.gifUrl;
+    document.getElementById('celebrationGif').alt = `${config.valentineName} celebration`;
+    document.getElementById('celebrationClosing').textContent = config.celebration.closingMessage;
     
     // Create heart explosion effect
     createHeartExplosion();
