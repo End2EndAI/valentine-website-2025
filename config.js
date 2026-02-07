@@ -22,13 +22,13 @@ const CONFIG = {
     // Customize each question and its possible responses
     questions: {
         first: {
-            text: "You like me?",                                    // First interaction
+            text: "You like me right?",                                // First interaction
             yesBtn: "Yes",                                             // Text for "Yes" button
             noBtn: "No",                                               // Text for "No" button
             secretAnswer: "I don't like you, I love you! ❤️"           // Secret hover message
         },
         second: {
-            text: "How much do you love me?",                          // For the love meter
+            text: "How much do you love me then?",                     // For the love meter
             startText: "This much!",                                   // Text before the percentage
             nextBtn: "Next ❤️"                                         // Text for the next button
         },
@@ -43,15 +43,15 @@ const CONFIG = {
     // They show up depending on how far they slide the meter
     loveMessages: {
         extreme: "Rahhhh you love me that much?? 🥰🚀💝",  // Shows when they go past 5000%
-        mad: "Love you too bby ! 🥰🚀💝",  // Shows when they go past 2500%
+        mad: "Love you too bby ! 🥰🚀💝",  // Shows when they go past 3000%
         high: "Keep going! 🚀💝",              // Shows when they go past 1000%
-        normal: "Cmon! 🥰"                           // Shows when they go past 100%
+        normal: "Cmon! 🥰"                           // Shows when they go past 50%
     },
 
     // Messages that appear after they say "Yes!"
     celebration: {
-        title: "yh i'm the luckiest man ever!",
-        message: "Meet Me on Greenwhich @ The Cloud One Hotel, by 6:30pm, 2.14.2026",
+        title: "i'm the luckiest man ever!",
+        message: "Meet Me on Greenwhich @ The Cloud One Hotel, by 6:30pm",
         emojis: "🎁💖😏😈🤗💝💋❤️💕"  // These will bounce around
     },
 
