@@ -6,7 +6,7 @@ function validateConfig() {
     const warnings = [];
 
     // Check required fields
-    document.getElementById("title").textContent = CONFIG.valentineName;
+    document.getElementById("title").textContent = CONFIG.valentineName; }
 
 
     // Validate colors
