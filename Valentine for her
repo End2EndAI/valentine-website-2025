@@ -1,0 +1,110 @@
+// ================= BASIC INFORMATION =================
+valentineName: "Shaziya",
+pageTitle: "Will You Be My Valentine 2026? 💝✨",
+year: 2026,
+
+// ================= FLOATING BACKGROUND =================
+floatingEmojis: {
+    hearts: ['❤️', '💖', '💝', '💗', '💓', '🩷'],
+    bears: ['🧸', '🐻'],
+    chocolates: ['🍫', '🍩'] // Chocolate Day vibe
+},
+
+// ================= QUESTIONS FLOW =================
+questions: {
+    first: {
+        text: "Do you like me, Shaziya? 👀💖",
+        yesBtn: "Yes 😳",
+        noBtn: "Maybe 🤭",
+        secretAnswer: "I don't like you… I LOVE YOU ❤️🔥"
+    },
+    second: {
+        text: "How much do you love me? 💕",
+        startText: "This much!",
+        nextBtn: "Next 💘"
+    },
+    third: {
+        text: "Will you be my Valentine 2026? 💍✨",
+        yesBtn: "YESSS 💖",
+        noBtn: "You wish 😏"
+    }
+},
+
+// ================= LOVE METER TEXT =================
+loveMessages: {
+    extreme: "BROOO THAT'S CRAZY LOVE 😭💝🚀",
+    high: "To infinity & beyond 🥰🚀",
+    normal: "That’s cuteee 💕"
+},
+
+// ================= MINI GAMES (PLAYFUL) =================
+games: {
+    heartCatch: {
+        title: "Catch My Heart ❤️",
+        description: "Catch 5 hearts to unlock a secret message 😏",
+        reward: "You unlocked my heart 💘"
+    },
+    chocolateChoice: {
+        title: "Chocolate Day Special 🍫",
+        question: "Which chocolate will you give me?",
+        options: ["Dairy Milk 🍫", "KitKat 🍩", "Ferrero 💝", "All of them 😏"],
+        correct: "All of them 😏",
+        reward: "Perfect answer! You know me well 💖"
+    },
+    quickTap: {
+        title: "Love Speed Test ⚡",
+        description: "Tap the heart 10 times in 3 seconds!",
+        reward: "FAST LOVE DETECTED 🔥❤️"
+    }
+},
+
+// ================= CHOCOLATE DAY SECTION =================
+chocolateDay: {
+    enabled: true,
+    title: "Happy Chocolate Day, Shaziya 🍫💖",
+    message: "Life is sweeter with you… just like chocolate 🤎",
+    surpriseGift: "🎁🍫💝"
+},
+
+// ================= FINAL CELEBRATION =================
+celebration: {
+    title: "YAYYY!! 💖🥰",
+    message: "Now come get your Chocolate + Hug + Gift 🤗🍫🎁",
+    emojis: "🍫🎁💖🤗💝💋❤️💕",
+    fireworks: true
+},
+
+// ================= COLOR THEME (2026 TRENDY) =================
+colors: {
+    backgroundStart: "#ff9a9e",   // soft pink
+    backgroundEnd: "#fad0c4",     // peach glow
+    buttonBackground: "#ff4d6d",  // modern rose
+    buttonHover: "#ff758f",
+    textColor: "#e63946",
+    glassEffect: true             // glassmorphism trend
+},
+
+// ================= ANIMATIONS =================
+animations: {
+    floatDuration: "14s",
+    floatDistance: "60px",
+    bounceSpeed: "0.45s",
+    heartExplosionSize: 1.7,
+    confetti: true
+},
+
+// ================= MUSIC =================
+music: {
+    enabled: true,
+    autoplay: false, // browsers are strict now
+    musicUrl: "YOUR_CLOUDINARY_URL_HERE",
+    startText: "🎵 Play Love Song",
+    stopText: "🔇 Stop Music",
+    volume: 0.6
+},
+
+// ================= FOOTER =================
+footer: {
+    text: "Made with ❤️ in 2026",
+    subText: "For Shaziya ✨"
+}
