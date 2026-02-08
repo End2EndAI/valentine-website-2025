@@ -45,22 +45,22 @@ Note: Make sure you're logged into your GitHub account. If you don't have one, y
 Here's what you can customize in `config.js`:
 ```javascript
 // Basic Information
-valentineName: "Jade"                    // Your Valentine's name
-pageTitle: "Will You Be My Valentine? 💝" // Browser tab title
+valentineName: "dylan"                    // Your Valentine's name
+pageTitle: "Will You Be My Valentine? 💘" // Browser tab title
 
 // Floating Background Elements
 floatingEmojis: {
-    hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis in background
-    bears: ['🧸', '🐻']                       // Bear emojis in background
+    hearts: ['🫀', '💞', '💘', '💗', '💓'],  // Heart emojis in background
+    bears: ['🧸', '💋']                       // Bear emojis in background
 }
 
 // Questions and Buttons
 questions: {
     first: {
         text: "Do you like me?",                   // First question
-        yesBtn: "Yes",                             // Yes button text
-        noBtn: "No",                               // No button text
-        secretAnswer: "I don't like you, I love you! ❤️"  // Hidden message
+        yesBtn: "Yass🤭",                             // Yes button text
+        noBtn: "Naur😔",                               // No button text
+        secretAnswer: "I don't like you, I love you! 🫶🏻"  // Hidden message
     },
     second: {
         text: "How much do you love me?",          // Second question
@@ -161,7 +161,7 @@ music: {
 3. Under "Source", select "main" branch
 4. Click "Save"
 5. Wait a few minutes
-6. Your site will be live at: `https://your-username.github.io/repository-name`
+6. Your site will be live at: `https://your-luxuriousluan-lgtm.github.io/repository-name`
 
 #### Using Netlify (Free, Recommended, Custom URL)
 1. Go to [Netlify](https://www.netlify.com/)
