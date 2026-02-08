@@ -157,7 +157,7 @@ if (value >= 6000) {
     extraLove.textContent = config.loveMessages.extreme;
 } else if (value >= 2500) {
     extraLove.classList.remove('super-love');
-    extraLove.textContent = config.loveMessages.mad;
+    extraLove.textContent = config.loveMessages.high;
 } else if (value > 1000) {
     extraLove.classList.remove('super-love');
     extraLove.textContent = config.loveMessages.high;
