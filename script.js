@@ -5,11 +5,11 @@ const config = window.VALENTINE_CONFIG;
 function validateConfig() {
     const warnings = [];
 
-    // Check required fields
+   // Check required fields
     if (!config.valentineName) {
         warnings.push("Valentine's name is not set! Using default.");
-        config.valentineName = "My Love";
-    }
+        config.valentineName = "Babygirl";
+        }
 
     // Validate colors
     const isValidHex = (hex) => /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(hex);
@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
     validateConfig();
 
     // Set texts from config
-    document.getElementById('valentineTitle').textContent = `${config.valentineName}, my love...`;
+    document.getElementById('valentineTitle').textContent = `${config.valentineName}, babygirl ...`;
     
     // Set first question texts
     document.getElementById('question1Text').textContent = config.questions.first.text;
@@ -152,21 +152,20 @@ loveMeter.addEventListener('input', () => {
         loveMeter.style.transition = 'width 0.3s';
         
         // Show different messages based on the value
-        if (value >= 5000) {
-            extraLove.classList.add('super-love');
-            extraLove.textContent = config.loveMessages.extreme;
-        } else if (value > 1000) {
-            extraLove.classList.remove('super-love');
-            extraLove.textContent = config.loveMessages.high;
-        } else {
-            extraLove.classList.remove('super-love');
-            extraLove.textContent = config.loveMessages.normal;
-        }
-    } else {
-        extraLove.classList.add('hidden');
-        extraLove.classList.remove('super-love');
-        loveMeter.style.width = '100%';
-    }
+if (value >= 6000) {
+    extraLove.classList.add('super-love');
+    extraLove.textContent = config.loveMessages.extreme;
+} else if (value >= 2500) {
+    extraLove.classList.remove('super-love');
+    extraLove.textContent = config.loveMessages.mad;
+} else if (value > 1000) {
+    extraLove.classList.remove('super-love');
+    extraLove.textContent = config.loveMessages.high;
+} else {
+    extraLove.classList.remove('super-love');
+    extraLove.textContent = config.loveMessages.normal;
+}
+
 });
 
 // Initialize love meter

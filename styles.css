@@ -1,318 +1,179 @@
-/* CSS Variables - Will be updated by JavaScript */
-:root {
-    /* Colors */
-    --background-color-1: #ffafbd;
-    --background-color-2: #ffc3a0;
-    --button-color: #ff6b6b;
-    --button-hover: #ff8787;
-    --text-color: #ff4757;
+// ============================================
+// SAFE INITIALIZATION
+// ============================================
 
-    /* Animations */
-    --float-duration: 15s;
-    --float-distance: 50px;
-    --bounce-speed: 0.5s;
-    --heart-explosion-size: 1.5;
+const config = window.VALENTINE_CONFIG;
+
+window.addEventListener('DOMContentLoaded', () => {
+    validateConfig();
+    applyThemeFromConfig();
+    initializeTexts();
+    createFloatingElements();
+    setupLoveMeter();
+    setupMusicPlayer();
+});
+
+// ============================================
+// CONFIG VALIDATION
+// ============================================
+
+function validateConfig() {
+    if (!config.valentineName) config.valentineName = "Babygirl";
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, var(--background-color-1), var(--background-color-2));
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
+function applyThemeFromConfig() {
+    const root = document.documentElement;
+
+    root.style.setProperty('--background-color-1', config.colors.backgroundStart);
+    root.style.setProperty('--background-color-2', config.colors.backgroundEnd);
+    root.style.setProperty('--button-color', config.colors.buttonBackground);
+    root.style.setProperty('--button-hover', config.colors.buttonHover);
+    root.style.setProperty('--text-color', config.colors.textColor);
+
+    root.style.setProperty('--float-duration', config.animations.floatDuration);
+    root.style.setProperty('--float-distance', config.animations.floatDistance);
+    root.style.setProperty('--bounce-speed', config.animations.bounceSpeed);
+    root.style.setProperty('--heart-explosion-size', config.animations.heartExplosionSize);
 }
 
-.container {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 600px;
-    margin: 20px;
-    overflow: visible !important;
+// ============================================
+// TEXT INITIALIZATION
+// ============================================
+
+function initializeTexts() {
+    document.title = config.pageTitle;
+
+    document.getElementById('valentineTitle').textContent =
+        `${config.valentineName}, babygirl ...`;
+
+    // Question 1
+    q('question1Text').textContent = config.questions.first.text;
+    q('yesBtn1').textContent = config.questions.first.yesBtn;
+    q('noBtn1').textContent = config.questions.first.noBtn;
+    q('secretAnswerBtn').textContent = config.questions.first.secretAnswer;
+
+    // Question 2
+    q('question2Text').textContent = config.questions.second.text;
+    q('startText').textContent = config.questions.second.startText;
+    q('nextBtn').textContent = config.questions.second.nextBtn;
+
+    // Question 3
+    q('question3Text').textContent = config.questions.third.text;
+    q('yesBtn3').textContent = config.questions.third.yesBtn;
+    q('noBtn3').textContent = config.questions.third.noBtn;
 }
 
-.floating-elements {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
+function q(id) {
+    return document.getElementById(id);
 }
 
-.heart, .bear {
-    position: absolute;
-    font-size: 2rem;
-    animation: float var(--float-duration) linear infinite;
+// ============================================
+// FLOATING EMOJIS
+// ============================================
+
+function createFloatingElements() {
+    const container = document.querySelector('.floating-elements');
+
+    [...config.floatingEmojis.hearts, ...config.floatingEmojis.bears].forEach(e => {
+        const div = document.createElement('div');
+        div.className = e === '🧸' || e === '🐻' ? 'bear' : 'heart';
+        div.innerHTML = e;
+        div.style.left = Math.random() * 100 + 'vw';
+        div.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(div);
+    });
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(100vh) translateX(0);
+// ============================================
+// BUTTON MOVEMENT
+// ============================================
+
+function moveButton(button) {
+    const x = Math.random() * (window.innerWidth - button.offsetWidth);
+    const y = Math.random() * (window.innerHeight - button.offsetHeight);
+    button.style.position = 'fixed';
+    button.style.left = x + 'px';
+    button.style.top = y + 'px';
+}
+
+function showNextQuestion(n) {
+    document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
+    q(`question${n}`).classList.remove('hidden');
+}
+
+// ============================================
+// LOVE METER (FIXED)
+// ============================================
+
+function setupLoveMeter() {
+    const loveMeter = q('loveMeter');
+    const loveValue = q('loveValue');
+    const extraLove = q('extraLove');
+
+    loveMeter.value = 100;
+    loveValue.textContent = 100;
+
+    loveMeter.addEventListener('input', () => {
+        const value = parseInt(loveMeter.value);
+        loveValue.textContent = value;
+
+        if (value <= 100) {
+            extraLove.classList.add('hidden');
+            return;
+        }
+
+        extraLove.classList.remove('hidden');
+
+        if (value >= 6000) {
+            extraLove.textContent = config.loveMessages.extreme;
+        } else if (value >= 2500) {
+            extraLove.textContent = config.loveMessages.mad;
+        } else if (value >= 1000) {
+            extraLove.textContent = config.loveMessages.high;
+        } else {
+            extraLove.textContent = config.loveMessages.normal;
+        }
+    });
+}
+
+// ============================================
+// CELEBRATION
+// ============================================
+
+function celebrate() {
+    document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
+    q('celebration').classList.remove('hidden');
+
+    q('celebrationTitle').textContent = config.celebration.title;
+    q('celebrationMessage').textContent = config.celebration.message;
+    q('celebrationEmojis').textContent = config.celebration.emojis;
+}
+
+// ============================================
+// MUSIC
+// ============================================
+
+function setupMusicPlayer() {
+    const musicToggle = q('musicToggle');
+    const bgMusic = q('bgMusic');
+    const musicSource = q('musicSource');
+
+    if (!config.music.enabled) {
+        q('musicControls').style.display = 'none';
+        return;
     }
-    100% {
-        transform: translateY(-100px) translateX(var(--float-distance));
-    }
+
+    musicSource.src = config.music.musicUrl;
+    bgMusic.volume = config.music.volume;
+    bgMusic.load();
+
+    musicToggle.addEventListener('click', () => {
+        if (bgMusic.paused) {
+            bgMusic.play();
+            musicToggle.textContent = config.music.stopText;
+        } else {
+            bgMusic.pause();
+            musicToggle.textContent = config.music.startText;
+        }
+    });
 }
-
-.cute-btn {
-    background: var(--button-color);
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 20px;
-    color: white;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
-}
-
-.cute-btn:hover {
-    transform: scale(1.1);
-    background: var(--button-hover);
-}
-
-.hidden {
-    display: none;
-}
-
-.disabled-btn {
-    opacity: 0.7;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.secret-answer {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    margin-top: 0;
-    opacity: 0.2;
-    transition: opacity 0.3s;
-    transform: scale(0.7);
-    z-index: 2;
-    animation: subtle-hint 2s infinite alternate;
-    animation-delay: 5s;
-}
-
-.secret-answer .cute-btn {
-    font-size: 0.8rem;
-    padding: 5px 10px;
-}
-
-.secret-answer:hover {
-    opacity: 1;
-    animation: none;
-}
-
-.love-meter {
-    position: relative;
-    width: 100%;
-    margin: 20px auto;
-    overflow: visible;
-    padding: 10px 0;
-}
-
-.love-meter p {
-    font-size: 1.2em;
-    margin: 15px 0;
-    color: var(--text-color);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.slider {
-    width: 100%;
-    height: 25px;
-    background: linear-gradient(to right, #ff6b6b, #ff8787, #ffb8b8);
-    -webkit-appearance: none;
-    appearance: none;
-    outline: none;
-    position: relative;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
-    transition: all 0.3s ease;
-}
-
-.slider:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
-}
-
-/* Ensure track is visible */
-.slider::-webkit-slider-runnable-track,
-.slider::-moz-range-track {
-    width: 100%;
-    height: 25px;
-    background: linear-gradient(to right, #ff6b6b, #ff8787, #ffb8b8);
-    border-radius: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-}
-
-/* Ensure thumb is properly styled */
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(135deg, #ff4757, #ff6b6b);
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(255, 71, 87, 0.3);
-    position: relative;
-    z-index: 10;
-    margin-top: -5px;
-    border: 3px solid white;
-    transition: all 0.2s ease;
-}
-
-.slider::-webkit-slider-thumb:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
-}
-
-.slider::-moz-range-thumb {
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(135deg, #ff4757, #ff6b6b);
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(255, 71, 87, 0.3);
-    position: relative;
-    z-index: 10;
-    border: 3px solid white;
-    transition: all 0.2s ease;
-}
-
-.slider::-moz-range-thumb:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
-}
-
-#extraLove {
-    color: #ff6b6b;
-    font-weight: bold;
-    animation: bounce 0.5s infinite alternate;
-    display: block;
-    padding: 5px 10px;
-    border-radius: 10px;
-    background: rgba(255, 107, 107, 0.1);
-    text-shadow: 0 2px 4px rgba(255, 71, 87, 0.2);
-    transition: all 0.3s ease;
-    margin-top: 5px;
-}
-
-#extraLove.super-love {
-    background: rgba(255, 107, 107, 0.2);
-    font-size: 1.2em;
-    padding: 8px 15px;
-    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.2);
-}
-
-#loveValue {
-    font-weight: bold;
-    color: #ff4757;
-    font-size: 1.3em;
-    transition: all 0.3s ease;
-}
-
-.love-value-container {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-
-@keyframes bounce {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.2);
-    }
-}
-
-.hearts-explosion {
-    font-size: 2rem;
-    animation: explode 1s ease-out forwards;
-    margin-top: 30px;
-}
-
-@keyframes explode {
-    0% {
-        transform: scale(0);
-    }
-    50% {
-        transform: scale(var(--heart-explosion-size));
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-h1, h2 {
-    font-family: Arial, sans-serif;
-    font-weight: 700;
-}
-
-h1 {
-    color: #ff6b6b;
-    margin-bottom: 2rem;
-}
-
-h2 {
-    color: #ff8787;
-}
-
-.super-love {
-    font-size: 1.5em;
-    color: #ff4757;
-    font-weight: bold;
-    transform: scale(1.2);
-    display: inline-block;
-    text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.3);
-}
-
-
-.celebration-text {
-    font-size: 3em;
-    color: #ff4757;
-    font-weight: bold;
-    margin: 30px 0;
-    animation: bounce var(--bounce-speed) infinite alternate;
-    text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.3);
-}
-
-@keyframes subtle-hint {
-    0% { opacity: 0.2; }
-    100% { opacity: 0.3; }
-}
-
-.music-controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.music-btn {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.music-btn:hover {
-    transform: scale(1.05);
-    background: var(--secondary-color);
-} 
