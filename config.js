@@ -14,8 +14,10 @@ const CONFIG = {
     // Floating emojis that appear in the background
     // Find more emojis at: https://emojipedia.org
     floatingEmojis: {
-        hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis
-        bears: ['🧸', '🐻']                       // Cute bear emojis
+        hearts: ['💗', '💗', '💗', '❤️', '💖', '💗',],  // Heart emojis
+        bears: [],                       // Cute bear emojis
+        heartCount: 10, // Number of hearts to display
+        bearCount: 0,   // Number of bears to display
     },
 
     // Questions and answers
@@ -82,6 +84,21 @@ const CONFIG = {
         startText: "🎵 Play Music",        // Button text to start music
         stopText: "🔇 Stop Music",         // Button text to stop music
         volume: 0.5                        // Volume level (0.0 to 1.0)
+    },
+
+    // Image Gallery (Optional)
+    gallery: {
+        enabled: true,
+        buttonText: "See Our Memories 📸",
+        title: "Our Beautiful Moments",
+        images: [
+            "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+            "https://images.unsplash.com/photo-1516589178581-a70e2895392a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+            "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+            "https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+            "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+            "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+        ]
     }
 };
 
