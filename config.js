@@ -78,7 +78,7 @@ const CONFIG = {
     music: {
         enabled: true,                     // Music feature is enabled
         autoplay: true,                    // Try to autoplay (note: some browsers may block this)
-        musicUrl: "https://collection.cloudinary.com/ddphlx9p6/30d9b384345076076305aa5e4f650364.mp3", // Music streaming URL
+        musicUrl: "https://res.cloudinary.com/ddphlx9p6/video/upload/v1770757083/FlawlÃ_ss_feat._Lil_Uzi_Vert_Official_Audio_-mc_v8pxcf.mp3", // Music streaming URL
         startText: "🎵 Play Music",        // Button text to start music
         stopText: "🔇 Stop Music",         // Button text to stop music
         volume: 0.5                        // Volume level (0.0 to 1.0)
