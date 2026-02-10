@@ -50,7 +50,7 @@ const CONFIG = {
     // Messages that appear after they say "Yes!"
     celebration: {
         title: "Aww you like me :p 🎉💝💖💝💓",
-        message: "Hurry back home!",
+        message: <img src:cat-hugs.gif>,
         emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
     },
 
