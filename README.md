@@ -45,13 +45,14 @@ Note: Make sure you're logged into your GitHub account. If you don't have one, y
 Here's what you can customize in `config.js`:
 ```javascript
 // Basic Information
-valentineName: "Jade"                    // Your Valentine's name
+valentineName: "Wewo"                    // Your Valentine's name
 pageTitle: "Will You Be My Valentine? 💝" // Browser tab title
 
 // Floating Background Elements
 floatingEmojis: {
     hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis in background
     bears: ['🧸', '🐻']                       // Bear emojis in background
+    broccoli ['🥦'']                          // Broccoli emojis in background
 }
 
 // Questions and Buttons
@@ -135,7 +136,7 @@ Want to make it extra special with your own romantic song? Follow these steps to
    - Click the "..." (more options) button on your music file
    - Click "Copy URL"
    - Select "Copy Original URL with options"
-   - The URL should look like: `https://res.cloudinary.com/your-cloud-name/video/upload/v1234567890/your-file-name.mp3`
+   - The URL should look like:`https://res.cloudinary.com/dasw6ncyr/video/upload/v1769913004/Your_Universe_mr4yqd.mp3`
 
 4. **Add to Your Website:**
    - Open `config.js`
