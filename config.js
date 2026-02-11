@@ -79,8 +79,8 @@ const CONFIG = {
         enabled: true,                     // Music feature is enabled
         autoplay: true,                    // Try to autoplay (note: some browsers may block this)
         musicUrl: "https://s3.ustatik.com/audio.com.audio/transcoding/21/57/1830122999345721-1830122999406258-1830123000769438.mp3?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=W7IA3NSYSOQIKLY9DEVC%2F20260211%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20260211T181536Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=f4532c5f12e32e49256c73d85852e423768cf8706c6a1432851ab536dcee5161", // Music streaming URL
-        startText: "🎵 Play Music",        // Button text to start music
-        stopText: "🔇 Stop Music",         // Button text to stop music
+        startText: "🎵 Iniciar Musica",        // Button text to start music
+        stopText: "🔇 Parar Musica",         // Button text to stop music
         volume: 0.5                        // Volume level (0.0 to 1.0)
     }
 };
