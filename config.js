@@ -23,18 +23,18 @@ const CONFIG = {
     questions: {
         first: {
             text: "Ti piaccio?",                                    // First interaction
-            yesBtn: "Yes",                                             // Text for "Yes" button
+            yesBtn: "Si",                                             // Text for "Yes" button
             noBtn: "No",                                               // Text for "No" button
-            secretAnswer: "I don't like you, I love you! ❤️"           // Secret hover message
+            secretAnswer: "Non mi piaci, Io ti amo! ❤️"           // Secret hover message
         },
         second: {
             text: "Quanto mi ami?",                          // For the love meter
-            startText: "This much!",                                   // Text before the percentage
-            nextBtn: "Next ❤️"                                         // Text for the next button
+            startText: "Tantissimissimissimo",                                   // Text before the percentage
+            nextBtn: "Vai Avanti ❤️"                                         // Text for the next button
         },
         third: {
             text: "Vuoi essere il mio San Valentino il 14 Febbraio 2026? 🌹", // The big question!
-            yesBtn: "Yes!",                                             // Text for "Yes" button
+            yesBtn: "Si!",                                             // Text for "Yes" button
             noBtn: "No"                                                 // Text for "No" button
         }
     },
