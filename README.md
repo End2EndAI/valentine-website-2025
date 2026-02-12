@@ -45,30 +45,30 @@ Note: Make sure you're logged into your GitHub account. If you don't have one, y
 Here's what you can customize in `config.js`:
 ```javascript
 // Basic Information
-valentineName: "Jade"                    // Your Valentine's name
-pageTitle: "Will You Be My Valentine? 💝" // Browser tab title
+valentineName: "Muntazir Mahdi"                    // Your Valentine's name
+pageTitle: "Will You kiss me? 💝" // Browser tab title
 
 // Floating Background Elements
 floatingEmojis: {
-    hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis in background
-    bears: ['🧸', '🐻']                       // Bear emojis in background
+    hearts: ['❤️', '🥰', '😚', '😘', '💋'],  // Heart emojis in background
+    bears: ['😘', '💋']                       // Bear emojis in background
 }
 
 // Questions and Buttons
 questions: {
     first: {
-        text: "Do you like me?",                   // First question
+        text: "3 minutes wala romance kren?",                   // First question
         yesBtn: "Yes",                             // Yes button text
         noBtn: "No",                               // No button text
-        secretAnswer: "I don't like you, I love you! ❤️"  // Hidden message
+        secretAnswer: "I love you so much shony shehzady! ❤️"  // Hidden message
     },
     second: {
-        text: "How much do you love me?",          // Second question
-        startText: "This much!",                   // Text before percentage
+        text: "Ap mjhsy kitna pyar krty ho?",          // Second question
+        startText: "itna zyada!",                   // Text before percentage
         nextBtn: "Next ❤️"                         // Next button text
     },
     third: {
-        text: "Will you be my Valentine...?",      // Final question
+        text: "Will you be my forever?",      // Final question
         yesBtn: "Yes!",                            // Yes button text
         noBtn: "No"                                // No button text
     }
@@ -76,16 +76,16 @@ questions: {
 
 // Love Meter Messages
 loveMessages: {
-    extreme: "WOOOOW You love me that much?? 🥰🚀💝",  // Shows above 5000%
-    high: "To infinity and beyond! 🚀💝",              // Shows above 1000%
-    normal: "And beyond! 🥰"                           // Shows above 100%
+    extreme: "Mai sadqy itna pyar krty ho?? 🥰🚀💝",  // Shows above 5000%
+    high: "meri Zindagi! 🚀💝",              // Shows above 1000%
+    normal: "meri duniya! 🥰"                           // Shows above 100%
 }
 
 // Final Celebration
 celebration: {
-    title: "Yay! I'm the luckiest person...",     // Celebration title
-    message: "Now come get your gift...",          // Celebration message
-    emojis: "🎁💖🤗💝💋❤️💕"                        // Celebration emojis
+    title: "Alhamdullilah I'm so lucky",     // Celebration title
+    message: "Ab pyar kren?",          // Celebration message
+    emojis: "🤗💋❤️😘"                        // Celebration emojis
 }
 
 // Website Colors
