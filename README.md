@@ -1,4 +1,4 @@
-# 💝 Valentine's Day Website 2026 💝
+# 💝 Valentine's Day 2026 💝
 
 [![Stars](https://img.shields.io/github/stars/End2EndAI/valentine-website-2025?style=social)](https://github.com/End2EndAI/valentine-website-2025/stargazers)
 [![Fork](https://img.shields.io/github/forks/End2EndAI/valentine-website-2025?style=social)](https://github.com/End2EndAI/valentine-website-2025/fork)
