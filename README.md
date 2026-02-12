@@ -3,7 +3,7 @@
 [![Stars](https://img.shields.io/github/stars/End2EndAI/valentine-website-2025?style=social)](https://github.com/End2EndAI/valentine-website-2025/stargazers)
 [![Fork](https://img.shields.io/github/forks/End2EndAI/valentine-website-2025?style=social)](https://github.com/End2EndAI/valentine-website-2025/fork)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FEnd2EndAI%2Fvalentine-website-2025)](https://twitter.com/intent/tweet?text=%F0%9F%92%9D%20Create%20your%20own%20Valentine%27s%20website%20for%20free%21%20No%20coding%20required%21%0A%F0%9F%8E%81%20Fully%20customizable%2C%20easy%20to%20deploy%20with%20your%20own%20website%20name%0A%E2%9C%A8%20Try%20it%20now%3A%20https%3A%2F%2Fgithub.com%2FEnd2EndAI%2Fvalentine-website-2025%0A%23ValentinesDay2025%20%23WebDev%20%23GitHub%20%23Love)
+[![Support me](https://img.shields.io/badge/Support-Stripe-blue)](https://buy.stripe.com/bJefZa8Le7fvgDe3ric7u00)
 
 A beautiful, interactive Valentine's Day website generator to ask your special someone to be your Valentine! Create your own personalized version in minutes. Perfect for Valentine's Day 2026! 💝
 Follow below the tutorial how to custom the website and get your custom URL and access your website on the internet from everywhere !
@@ -15,7 +15,7 @@ Follow below the tutorial how to custom the website and get your custom URL and 
 If you liked it, please :
 - ⭐ Star this repository if you like it
 - 🔄 Fork it to create your own version
-- 🔥 Like and follow on instagram for more websites : [Instagram]([https://www.instagram.com/ai_cute_apps/](https://www.instagram.com/reel/DFh3ZaxtrYX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==))
+- 🔥 Like and follow on instagram for more websites : [Instagram](https://www.instagram.com/reel/DFh3ZaxtrYX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==)
 
 ## ✨ Features
 - 💖 Floating hearts and bears
@@ -192,6 +192,16 @@ Created with love for Valentine's Day 2026.
 Feel free to use and modify for your special someone!
 
 \- Louis Fontaine -
+
+## ❤️ Support this project
+
+This Valentine website template is completely **free and open-source**.
+
+If it helped you create something special, you can support the project with a small donation:
+
+👉 [Tip](https://buy.stripe.com/bJefZa8Le7fvgDe3ric7u00)
+
+Thank you for keeping it alive!
 
 ## 📜 License
 MIT License - Feel free to use this for your Valentine! 
