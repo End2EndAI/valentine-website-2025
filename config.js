@@ -40,7 +40,7 @@ const CONFIG = {
     },
 
     video: {
-        url: "./video/anjuAndme.mp4",
+        url: "/video/anjuAndme.mp4",
         autoplay: true,
         allowSkipAfterSeconds: 3,
         modalTitle: "Let’s bring these sweet memories into taste",
