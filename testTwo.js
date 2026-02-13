@@ -198,36 +198,6 @@
 
 
 
-        finish() {
-            clearTimeout(this.state.timer);
-            // 💕 Fade out music
-            this.fadeOutMusic(2000);
-            setTimeout(() => {
-                this.startVideoAfterDelay(5);
-            }, 1200);
-            // Fade out portrait
-            this.elements.portraitSection.style.opacity = "0";
-            this.elements.portraitSection.style.transition = "opacity 1s ease";
-
-            // setTimeout(() => {
-            //     this.elements.portraitSection.classList.add("hidden");
-            //     this.elements.videoSection.classList.remove("hidden");
-
-            //     this.elements.video.src = "YOUR_VIDEO_URL_HERE";
-            //     this.elements.video.play();
-            // }, 1000);
-        }
-
-        loadImage(src) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.onload = () => resolve(img);
-                img.onerror = reject;
-                img.src = src;
-            });
-        }
-
-
         setupMusicPlayer() {
 
 
@@ -268,22 +238,31 @@
         fadeOutMusic(duration = 2000) {
 
             const bgMusic = document.getElementById("bgMusic");
-
+        
             if (!bgMusic || bgMusic.paused) return;
-
-            const fadeInterval = 50;
-            const step = bgMusic.volume / (duration / fadeInterval);
-
-            const fadeAudio = setInterval(() => {
-                if (bgMusic.volume > step) {
-                    bgMusic.volume -= step;
-                } else {
-                    bgMusic.volume = 0;
+        
+            const initialVolume = bgMusic.volume;
+            const fadeSteps = 20;
+            const stepTime = duration / fadeSteps;
+            let currentStep = 0;
+        
+            const fadeInterval = setInterval(() => {
+        
+                currentStep++;
+        
+                const newVolume = initialVolume * (1 - currentStep / fadeSteps);
+                bgMusic.volume = Math.max(newVolume, 0);
+        
+                if (currentStep >= fadeSteps) {
+                    clearInterval(fadeInterval);
                     bgMusic.pause();
-                    clearInterval(fadeAudio);
+                    bgMusic.currentTime = 0; // fully stop
+                    bgMusic.volume = initialVolume; // reset for future
                 }
-            }, fadeInterval);
+        
+            }, stepTime);
         }
+        
 
 
         startVideoAfterDelay(delayInSeconds) {
@@ -317,12 +296,49 @@
                     clearInterval(intervalId);
                     timerDisplay.remove();
 
-                    // Autoplay the video
                     video.src = GlobalConfig.video.url;
-                    video.autoplay = GlobalConfig.video.autoplay;
-                    video.playsInline = true;
+
+                    // FORCE mobile compatibility
+                    video.setAttribute("playsinline", "");
+                    video.setAttribute("webkit-playsinline", "");
+                    // video.muted = true;   // 🔴 MUST be true
+                    video.autoplay = true;
+                    video.preload = "auto";
+
+                    video.load();
+
+                    const playPromise = video.play();
+
+                    if (playPromise !== undefined) {
+                        playPromise.catch(err => {
+                            console.log("Mobile autoplay blocked:", err);
+                        });
+                    }
+
                 }
             }, 1000);
+        }
+
+        finish() {
+
+            clearTimeout(this.state.timer);
+        
+            // 🎵 Stop music
+            this.fadeOutMusic(2000);
+        
+            // Slight delay before video
+            setTimeout(() => {
+                this.startVideoAfterDelay(1);
+            }, 2000);
+        }
+
+        loadImage(src) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => resolve(img);
+                img.onerror = reject;
+                img.src = src;
+            });
         }
     }
 

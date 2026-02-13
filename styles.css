@@ -37,9 +37,15 @@ body {
 }
 
 .video-section {
-    margin: 20px 0;
     position: relative;
     background-color: black;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 20px;
+    overflow: visible !important;
 }
 
 .memory-video {
@@ -414,11 +420,16 @@ h2 {
 
 /* Portrait slideshow feature */
 .portrait-feature {
-    margin-top: 28px;
     padding: 20px;
     border-radius: 18px;
     background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,230,236,0.75));
     border: 1px solid rgba(255, 107, 107, 0.2);
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 20px;
+    overflow: visible !important;
 }
 
 .portrait-feature__header h2 {
