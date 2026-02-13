@@ -270,54 +270,63 @@
             const video = document.getElementById('memoryVideo');
             const portraitFeature = document.getElementById('portraitFeature');
             const videoSection = document.getElementById('videoSection');
-
-            // Hide portrait slideshow
-            portraitFeature.classList.add('hidden');
+        
+            // Show video section FIRST
             videoSection.classList.remove('hidden');
-
-            // Start the timer
+        
+            // Make sure it can position children properly
+            videoSection.style.position = "relative";
+        
             let timer = delayInSeconds;
+        
             const timerDisplay = document.createElement('div');
             timerDisplay.style.position = 'absolute';
             timerDisplay.style.top = '30px';
-            timerDisplay.style.left = '10px';
-            timerDisplay.style.padding = "10px"
-            timerDisplay.style.fontSize = '16px';
+            timerDisplay.style.left = '50%';
+            timerDisplay.style.transform = 'translateX(-50%)';
+            timerDisplay.style.padding = "12px 18px";
+            timerDisplay.style.fontSize = '18px';
             timerDisplay.style.color = 'white';
-            // timerDisplay.textContent = `That's not it..."I may not be your first love but I wanna be your last forever.🥹💕"`;
-            // timerDisplay.textContent = `Starting in: ${timer}s`;
+            timerDisplay.style.background = 'rgba(0,0,0,0.6)';
+            timerDisplay.style.borderRadius = '10px';
+            timerDisplay.style.zIndex = "9999";
+        
             videoSection.appendChild(timerDisplay);
-
+        
             const intervalId = setInterval(() => {
+        
+                timerDisplay.innerHTML =
+                    `That's not it...That's not it..."I may not be your first love but I wanna be your last & forever🥹💕<br><br>Starting in: ${timer}s 💕`;
+        
                 timer--;
-                timerDisplay.textContent = `That's not it..."I may not be your first love but I wanna be your last forever.🥹💕" \n\n Starting in: ${timer}s`;
-
-                if (timer <= 0) {
+        
+                if (timer < 0) {
+        
                     clearInterval(intervalId);
                     timerDisplay.remove();
-
+        
+                    // NOW hide portrait
+                    portraitFeature.classList.add('hidden');
+        
+                    // Set video source
                     video.src = GlobalConfig.video.url;
-
-                    // FORCE mobile compatibility
+        
                     video.setAttribute("playsinline", "");
                     video.setAttribute("webkit-playsinline", "");
-                    // video.muted = true;   // 🔴 MUST be true
+                    video.muted = true; // MUST for mobile autoplay
                     video.autoplay = true;
                     video.preload = "auto";
-
+        
                     video.load();
-
-                    const playPromise = video.play();
-
-                    if (playPromise !== undefined) {
-                        playPromise.catch(err => {
-                            console.log("Mobile autoplay blocked:", err);
-                        });
-                    }
-
+        
+                    video.play().catch(err => {
+                        console.log("Mobile autoplay blocked:", err);
+                    });
                 }
+        
             }, 1000);
         }
+        
 
         finish() {
 
