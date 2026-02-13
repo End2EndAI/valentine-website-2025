@@ -42,7 +42,7 @@ Note: Make sure you're logged into your GitHub account. If you don't have one, y
 3. Change the values to personalize your website
 4. Click "Commit changes" at the bottom
 
-Here's what you can customize in `config.js`:
+Here's what you can customize in `CONFIG = `:
 ```javascript
 // Basic Information
 valentineName: "Jade"                    // Your Valentine's name
