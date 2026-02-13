@@ -1,5 +1,7 @@
 .DS_Store
 .vscode/
 *.log 
-
+node_modules/
 *.mp4
+
+*.json

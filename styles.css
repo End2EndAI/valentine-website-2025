@@ -124,6 +124,13 @@ body.modal-open {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+.cross{
+    position: absolute;
+    top: 0px;
+    right: 1rem;
+    font-size: 2rem;
+}
+
 .modal-actions {
     display: flex;
     flex-direction: column;
@@ -447,6 +454,8 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    align-items: center;
+    justify-content: center;
 }
 
 .portrait-status {
@@ -458,7 +467,7 @@ h2 {
 
 .portrait-stage {
     position: relative;
-    width: min(100%, 320px);
+    width: min(100%, 350px);
     margin: 0 auto;
     min-height: 460px;
     display: grid;

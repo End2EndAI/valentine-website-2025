@@ -61,6 +61,7 @@
             }
 
             const folderLink = this.elements.folderInput?.value?.trim() || this.options.googleDrive.folderLink;
+            console.log("folderLink", folderLink)
             if (!folderLink) {
                 this.setStatus('Please paste a valid Google Drive folder link first.');
                 return;
@@ -159,11 +160,13 @@
                 const queryParams = new URLSearchParams({
                     key: this.options.googleDrive.apiKey,
                     q: `'${folderId}' in parents and mimeType contains 'image/' and trashed=false`,
-                    fields: 'nextPageToken, files(id, name, mimeType)',
+                    fields: "nextPageToken, files(id, name, mimeType)",
                     pageSize: String(pageSize),
-                    supportsAllDrives: 'true',
-                    includeItemsFromAllDrives: 'true'
+                    supportsAllDrives: "true",
+                    includeItemsFromAllDrives: "true"
                 });
+
+        
 
                 if (nextPageToken) {
                     queryParams.set('pageToken', nextPageToken);
@@ -175,15 +178,21 @@
                 }
 
                 const data = await response.json();
+                console.log("dataImages",data)
                 allFiles.push(...(data.files || []));
                 nextPageToken = data.nextPageToken || '';
             } while (nextPageToken);
 
-            return allFiles.map((file) => ({
+
+            const finalData = allFiles.map((file) => ({
                 id: file.id,
                 name: file.name,
-                originalUrl: `https://drive.google.com/thumbnail?id=${file.id}&sz=w1600`
+                originalUrl: `http://localhost:8000/api/drive-image?id=${encodeURIComponent(file.id)}`
             }));
+
+            console.log("finalData", finalData)
+
+            return finalData
         }
 
         extractFolderId(link) {
@@ -409,7 +418,7 @@
         loadImage(src) {
             return new Promise((resolve, reject) => {
                 const img = new Image();
-                img.crossOrigin = 'anonymous';
+                // img.crossOrigin = 'anonymous';
                 img.onload = () => resolve(img);
                 img.onerror = () => reject(new Error('Image failed to load for portrait conversion.'));
                 img.src = src;

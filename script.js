@@ -85,16 +85,6 @@ window.addEventListener('DOMContentLoaded', () => {
     setTextIfExists('yesBtn3', config.questions.third.yesBtn);
     setTextIfExists('noBtn3', config.questions.third.noBtn);
 
-    // Set celebration and waffle order texts
-    setTextIfExists('celebrationNextBtn', config.celebration.nextBtn);
-    setTextIfExists('orderTitle', config.waffleOrder.title);
-    setTextIfExists('orderSubtitle', config.waffleOrder.subtitle);
-    setTextIfExists('orderItem', config.waffleOrder.itemName);
-    setTextIfExists('orderStore', config.waffleOrder.storeQuery);
-    setTextIfExists('orderDelivery', config.waffleOrder.deliveryLabel);
-    setTextIfExists('orderLink', config.waffleOrder.linkText);
-    setTextIfExists('orderPartner', config.waffleOrder.api.provider.toUpperCase());
-
     // Set video modal texts
     setTextIfExists('orderModalTitle', config.video.modalTitle);
     setTextIfExists('orderModalText', config.video.modalText);
@@ -108,8 +98,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Setup music player
     setupMusicPlayer();
 
-    // // Setup video flow
-    setupVideoFlow();
+ 
 });
 
 // Create floating hearts and bears
@@ -220,60 +209,12 @@ function celebrate() {
     setTextIfExists('celebrationNextBtn', config.celebration.nextBtn);
     
 
-}
-
-function showOrderSection() {
-    document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
-    document.getElementById('celebration').classList.add('hidden');
-    const orderSection = document.getElementById('orderSection');
-    orderSection.classList.remove('hidden');
-    startWaffleOrder();
-}
-
-
-function setupVideoFlow() {
-    const video = document.getElementById('memoryVideo');
-    const upiButton = document.getElementById('upiFallbackBtn');
-    const showModal =   document.getElementById('celebrationNextBtn')
-
-  
-
-    showModal.addEventListener('click',()=>{
-        document.getElementById("orderModal").classList.add("modal")
-        video.src = config.video.url;
-        video.autoplay = config.video.autoplay;
-        video.playsInline = true;
-        video.muted = false;
-    })
-   
-}
-
-
-
-
-const memoryVideoElement = document.getElementById('memoryVideo');
-if (memoryVideoElement) {
-    memoryVideoElement.addEventListener('click', ()=>{
-        const video = document.getElementById('memoryVideo');
-        video.src = config.video.url;
-        video.autoplay = config.video.autoplay;
-        video.playsInline = true;
-        video.muted = true;
-    });
-}
-
-function potraits() {
-
-
-
-    
-}
-
-
+}   
 
 
 // Music Player Setup
 function setupMusicPlayer() {
+    console.log("clciked to play")
     const musicControls = document.getElementById('musicControls');
     const musicToggle = document.getElementById('musicToggle');
     const bgMusic = document.getElementById('bgMusic');
