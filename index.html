@@ -25,7 +25,7 @@
             <h1 id="valentineTitle"></h1>
 
             <!-- Music Player -->
-            <div id="musicControls" class="music-controls">
+            <div id="musicControls" class="music-controls hidden">
                 <button id="musicToggle" class="music-btn">🎵 Play Music</button>
                 <audio id="bgMusic" loop>
                     <source id="musicSource" type="audio/mpeg">
@@ -87,7 +87,10 @@
 
                 <section class="portrait-feature hidden" id="portraitFeature" aria-live="polite">
                     <div class="portrait-feature__header">
-                        <h2>The reasons I Love You,💞</h2>
+                        <!-- <h2>Reasons I Love You...💞</h2> -->
+                        <h2>Every memory, every reason,
+                            always
+                            you ❤️</h2>
                     </div>
 
                     <!-- <div class="portrait-feature__controls"> -->
@@ -115,16 +118,14 @@
                         </article>
                     </div>
 
-                    <p id="portraitFinalMessage" class="portrait-final-message hidden">Every memory, every reason,
-                        always
-                        you ❤️</p>
+                    <p id="portraitFinalMessage" class="portrait-final-message hidden"></p>
                     <!-- 
                         <div>
                             <button class="cute-btn" id="GotoVideo" type="button" disabled>Wanna findout what makes you more interesting?</button>
                         </div> -->
                 </section>
                 <section class="video-section" id="videoSection">
-                    <video id="memoryVideo" class="memory-video" playsinline autoplay muted></video>
+                    <video id="memoryVideo" class="memory-video" playsinline autoplay ></video>
                 </section>
 
             </div>

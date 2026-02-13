@@ -2,8 +2,13 @@
 
 
     const config = window.VALENTINE_CONFIG?.portraitSlideshow;
-    const videoConfig = window.VALENTINE_CONFIG
+    const GlobalConfig = window.VALENTINE_CONFIG
     if (!config) return;
+
+    const musicControls = document.getElementById('musicControls');
+    const musicToggle = document.getElementById('musicToggle');
+    const bgMusic = document.getElementById('bgMusic');
+    const musicSource = document.getElementById('musicSource');
 
     const LOCAL_FOLDER = "./Ammu/";
 
@@ -46,6 +51,7 @@
         async start() {
             if (this.state.isRunning) return;
             this.state.isRunning = true;
+            this.setupMusicPlayer();
 
             const images = LOCAL_IMAGES.map((name, index) => ({
                 id: index,
@@ -114,55 +120,54 @@
         playCurrent() {
 
             const current = this.state.processed[this.state.currentIndex];
-        
+
             if (!current) {
                 this.finish();
                 return;
             }
-        
+
             // Clear previous compliment (smooth fade out)
             this.elements.compliment.style.opacity = "0";
-        
+
             setTimeout(() => {
-        
+
                 const compliment =
                     config.fallbackCompliments[
-                        this.state.currentIndex % config.fallbackCompliments.length
+                    this.state.currentIndex % config.fallbackCompliments.length
                     ];
-        
+
                 // Update image
                 this.elements.activeImage.src = current.portraitDataUrl;
-        
+
                 // Set new compliment
                 this.elements.compliment.textContent = compliment;
-        
+
                 // Fade in new compliment
                 this.elements.compliment.style.opacity = "1";
-        
-                const holdDuration = 3500;
-        
+
+                const holdDuration = 5000;
+
                 this.state.timer = setTimeout(() => {
                     this.pushToStack(current, compliment);
-        
+
                     // Clear compliment AFTER pushing to stack
                     this.elements.compliment.textContent = "";
                     this.elements.compliment.style.opacity = "0";
-        
+
                     this.state.currentIndex++;
                     this.playCurrent();
-        
+
                 }, holdDuration);
-        
+
             }, 300); // fade delay
         }
-        
-        
+
+
 
         pushToStack(item, compliment) {
-
             const card = document.createElement("div");
             card.className = "portrait-stack-card";
-        
+
             card.innerHTML = `
                 <div class="stack-image-wrapper">
                     <img src="${item.portraitDataUrl}" />
@@ -171,11 +176,11 @@
                     </div>
                 </div>
             `;
-        
+
             this.elements.stack.prepend(card);
-        
+
             const cards = Array.from(this.elements.stack.children);
-        
+
             cards.forEach((card, index) => {
                 card.style.transform = `
                     translateY(${index * 6}px)
@@ -185,21 +190,25 @@
                 card.style.zIndex = 100 - index;
                 card.style.opacity = 1 - index * 0.1;
             });
-        
+
             while (cards.length > 10) {
                 this.elements.stack.lastElementChild.remove();
             }
         }
-        
-        
+
+
 
         finish() {
             clearTimeout(this.state.timer);
-            this.startVideoAfterDelay(5)
+            // 💕 Fade out music
+            this.fadeOutMusic(2000);
+            setTimeout(() => {
+                this.startVideoAfterDelay(5);
+            }, 1200);
             // Fade out portrait
             this.elements.portraitSection.style.opacity = "0";
             this.elements.portraitSection.style.transition = "opacity 1s ease";
-           
+
             // setTimeout(() => {
             //     this.elements.portraitSection.classList.add("hidden");
             //     this.elements.videoSection.classList.remove("hidden");
@@ -218,7 +227,67 @@
             });
         }
 
+
+        setupMusicPlayer() {
+
+
+            // Only show controls if music is enabled in config
+            if (!GlobalConfig.music.enabled) {
+                musicControls.style.display = 'none';
+                return;
+            }
+
+            // Set music source and volume
+            musicSource.src = GlobalConfig.music.musicUrl;
+            bgMusic.volume = GlobalConfig.music.volume || 0.3;
+            bgMusic.load();
+
+            // Try autoplay if enabled
+            if (GlobalConfig.music.autoplay) {
+                const playPromise = bgMusic.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Autoplay prevented by browser", error);
+                        musicToggle.textContent = GlobalConfig.music.startText;
+                    });
+                }
+            }
+
+            // Toggle music on button click
+            musicToggle.addEventListener('click', () => {
+                if (bgMusic.paused) {
+                    bgMusic.play();
+                    musicToggle.textContent = GlobalConfig.music.stopText;
+                } else {
+                    bgMusic.pause();
+                    musicToggle.textContent = GlobalConfig.music.startText;
+                }
+            });
+        }
+
+        fadeOutMusic(duration = 2000) {
+
+            const bgMusic = document.getElementById("bgMusic");
+
+            if (!bgMusic || bgMusic.paused) return;
+
+            const fadeInterval = 50;
+            const step = bgMusic.volume / (duration / fadeInterval);
+
+            const fadeAudio = setInterval(() => {
+                if (bgMusic.volume > step) {
+                    bgMusic.volume -= step;
+                } else {
+                    bgMusic.volume = 0;
+                    bgMusic.pause();
+                    clearInterval(fadeAudio);
+                }
+            }, fadeInterval);
+        }
+
+
         startVideoAfterDelay(delayInSeconds) {
+
             const video = document.getElementById('memoryVideo');
             const portraitFeature = document.getElementById('portraitFeature');
             const videoSection = document.getElementById('videoSection');
@@ -249,10 +318,9 @@
                     timerDisplay.remove();
 
                     // Autoplay the video
-                    video.src = videoConfig.video.url;
-                    video.autoplay = config.video.autoplay;
+                    video.src = GlobalConfig.video.url;
+                    video.autoplay = GlobalConfig.video.autoplay;
                     video.playsInline = true;
-                    video.muted = false;
                 }
             }, 1000);
         }
@@ -262,6 +330,7 @@
 
     document.getElementById("celebrationNextBtn")
         ?.addEventListener("click", function () {
+
             document.getElementById("container").classList.add('hidden')
             document.getElementById("orderModal").classList.remove('hidden')
             document.getElementById("portraitFeature")
