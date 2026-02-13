@@ -99,14 +99,14 @@ const CONFIG = {
 
     // Portrait slideshow feature configuration
     portraitSlideshow: {
-        googleDrive: {
-            folderLink: process.env.Google_Drive, // Example: https://drive.google.com/drive/folders/YOUR_FOLDER_ID
-            apiKey: process.env.GOOGLE_API_KEY
-        },
+        // googleDrive: {
+        //     folderLink: process.env.Google_Drive, // Example: https://drive.google.com/drive/folders/YOUR_FOLDER_ID
+        //     apiKey: process.env.GOOGLE_API_KEY
+        // },
         ai: {
             enabled: false,
             provider: "gemini", // "gemini" or "openai"
-            apiKey: process.env.Gemini_API_Key,
+            apiKey: "",
             model: "gemini-1.5-flash",
             prompt: "Write a short, sweet, romantic one-liner expressing love and appreciation."
         },
@@ -117,11 +117,16 @@ const CONFIG = {
         maxStackCards: 10,
         cacheKeyPrefix: "valentine-portrait-v1",
         fallbackCompliments: [
-            "You make every ordinary second feel magical and deeply cherished.",
-            "Your laughter is my favorite melody and my calmest place.",
-            "I fall in love with your heart a little more each day.",
-            "Your kindness paints my world with warmth, hope, and wonder.",
-            "With you, even silence feels like the sweetest love song."
+            `“You make every ordinary second feel magical and deeply cherished.💕✨”`,
+            `“Your laughter is my favorite melody and my calmest place.🎶💗”`,
+            `“I fall in love with your heart a little more each day.❤️✨”`,
+            `“Your kindness paints my world with warmth, hope, and wonder.🌷💞”`,
+            `“With you, even silence feels like the sweetest love song.🎵🤍”`,
+            `“You are my favorite forever 💕🌙”`,
+            `“you make ordinary days feel a little more magical.🪄💫”`,
+            `“Your smile could honestly fix any bad day.😊❤️”`,
+            `“Every moment with you feels like a perfect scene in a movie.🎬💖”`,
+            `“You’re my favorite place to go when I want peace, joy, or love.🌿💗”`
         ]
     }
 };

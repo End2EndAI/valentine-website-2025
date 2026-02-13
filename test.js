@@ -14,42 +14,6 @@
 
     if (!config) return;
 
-    // ---------- Defaults & helpers ----------
-    //   const defaults = {
-    //     cacheKeyPrefix: "valentine:portrait",
-    //     portraitRatio: 3 / 4, // 3:4 or 4:5 (set via config)
-    //     maxStackCards: 8,
-    //     animation: { holdMs: 3500 },
-    //     processing: {
-    //       useFaceDetection: true,          // try FaceDetector if available
-    //       warmthOverlayRGBA: "rgba(255, 180, 150, 0.14)", // subtle warmth
-    //       backdropFilter: "blur(18px) brightness(0.75)",  // soft BG
-    //       subjectFilter: "contrast(1.08) saturate(1.05) sepia(0.06)", // portrait vibe
-    //       outputWidth: 720
-    //     },
-    //     googleDrive: {
-    //       apiKey: "",          // if you keep client-side listing
-    //       folderLink: ""       // optional default
-    //     },
-    //     ai: {
-    //       enabled: false,
-    //       provider: "gemini",  // or "openai"
-    //       apiKey: "",
-    //       model: "gemini-1.5-flash", // or "gpt-4o-mini" etc.
-    //       prompt:
-    //         "Write a short, sweet, romantic one-liner expressing love and appreciation."
-    //     },
-    //     fallbackCompliments: [
-    //       "Your smile turns every ordinary moment into a beautiful memory.",
-    //       "You make my heart feel calm, brave, and endlessly grateful.",
-    //       "Loving you is my favorite chapter of every day.",
-    //       "You are my safest place and my sweetest adventure.",
-    //       "You glow with a kindness that makes the world softer."
-    //     ]
-    //   };
-
-    //   const opts = {...config };
-
     const fallbackCompliments = config.fallbackCompliments || [
         'Your smile turns every ordinary moment into a beautiful memory.',
         'You make my heart feel calm, brave, and endlessly grateful.',
@@ -130,9 +94,7 @@
             if (this.state.isRunning) return;
 
 
-            const folderLink =
-                this.elements.folderInput?.value?.trim() ||
-                this.options.googleDrive.folderLink;
+            const folderLink = "./Ammu"
 
             if (!folderLink) {
                 this.setStatus("Please paste a valid Google Drive folder link first.");
@@ -266,6 +228,14 @@
 
             return finalData
         }
+
+
+
+        
+
+
+     
+
 
 
         extractFolderId(link) {
@@ -625,6 +595,8 @@
         }
     }
 
+
+
     // window.addEventListener("DOMContentLoaded", () => {
     //         new PortraitSlideshow(config);
 
@@ -638,4 +610,5 @@
         document.getElementById("videoSection").classList.add('hidden')
         new PortraitSlideshow(config);
     })
+    
 })();

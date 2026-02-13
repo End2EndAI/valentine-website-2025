@@ -479,7 +479,19 @@ h2 {
 .portrait-card {
     position: absolute;
     inset: 0;
+    
 }
+
+/* .portrait-stack{
+    position: absolute;
+    width: 220px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+} */
+
 
 .portrait-card {
     display: flex;
@@ -488,6 +500,10 @@ h2 {
     align-items: center;
     z-index: 20;
     will-change: transform, opacity, filter;
+
+    /* width: 100%;
+    height: 100%;
+    object-fit: cover; */
 }
 
 .portrait-card img {
@@ -532,6 +548,32 @@ h2 {
 .portrait-fade-out {
     animation: portraitFade 700ms ease forwards;
 }
+
+.stack-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.stack-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+
+.stack-compliment {
+    position: absolute;
+    top: 0rem;
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    backdrop-filter: blur(4px);
+    font-weight: 500;
+}
+
 
 @keyframes portraitIn {
     from {
