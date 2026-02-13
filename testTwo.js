@@ -289,8 +289,8 @@
             timerDisplay.style.background = 'rgba(0,0,0,0.6)';
             timerDisplay.style.borderRadius = '10px';
             timerDisplay.style.zIndex = "9999";
-            timerDisplay.textContent =
-                    `That's not it...That's not it..."I may not be your first love but I wanna be your last & forever🥹💕<br><br>Starting in: ${timer}s 💕`;
+            // timerDisplay.textContent =
+            //         `That's not it...That's not it..."I may not be your first love but I wanna be your last & forever🥹💕<br><br>Starting in: ${timer}s 💕`;
         
             videoSection.appendChild(timerDisplay);
         
@@ -326,7 +326,7 @@
                     });
                 }
         
-            }, 5000);
+            }, 1000);
         }
         
 
