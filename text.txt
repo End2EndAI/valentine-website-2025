@@ -1,0 +1,48 @@
+compiler.cpp:7:14: warning: character constant too long for its type
+    7 |     hearts: ['❤️', '💖', '🫀', '💋', '💓','🫦'],  // Heart emojis in background
+      |              ^~~
+compiler.cpp:7:19: warning: multi-character character constant [-Wmultichar]
+    7 |     hearts: ['❤️', '💖', '🫀', '💋', '💓','🫦'],  // Heart emojis in background
+      |                   ^~~~
+compiler.cpp:7:25: warning: multi-character character constant [-Wmultichar]
+    7 |     hearts: ['❤️', '💖', '🫀', '💋', '💓','🫦'],  // Heart emojis in background
+      |                         ^~~~
+compiler.cpp:7:31: warning: multi-character character constant [-Wmultichar]
+    7 |     hearts: ['❤️', '💖', '🫀', '💋', '💓','🫦'],  // Heart emojis in background
+      |                               ^~~~
+compiler.cpp:7:37: warning: multi-character character constant [-Wmultichar]
+    7 |     hearts: ['❤️', '💖', '🫀', '💋', '💓','🫦'],  // Heart emojis in background
+      |                                     ^~~~
+compiler.cpp:7:42: warning: multi-character character constant [-Wmultichar]
+    7 |     hearts: ['❤️', '💖', '🫀', '💋', '💓','🫦'],  // Heart emojis in background
+      |                                          ^~~
+compiler.cpp:8:13: warning: multi-character character constant [-Wmultichar]
+    8 |     bears: ['🧸', '🐻','🎀']                       // Bear emojis in background
+      |             ^~~~
+compiler.cpp:8:19: warning: multi-character character constant [-Wmultichar]
+    8 |     bears: ['🧸', '🐻','🎀']                       // Bear emojis in background
+      |                   ^~~~
+compiler.cpp:8:24: warning: multi-character character constant [-Wmultichar]
+    8 |     bears: ['🧸', '🐻','🎀']                       // Bear emojis in background
+      |                        ^~~~
+compiler.cpp:1:1: error: expected unqualified-id before '/' token
+    1 | / Basic Information
+      | ^
+compiler.cpp:12:1: error: 'questions' does not name a type
+   12 | questions: {
+      | ^~~~~~~~~
+compiler.cpp:32:1: error: 'loveMessages' does not name a type
+   32 | loveMessages: {
+      | ^~~~~~~~~~~~
+compiler.cpp:39:1: error: 'celebration' does not name a type
+   39 | celebration: {
+      | ^~~~~~~~~~~
+compiler.cpp:46:1: error: 'colors' does not name a type
+   46 | colors: {
+      | ^~~~~~
+compiler.cpp:55:1: error: 'animations' does not name a type
+   55 | animations: {
+      | ^~~~~~~~~~
+compiler.cpp:63:1: error: 'music' does not name a type
+   63 | music: {
+      | ^~~~~
