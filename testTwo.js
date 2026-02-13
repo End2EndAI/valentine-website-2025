@@ -268,14 +268,13 @@
         startVideoAfterDelay(delayInSeconds) {
 
             const video = document.getElementById('memoryVideo');
-            const portraitFeature = document.getElementById('portraitFeature');
-            const videoSection = document.getElementById('videoSection');
-        
-            // Show video section FIRST
-            videoSection.classList.remove('hidden');
+             const portraitFeature = document.getElementById('portraitFeature'); 
+             const videoSection = document.getElementById('videoSection'); // Hide portrait slideshow
+              portraitFeature.classList.add('hidden'); 
+              videoSection.classList.remove('hidden');
         
             // Make sure it can position children properly
-            videoSection.style.position = "relative";
+            // videoSection.style.position = "relative";
         
             let timer = delayInSeconds;
         
@@ -290,17 +289,20 @@
             timerDisplay.style.background = 'rgba(0,0,0,0.6)';
             timerDisplay.style.borderRadius = '10px';
             timerDisplay.style.zIndex = "9999";
+            timerDisplay.textContent =
+                    `That's not it...That's not it..."I may not be your first love but I wanna be your last & forever🥹💕<br><br>Starting in: ${timer}s 💕`;
         
             videoSection.appendChild(timerDisplay);
         
             const intervalId = setInterval(() => {
         
-                timerDisplay.innerHTML =
-                    `That's not it...That's not it..."I may not be your first love but I wanna be your last & forever🥹💕<br><br>Starting in: ${timer}s 💕`;
+                
         
                 timer--;
+                timerDisplay.textContent =
+                    `That's not it...I may not be your first love but I wanna be your last & forever🥹💕<br><br>Starting in: ${timer}s 💕`;
         
-                if (timer < 0) {
+                if (timer <= 0) {
         
                     clearInterval(intervalId);
                     timerDisplay.remove();
@@ -313,7 +315,7 @@
         
                     video.setAttribute("playsinline", "");
                     video.setAttribute("webkit-playsinline", "");
-                    video.muted = true; // MUST for mobile autoplay
+                    // video.muted = true; // MUST for mobile autoplay
                     video.autoplay = true;
                     video.preload = "auto";
         
@@ -324,7 +326,7 @@
                     });
                 }
         
-            }, 1000);
+            }, 5000);
         }
         
 
@@ -337,7 +339,7 @@
         
             // Slight delay before video
             setTimeout(() => {
-                this.startVideoAfterDelay(1);
+                this.startVideoAfterDelay(5);
             }, 2000);
         }
 
