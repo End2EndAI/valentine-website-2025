@@ -45,13 +45,13 @@ Note: Make sure you're logged into your GitHub account. If you don't have one, y
 Here's what you can customize in `config.js`:
 ```javascript
 // Basic Information
-valentineName: "Jade"                    // Your Valentine's name
+valentineName: "Tori"                    // Your Valentine's name
 pageTitle: "Will You Be My Valentine? 💝" // Browser tab title
 
 // Floating Background Elements
 floatingEmojis: {
-    hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis in background
-    bears: ['🧸', '🐻']                       // Bear emojis in background
+    hearts: ['🩵', '💖', '💝', '💙', '💓'],  // Heart emojis in background
+    bears: ['🦉', '🐻']                       // Bear emojis in background
 }
 
 // Questions and Buttons
@@ -68,7 +68,7 @@ questions: {
         nextBtn: "Next ❤️"                         // Next button text
     },
     third: {
-        text: "Will you be my Valentine...?",      // Final question
+        text: "Will you be my Valentine? If not I will perish!",      // Final question
         yesBtn: "Yes!",                            // Yes button text
         noBtn: "No"                                // No button text
     }
@@ -76,25 +76,25 @@ questions: {
 
 // Love Meter Messages
 loveMessages: {
-    extreme: "WOOOOW You love me that much?? 🥰🚀💝",  // Shows above 5000%
+    extreme: "MAN WHAT? You love me that much,CAP?? 🥰🚀💝",  // Shows above 5000%
     high: "To infinity and beyond! 🚀💝",              // Shows above 1000%
     normal: "And beyond! 🥰"                           // Shows above 100%
 }
 
 // Final Celebration
 celebration: {
-    title: "Yay! I'm the luckiest person...",     // Celebration title
+    title: "I HAVE WON! I AM THE LUCKIEST MAN IN THE UNIVERSE! YAHOO!...",     // Celebration title
     message: "Now come get your gift...",          // Celebration message
     emojis: "🎁💖🤗💝💋❤️💕"                        // Celebration emojis
 }
 
 // Website Colors
 colors: {
-    backgroundStart: "#ffafbd",      // Background gradient start
-    backgroundEnd: "#ffc3a0",        // Background gradient end
-    buttonBackground: "#ff6b6b",     // Button color
-    buttonHover: "#ff8787",          // Button hover color
-    textColor: "#ff4757"            // Text color
+    backgroundStart: "#023e8a",      // Background gradient start
+    backgroundEnd: "#0077b6",        // Background gradient end
+    buttonBackground: "#0096c7",     // Button color
+    buttonHover: "#90e0ef",          // Button hover color
+    textColor: "#03045e"            // Text color
 }
 
 // Animation Settings
@@ -109,7 +109,7 @@ animations: {
 music: {
     enabled: true, // Music feature is enabled
     autoplay: true, // Try to autoplay (note: some browsers may block this)
-    musicUrl: "YOUR_CLOUDINARY_URL_HERE", // Paste your music URL here
+    musicUrl: https://res.cloudinary.com/dyibvzfng/video/upload/v1769456644/ATEEZ_%EC%97%90%EC%9D%B4%ED%8B%B0%EC%A6%88_-_Youth_%EC%9C%A4%ED%98%B8_%EB%AF%BC%EA%B8%B0_Official_MV_ecarri.mp3
     startText: "🎵 Play Music", // Button text to start music
     stopText: "🔇 Stop Music", // Button text to stop music
     volume: 0.5 // Volume level (0.0 to 1.0)
@@ -146,7 +146,7 @@ Want to make it extra special with your own romantic song? Follow these steps to
 music: {
     enabled: true,
     autoplay: true,
-    musicUrl: "YOUR_CLOUDINARY_URL_HERE", // Paste your URL here
+    musicUrl: https://res.cloudinary.com/dyibvzfng/video/upload/v1769456644/ATEEZ_%EC%97%90%EC%9D%B4%ED%8B%B0%EC%A6%88_-_Youth_%EC%9C%A4%ED%98%B8_%EB%AF%BC%EA%B8%B0_Official_MV_ecarri.mp3
     startText: "🎵 Play Music",
     stopText: "🔇 Stop Music",
     volume: 0.5
