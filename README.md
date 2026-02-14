@@ -45,30 +45,25 @@ Note: Make sure you're logged into your GitHub account. If you don't have one, y
 Here's what you can customize in `config.js`:
 ```javascript
 // Basic Information
-valentineName: "Jade"                    // Your Valentine's name
-pageTitle: "Will You Be My Valentine? 💝" // Browser tab title
+valentineName: "King Gio Turano"                    // Your Valentine's name
+pageTitle: "Will You Be My Valentine Mamaya kasi I love you? 🥰😘" // Browser tab title
 
 // Floating Background Elements
 floatingEmojis: {
-    hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis in background
-    bears: ['🧸', '🐻']                       // Bear emojis in background
+    hearts: ['💕', '💖', '💝', '💌', '💕'],  // Heart emojis in background
+    this: ['🤵🏻👰🏻‍♀️👩🏻‍❤️‍💋‍👨🏻', '🍿🥂']                       //this emojis in background
 }
 
 // Questions and Buttons
 questions: {
     first: {
-        text: "Do you like me?",                   // First question
-        yesBtn: "Yes",                             // Yes button text
+        text: "Do you like Hanna Katrina Vertido🥰?",                   // First question
+        yesBtn: "Maybe yes",                             // Yes button text
         noBtn: "No",                               // No button text
-        secretAnswer: "I don't like you, I love you! ❤️"  // Hidden message
+        secretAnswer: "di kita gusto lang kasi mahal kita! ❤️"  // Hidden message
     },
     second: {
-        text: "How much do you love me?",          // Second question
-        startText: "This much!",                   // Text before percentage
-        nextBtn: "Next ❤️"                         // Next button text
-    },
-    third: {
-        text: "Will you be my Valentine...?",      // Final question
+        text: "Will you be my Valentine Mamaya King Gio Turano, kasi I love you? 🥰😘..?",      // Final question
         yesBtn: "Yes!",                            // Yes button text
         noBtn: "No"                                // No button text
     }
@@ -90,11 +85,11 @@ celebration: {
 
 // Website Colors
 colors: {
-    backgroundStart: "#ffafbd",      // Background gradient start
-    backgroundEnd: "#ffc3a0",        // Background gradient end
-    buttonBackground: "#ff6b6b",     // Button color
-    buttonHover: "#ff8787",          // Button hover color
-    textColor: "#ff4757"            // Text color
+    backgroundStart: "#2130DC",      // Background gradient start
+    backgroundEnd: "#2130DC",        // Background gradient end
+    buttonBackground: "#2130DC",     // Button color
+    buttonHover: "#12E4F3",          // Button hover color
+    textColor: "#000000"            // Text color
 }
 
 // Animation Settings
