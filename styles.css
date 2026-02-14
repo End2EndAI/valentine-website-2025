@@ -36,6 +36,31 @@ body {
     overflow: visible !important;
 }
 
+.video-section {
+    position: relative;
+    background-color: black;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 20px;
+    overflow: visible !important;
+}
+
+.memory-video {
+    width: 100%;
+    height: 450px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.skip-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+
 .floating-elements {
     position: fixed;
     width: 100%;
@@ -80,6 +105,55 @@ body {
     display: none;
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cross{
+    position: absolute;
+    top: 0px;
+    right: 1rem;
+    font-size: 2rem;
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.modal-disclaimer {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 16px;
+}
+
+.cute-btn.secondary {
+    background: #6c757d;
+}
+
 .disabled-btn {
     opacity: 0.7;
     cursor: not-allowed;
@@ -91,7 +165,7 @@ body {
     bottom: 20px;
     right: 20px;
     margin-top: 0;
-    opacity: 0.2;
+    opacity: 0.4;
     transition: opacity 0.3s;
     transform: scale(0.7);
     z-index: 2;
@@ -101,7 +175,7 @@ body {
 
 .secret-answer .cute-btn {
     font-size: 0.8rem;
-    padding: 5px 10px;
+    padding: 10px 10px;
 }
 
 .secret-answer:hover {
@@ -288,6 +362,33 @@ h2 {
     text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.3);
 }
 
+.order-section {
+    margin-top: 20px;
+    color: var(--text-color);
+}
+
+.order-subtitle {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.order-details {
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 16px 0;
+    text-align: left;
+}
+
+.order-details p {
+    margin: 8px 0;
+}
+
+.order-status {
+    font-weight: bold;
+    margin: 12px 0 20px;
+}
+
 @keyframes subtle-hint {
     0% { opacity: 0.2; }
     100% { opacity: 0.3; }
@@ -316,3 +417,197 @@ h2 {
     transform: scale(1.05);
     background: var(--secondary-color);
 } 
+
+/* Portrait slideshow feature */
+.portrait-feature {
+    padding: 20px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,230,236,0.75));
+    border: 1px solid rgba(255, 107, 107, 0.2);
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 20px;
+    overflow: visible !important;
+}
+
+.portrait-feature__header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.portrait-feature__header p {
+    margin: 8px 0 18px;
+    color: #8f4568;
+    font-size: 0.95rem;
+}
+
+.portrait-feature__controls {
+    display: grid;
+    gap: 10px;
+    text-align: left;
+}
+
+.portrait-feature__controls label {
+    font-weight: 600;
+    color: #b13d67;
+}
+
+.portrait-feature__controls input {
+    border: 1px solid rgba(255, 107, 107, 0.35);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+}
+
+.portrait-feature__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.portrait-status {
+    min-height: 1.4em;
+    color: #9e2d5b;
+    margin: 14px 0;
+    font-weight: 600;
+}
+
+.portrait-stage {
+    position: relative;
+    width: min(100%, 350px);
+    margin: 0 auto;
+    min-height: 460px;
+    display: grid;
+    place-items: center;
+    transform: translateZ(0);
+}
+
+.portrait-stack,
+.portrait-card {
+    position: absolute;
+    inset: 0;
+    
+}
+
+/* .portrait-stack{
+    position: absolute;
+    width: 220px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+} */
+
+
+.portrait-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 20;
+    will-change: transform, opacity, filter;
+
+    /* width: 100%;
+    height: 100%;
+    object-fit: cover; */
+}
+
+.portrait-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(131, 40, 77, 0.25);
+}
+
+.portrait-card p {
+    margin-top: 14px;
+    min-height: 2.6em;
+    color: #7c2e52;
+    font-weight: 600;
+}
+
+.portrait-stack-card {
+    position: absolute;
+    inset: 20px 16px 70px;
+    opacity: calc(0.42 - (var(--stack-index, 0) * 0.04));
+    transform:
+        translateY(calc(8px + (var(--stack-index, 0) * 5px)))
+        scale(calc(0.92 - (var(--stack-index, 0) * 0.035)))
+        rotate(calc((var(--stack-index, 0) - 1) * 1.6deg));
+    filter: blur(calc(0.5px + var(--stack-index, 0) * 0.6px));
+    transition: transform 400ms ease, opacity 400ms ease, filter 400ms ease;
+    z-index: calc(10 - var(--stack-index, 0));
+}
+
+.portrait-stack-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.portrait-enter {
+    animation: portraitIn 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.portrait-fade-out {
+    animation: portraitFade 700ms ease forwards;
+}
+
+.stack-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.stack-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+
+.stack-compliment {
+    position: absolute;
+    top: 0rem;
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    backdrop-filter: blur(4px);
+    font-weight: 500;
+}
+
+
+@keyframes portraitIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0) scale(0.94);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes portraitFade {
+    to {
+        opacity: 0;
+        transform: translate3d(0, -14px, 0) scale(0.94);
+        filter: blur(2px);
+    }
+}
+
+.portrait-final-message {
+    color: #a72558;
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin-top: 16px;
+}

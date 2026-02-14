@@ -5,7 +5,7 @@
 const CONFIG = {
     // Your Valentine's name that will appear in the title
     // Example: "Jade", "Sarah", "Mike"
-    valentineName: "Jade",
+    valentineName: "Anju!!",
 
     // The title that appears in the browser tab
     // You can use emojis! 💝 💖 💗 💓 💞 💕
@@ -14,8 +14,8 @@ const CONFIG = {
     // Floating emojis that appear in the background
     // Find more emojis at: https://emojipedia.org
     floatingEmojis: {
-        hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis
-        bears: ['🧸', '🐻']                       // Cute bear emojis
+        hearts: ['❤️', '💖', '💝', '💗', '💓', '💞'],  // Heart emojis
+        bears: ['🧸', '🐻', '🦋']                       // Cute bear emojis
     },
 
     // Questions and answers
@@ -33,10 +33,21 @@ const CONFIG = {
             nextBtn: "Next ❤️"                                         // Text for the next button
         },
         third: {
-            text: "Will you be my Valentine on February 14th, 2025? 🌹", // The big question!
+            text: "Will you be my Valentine on February 14th, 2026? 🌹", // The big question!
             yesBtn: "Yes!",                                             // Text for "Yes" button
             noBtn: "No"                                                 // Text for "No" button
         }
+    },
+
+    video: {
+        url: "https://res.cloudinary.com/pranxxxd/video/upload/v1771015898/anjuAndme_i36xrn.mp4",
+        autoplay: true,
+        allowSkipAfterSeconds: 3,
+        modalTitle: "Let’s bring these sweet memories into taste",
+        modalText: "Ready to order a Kikki & Oreo Cream Waffle?",
+        orderButtonText: "Order Now",
+        upiButtonText: "Pay via UPI",
+        disclaimer: "Ordering is handled by Swiggy/Zomato. You will confirm the order and payment there."
     },
 
     // Love meter messages
@@ -51,8 +62,10 @@ const CONFIG = {
     celebration: {
         title: "Yay! I'm the luckiest person in the world! 🎉💝💖💝💓",
         message: "Now come get your gift, a big warm hug and a huge kiss!",
-        emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
+        emojis: "🎁💖🤗💝💋❤️💕",  // These will bounce around
+        nextBtn: "Wanna see what makes you loved so much?😘"
     },
+
 
     // Color scheme for the website
     // Use https://colorhunt.co or https://coolors.co to find beautiful color combinations
@@ -78,10 +91,43 @@ const CONFIG = {
     music: {
         enabled: true,                     // Music feature is enabled
         autoplay: true,                    // Try to autoplay (note: some browsers may block this)
-        musicUrl: "https://res.cloudinary.com/dncywqfpb/video/upload/v1738399057/music_qrhjvy.mp3", // Music streaming URL
+        musicUrl: "/mp3/Ed-Sheeran-Perfect.mp3", // Music streaming URL
         startText: "🎵 Play Music",        // Button text to start music
         stopText: "🔇 Stop Music",         // Button text to stop music
-        volume: 0.5                        // Volume level (0.0 to 1.0)
+        volume: 0.3                        // Volume level (0.0 to 1.0)
+    },
+
+    // Portrait slideshow feature configuration
+    portraitSlideshow: {
+        // googleDrive: {
+        //     folderLink: process.env.Google_Drive, // Example: https://drive.google.com/drive/folders/YOUR_FOLDER_ID
+        //     apiKey: process.env.GOOGLE_API_KEY
+        // },
+        ai: {
+            enabled: false,
+            provider: "gemini", // "gemini" or "openai"
+            apiKey: "",
+            model: "gemini-1.5-flash",
+            prompt: "Write a short, sweet, romantic one-liner expressing love and appreciation."
+        },
+        animation: {
+            holdMs: 3800
+        },
+        portraitRatio: 0.8, // 4:5 ratio
+        maxStackCards: 10,
+        cacheKeyPrefix: "valentine-portrait-v1",
+        fallbackCompliments: [
+            `“You make every ordinary second feel magical and deeply cherished.💕✨”`,
+            `“Your laughter is my favorite melody and my calmest place.🎶💗”`,
+            `“I fall in love with your heart a little more each day.❤️✨”`,
+            `“Your kindness paints my world with warmth, hope, and wonder.🌷💞”`,
+            `“With you, even silence feels like the sweetest love song.🎵🤍”`,
+            `“You are my favorite forever 💕🌙”`,
+            `“you make ordinary days feel a little more magical.🪄💫”`,
+            `“Your smile could honestly fix any bad day.😊❤️”`,
+            `“Every moment with you feels like a perfect scene in a movie.🎬💖”`,
+            `“You’re my favorite place to go when I want peace, joy, or love.🌿💗”`
+        ]
     }
 };
 
