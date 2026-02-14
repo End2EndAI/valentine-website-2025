@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="music-controls">
+  <button id="play-music">🎵 Play Music</button>
+  <button id="stop-music">⏹ Stop Music</button>
+</div>
+<!-- Hidden YouTube player -->
+<div id="youtube-player" style="width:0; height:0; overflow:hidden;"></div>
+
     <!-- Floating Background Elements -->
     <div class="floating-elements">
         <!-- Hearts and bears will be added here by JavaScript -->
@@ -73,5 +80,39 @@
     <script src="config.js"></script>
     <script src="theme.js"></script>
     <script src="script.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>    
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+  let player;
+
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube-player', {
+      height: '0',
+      width: '0',
+      videoId: 'euUm3-jFOls', // your video ID
+      playerVars: {
+        autoplay: 0,
+        controls: 0,
+        loop: 1,
+        playlist: 'euUm3-jFOls',
+        modestbranding: 1,
+        rel: 0
+      }
+    });
+  }
+
+  const playBtn = document.getElementById('play-music');
+  playBtn.addEventListener('click', () => {
+    player.playVideo();
+  });
+
+  const stopBtn = document.getElementById('stop-music');
+  stopBtn.addEventListener('click', () => {
+    player.pauseVideo();
+    player.seekTo(0);
+  });
+</script>
+
 </body>
 </html> 
