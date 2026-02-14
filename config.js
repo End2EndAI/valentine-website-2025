@@ -1,89 +1,154 @@
 // ============================================
-// 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE HERE 💝
+// 💝 SITE VALENTINE POUR ARTEMIS 💝
+// La femme de ma vie ✨
 // ============================================
 
 const CONFIG = {
-    // Your Valentine's name that will appear in the title
-    // Example: "Jade", "Sarah", "Mike"
-    valentineName: "Jade",
+    // Le nom de ta Valentine
+    valentineName: "Artemis",
 
-    // The title that appears in the browser tab
-    // You can use emojis! 💝 💖 💗 💓 💞 💕
-    pageTitle: "Will You Be My Valentine? 💝",
+    // Titre de la page
+    pageTitle: "Pour Artemis, l'amour de ma vie, ma femme",
 
-    // Floating emojis that appear in the background
-    // Find more emojis at: https://emojipedia.org
+    // Emojis flottants dans le fond
     floatingEmojis: {
-        hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis
-        bears: ['🧸', '🐻']                       // Cute bear emojis
+        hearts: ['❤️', '💖', '💝', '💗', '💓','💕', '💞', '💘', '💌', '💟'],
+        special: ['✨', '🌟', '⭐', '💫', '🌙', '🦋', '🌹', '🌺']
     },
 
-    // Questions and answers
-    // Customize each question and its possible responses
+    // Les questions
     questions: {
         first: {
-            text: "Do you like me?",                                    // First interaction
-            yesBtn: "Yes",                                             // Text for "Yes" button
-            noBtn: "No",                                               // Text for "No" button
-            secretAnswer: "I don't like you, I love you! ❤️"           // Secret hover message
+            text: "Artemis, tu sais que tu es la femme de ma vie ? 🌟",
+            yesBtn: "Oui je sais",
+            noBtn: "Dis-moi pourquoi",
+            secretAnswer: "Il faudra lire ma lettre"
         },
         second: {
-            text: "How much do you love me?",                          // For the love meter
-            startText: "This much!",                                   // Text before the percentage
-            nextBtn: "Next ❤️"                                         // Text for the next button
+            text: "À quel point tu m'aimes, mon amour ? 💝",
+            startText: "Je t'aime comme ça...",
+            nextBtn: "Continue mon cœur ❤️"
         },
         third: {
-            text: "Will you be my Valentine on February 14th, 2025? 🌹", // The big question!
-            yesBtn: "Yes!",                                             // Text for "Yes" button
-            noBtn: "No"                                                 // Text for "No" button
+            text: "Artemis, veux-tu être ma Valentine le 14 février 2025 ? 🌹💍",
+            yesBtn: "OUI mon amour ! 💕",
+            noBtn: "Jamais !"
         }
     },
 
-    // Love meter messages
-    // They show up depending on how far they slide the meter
+    // Messages du love-mètre
     loveMessages: {
-        extreme: "WOOOOW You love me that much?? 🥰🚀💝",  // Shows when they go past 5000%
-        high: "To infinity and beyond! 🚀💝",              // Shows when they go past 1000%
-        normal: "And beyond! 🥰"                           // Shows when they go past 100%
+        extreme: "ET MOI ENCORE PLUS QUE ÇA !",
+        high: "C'est cosmique cet amour ! ",
+        veryHigh: "Wow, mon cœur va exploser ! ",
+        normal: "C'est tellement beau ! "
     },
 
-    // Messages that appear after they say "Yes!"
+    // Célébration finale
     celebration: {
-        title: "Yay! I'm the luckiest person in the world! 🎉💝💖💝💓",
-        message: "Now come get your gift, a big warm hug and a huge kiss!",
-        emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
+        title: "YAAAAAY ! Je suis la femme le plus heureuse du monde ! 🎉💝✨",
+        message: "Artemis, tu es ma déesse mon amour, tu auras une grosse récompense hihi !",
+        emojis: "🎁💖🤗💝💋❤️💕✨🌟🎊🎉💫🌹"
     },
 
-    // Color scheme for the website
-    // Use https://colorhunt.co or https://coolors.co to find beautiful color combinations
+    // Nouveaux messages aléatoires qui apparaissent !
+    randomLoveMessages: [
+        "Tu es magnifique mon coeur ! ",
+        "Mon cœur bat pour toi ! 💓",
+        "Je t'aime plus que tout ! 💖",
+        "Tu es parfaite pour moi ",
+        "Mon amour éternel ",
+        "Ma princesse, ma reine ",
+        "toi et moi contre le reste du monde",
+    ],
+
+    // Messages drôles quand elle clique sur "Non"
+    funnyNoMessages: [
+        "Allez, je sais que tu veux dire oui ! ",
+        "je crois que c'est plutot oui que tu veux dire",
+        "Attention à toi😏"
+    ],
+
+    // Palette de couleurs romantique
     colors: {
-        backgroundStart: "#ffafbd",      // Gradient start (try pastel colors for a soft look)
-        backgroundEnd: "#ffc3a0",        // Gradient end (should complement backgroundStart)
-        buttonBackground: "#ff6b6b",     // Button color (should stand out against the background)
-        buttonHover: "#ff8787",          // Button hover color (slightly lighter than buttonBackground)
-        textColor: "#ff4757"             // Text color (make sure it's readable!)
+        backgroundStart: "#ff9a9e",      // Rose doux
+        backgroundEnd: "#fecfef",        // Rose-violet doux
+        buttonBackground: "#ff6b9d",     // Rose vif
+        buttonHover: "#ff8fb3",          // Rose clair
+        textColor: "#c71585",            // Rose foncé
+        accentColor: "#ffd700"           // Or pour les touches spéciales
     },
 
-    // Animation settings
-    // Adjust these if you want faster/slower animations
+    // Animations
     animations: {
-        floatDuration: "15s",           // How long it takes hearts to float up (10-20s recommended)
-        floatDistance: "50px",          // How far hearts move sideways (30-70px recommended)
-        bounceSpeed: "0.5s",            // Speed of bouncing animations (0.3-0.7s recommended)
-        heartExplosionSize: 1.5         // Size of heart explosion effect (1.2-2.0 recommended)
+        floatDuration: "12s",
+        floatDistance: "60px",
+        bounceSpeed: "0.4s",
+        heartExplosionSize: 2.0,
+        sparkleEffect: true,             // Effet étincelles ✨
+        heartRain: true                  // Pluie de cœurs 💕
     },
 
-    // Background Music (Optional)
-    // Add your own music URL after getting proper licenses
+    // Musique d'ambiance
     music: {
-        enabled: true,                     // Music feature is enabled
-        autoplay: true,                    // Try to autoplay (note: some browsers may block this)
-        musicUrl: "https://res.cloudinary.com/dncywqfpb/video/upload/v1738399057/music_qrhjvy.mp3", // Music streaming URL
-        startText: "🎵 Play Music",        // Button text to start music
-        stopText: "🔇 Stop Music",         // Button text to stop music
-        volume: 0.5                        // Volume level (0.0 to 1.0)
+        enabled: true,
+        autoplay: true,
+        musicUrl: "https://drive.google.com/file/d/1Q7ngMo-3SzaBp0mtjS0Co4LfMadq6eh9/view?usp=sharing",
+        startText: "🎵 Musique romantique",
+        stopText: "🔇 Pause musique",
+        volume: 0.6
+    },
+
+    // NOUVELLES FONCTIONNALITÉS MARRANTES !
+    
+    // Compte à rebours jusqu'à la Saint-Valentin
+    countdown: {
+        enabled: true,
+        targetDate: "2026-02-14T00:00:00",
+        message: "Plus que {days} jours avant notre Saint-Valentin ! 💝"
+    },
+
+    // Faits mignons aléatoires
+    cuteFacts: {
+        enabled: true,
+        facts: [
+            "Savais-tu qu'Artemis était la déesse de la lune ? 🌙 Toi aussi tu illumines mes nuits !",
+            "Mon cœur bat 150 fois par minute quand je te vois ! 💓",
+            "Si l'amour était de l'eau, je te donnerais l'océan ! 🌊💙",
+            "Tu es plus précieuse que tous les diamants du monde ! 💎",
+            "Chaque moment avec toi est mon préféré ! ⭐",
+            "Tu me fais sourire même dans mes rêves ! 😴💭💕"
+        ]
+    },
+
+    // Mini-jeu : trouve le cœur caché
+    hiddenHeartGame: {
+        enabled: true,
+        message: "Trouve le cœur caché sur la page pour un message secret ! 💝",
+        secretMessage: "Tu es la plus belle chose qui me soit arrivée"
+    },
+
+    // Compliments qui apparaissent au survol
+    hoverCompliments: {
+        enabled: true,
+        compliments: [
+            "Magnifique ! 😍",
+            "Sublime ! ✨",
+            "Parfaite ! 💖",
+            "Éblouissante ! 🌟",
+            "Radieuse ! ☀️",
+            "Extraordinaire ! 💫"
+        ]
+    },
+
+    // Effet de neige de cœurs
+    heartSnow: {
+        enabled: true,
+        intensity: "medium"  // "light", "medium", "heavy"
     }
 };
 
-// Don't modify anything below this line unless you know what you're doing
-window.VALENTINE_CONFIG = CONFIG; 
+// ============================================
+// NE PAS MODIFIER EN DESSOUS
+// ============================================
+window.VALENTINE_CONFIG = CONFIG;
