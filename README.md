@@ -182,7 +182,7 @@ Use these tools to find beautiful colors:
 - [Coolors](https://coolors.co/) - Color palette generator
 - [ColorHunt](https://colorhunt.co/) - Color palettes
 
-## 🔍 Need More Emojis?
+# 🔍 Need More Emojis?
 Find more emojis at:
 - [EmojiKeyboard](https://emojikeyboard.top/fr/)
 - [Emojipedia](https://emojipedia.org/)
