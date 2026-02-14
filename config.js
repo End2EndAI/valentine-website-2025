@@ -78,7 +78,7 @@ const CONFIG = {
     music: {
         enabled: true,                     // Music feature is enabled
         autoplay: true,                    // Try to autoplay (note: some browsers may block this)
-        musicUrl: "https://mr-jat.in/siteuploads/generaltheme/files/sfd9/4487/Tu%20Jaane%20Na-(Mr-Jat.in).mp3, // Music streaming URL
+        musicUrl: "https://collection.cloudinary.com/dkdqsic9k/ab2604397d61ca3e1031e68607937ece, // Music streaming URL
         startText: "🎵 Play Music",        // Button text to start music
         stopText: "🔇 Stop Music",         // Button text to stop music
         volume: 0.5                        // Volume level (0.0 to 1.0)
