@@ -5,7 +5,7 @@
     --background-color-2: #ffc3a0;
     --button-color: #ff6b6b;
     --button-hover: #ff8787;
-    --text-color: #ff4757;
+    --text-color: #000000;
 
     /* Animations */
     --float-duration: 15s;
@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, var(--background-color-1), var(--background-color-2));
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans serif;
     overflow-x: hidden;
 }
 
@@ -88,8 +88,8 @@ body {
 
 .secret-answer {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 30px;
     margin-top: 0;
     opacity: 0.2;
     transition: opacity 0.3s;
@@ -100,7 +100,7 @@ body {
 }
 
 .secret-answer .cute-btn {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding: 5px 10px;
 }
 

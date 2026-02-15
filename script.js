@@ -8,7 +8,6 @@ function validateConfig() {
     // Check required fields
     if (!config.valentineName) {
         warnings.push("Valentine's name is not set! Using default.");
-        config.valentineName = "My Love";
     }
 
     // Validate colors
@@ -45,7 +44,7 @@ function getDefaultColor(key) {
         backgroundEnd: "#ffc3a0",
         buttonBackground: "#ff6b6b",
         buttonHover: "#ff8787",
-        textColor: "#ff4757"
+        textColor: "#000000"
     };
     return defaults[key];
 }
