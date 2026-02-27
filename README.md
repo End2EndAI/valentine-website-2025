@@ -75,6 +75,7 @@ questions: {
 }
 
 // Love Meter Messages
+Shruti sun na… mujhe tum pasand ho yrr. Tumhare saath baat karke mujhe genuinely acha lagta hai aur kaafi safe feel hota hai. Main koi pressure nahi dena chahta, bas honest rehna tha. Agar tum bhi thoda same feel karti ho toh we can see, dheere-dheere. Aur agar nahi bhi, toh it’s okay.”
 loveMessages: {
     extreme: "WOOOOW You love me that much?? 🥰🚀💝",  // Shows above 5000%
     high: "To infinity and beyond! 🚀💝",              // Shows above 1000%
