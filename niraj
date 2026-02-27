@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffebf0;
+            margin: 0;
+            padding: 50px;
+            transition: background 1s ease-in-out;
+        }
+        .container {
+            background: lightpink;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            transition: opacity 1s ease-in-out;
+        }
+        h1 {
+            color: #e60073;
+        }
+        .button {
+            background-color: #ff66a3;
+            color: hotpink;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #e60073;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: white;
+            display: none;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function showMessage() {
+            document.body.style.backgroundColor = 'red';
+            document.querySelector('.container').style.opacity = '0';
+            setTimeout(() => {
+                document.body.innerHTML = "<h1 style='color: white; padding: 50px;'>Thank you for being the best boyfriend ever. You make me wanna be a better person, correct my mistakes, and be the best version of myself for you. I love you so much and I cannot imagine living without you. Now please be my first Valentine, and I just want to let you know that I will change for us and I love you very much. <br><br> - By PARAVASTHU, your baby 💖</h1>";
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Shalibaby, will you be my Valentine? 💖</h1>
+        <button class="button" onclick="showMessage()">Yes</button>
+        <button class="button" onclick="showMessage()">Of course</button>
+    </div>
+</body>
+</html>
