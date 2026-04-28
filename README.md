@@ -1,21 +1,15 @@
-# 💝 Valentine's Day Website 2026 💝
+# 💝 Happy Birtday to you Website 2026 💝
 
-[![Stars](https://img.shields.io/github/stars/End2EndAI/valentine-website-2025?style=social)](https://github.com/End2EndAI/valentine-website-2025/stargazers)
-[![Fork](https://img.shields.io/github/forks/End2EndAI/valentine-website-2025?style=social)](https://github.com/End2EndAI/valentine-website-2025/fork)
+[![Stars](https://img.shields.io/github/stars/End2EndAI/happybirtdaytoyou-website-2025?style=social)](https://github.com/End2EndAI/valentine-website-2025/stargazers)
+[![Fork](https://img.shields.io/github/forks/End2EndAI/happybirtdaytoyou-website-2025?style=social)](https://github.com/End2EndAI/valentine-website-2025/fork)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Support me](https://img.shields.io/badge/Support-Stripe-blue)](https://buy.stripe.com/bJefZa8Le7fvgDe3ric7u00)
 
-A beautiful, interactive Valentine's Day website generator to ask your special someone to be your Valentine! Create your own personalized version in minutes. Perfect for Valentine's Day 2026! 💝
-Follow below the tutorial how to custom the website and get your custom URL and access your website on the internet from everywhere !
+Happy birthday beautiful, may you grow older, become a successful person in the future, and I love you 
 
-🌟 **[Live Demo](https://end2endai.github.io/valentine-website-2025)** | 🚀 **[Quick Start](#-quick-start-guide)** | 🌐 **[Deploy Your Website](#4-make-it-live-get-your-online-website-url)**
+🌟 **[Live Demo](https://end2endai.github.io/happybirtdaytoyou-website-2025)** | 🚀 **[Quick Start](#-quick-start-guide)** | 🌐 **[Deploy Your Website](#4-make-it-live-get-your-online-website-url)**
 
 ## 🌟 Share The Love
-
-If you liked it, please :
-- ⭐ Star this repository if you like it
-- 🔄 Fork it to create your own version
-- 🔥 Like and follow on instagram for more websites : [Instagram](https://www.instagram.com/reel/DFh3ZaxtrYX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==)
 
 ## ✨ Features
 - 💖 Floating hearts and bears
@@ -28,7 +22,7 @@ If you liked it, please :
 ## 🚀 Quick Start Guide
 
 ### 1. Get Your Own Copy
-1. Click the "Fork" button at the top right of this page or [click here](https://github.com/End2EndAI/valentine-website-2025/fork)
+1. Click the "Fork" button at the top right of this page or [click here](https://github.com/End2EndAI/happybirtdaytoyou-website-2025/fork)
 2. Wait a few seconds while GitHub creates your copy
 3. You now have your own version of the code!
 
@@ -45,8 +39,8 @@ Note: Make sure you're logged into your GitHub account. If you don't have one, y
 Here's what you can customize in `config.js`:
 ```javascript
 // Basic Information
-valentineName: "Jade"                    // Your Valentine's name
-pageTitle: "Will You Be My Valentine? 💝" // Browser tab title
+happybirtday Name: "lutpia"                    // Your Valentine's name
+pageTitle: "happybirtdayy cantikk 💝" // Browser tab title
 
 // Floating Background Elements
 floatingEmojis: {
@@ -57,34 +51,34 @@ floatingEmojis: {
 // Questions and Buttons
 questions: {
     first: {
-        text: "Do you like me?",                   // First question
-        yesBtn: "Yes",                             // Yes button text
+        text: "happy birtday lutpiaa",                   // First question
+        yesBtn: "lanjut",                             // Yes button text
         noBtn: "No",                               // No button text
-        secretAnswer: "I don't like you, I love you! ❤️"  // Hidden message
+        secretAnswer: "tunggu sebentarr ❤️"  // Hidden message
     },
     second: {
-        text: "How much do you love me?",          // Second question
-        startText: "This much!",                   // Text before percentage
-        nextBtn: "Next ❤️"                         // Next button text
+        text: "kamuu suka enggaa",          // Second question
+        startText: "suka",                   // Text before percentage
+        nextBtn: "engga"                         // Next button text
     },
     third: {
-        text: "Will you be my Valentine...?",      // Final question
-        yesBtn: "Yes!",                            // Yes button text
-        noBtn: "No"                                // No button text
+        text: "semoga bertambahnyaa usia kamuu, kamuu menjadi orang sukses dunia akhirat",      // Final question
+        yesBtn: "aamiin",                            // Yes button text
+        noBtn: "aamiin"                                // No button text
     }
 }
 
 // Love Meter Messages
 loveMessages: {
-    extreme: "WOOOOW You love me that much?? 🥰🚀💝",  // Shows above 5000%
-    high: "To infinity and beyond! 🚀💝",              // Shows above 1000%
-    normal: "And beyond! 🥰"                           // Shows above 100%
+    extreme: "kamuu mauu hadiah enggaa??",  // Shows above 5000%
+    high: "mauu",              // Shows above 1000%
+    normal: "mauuu"    gaa adaa gamauu hehehee                       // Shows above 100%
 }
 
 // Final Celebration
 celebration: {
-    title: "Yay! I'm the luckiest person...",     // Celebration title
-    message: "Now come get your gift...",          // Celebration message
+    title: "maapp masii belajarr akuu hehee",     // Celebration title
+    message: "semoga kamuu di lancarkann pkl nya di mudahkann urusannyaa sehatt selaluu aamiinn",          // Celebration message
     emojis: "🎁💖🤗💝💋❤️💕"                        // Celebration emojis
 }
 
