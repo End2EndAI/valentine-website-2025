@@ -1,39 +1,33 @@
 // ============================================
-// 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE HERE 💝
+// 💝 CUSTOMIZE YOUR BIRTHDAY WEBSITE HERE 💝
 // ============================================
 
 const CONFIG = {
     // Your Valentine's name that will appear in the title
     // Example: "Jade", "Sarah", "Mike"
-    valentineName: "Jade",
+    BirthdayName: "Randyy",
 
     // The title that appears in the browser tab
     // You can use emojis! 💝 💖 💗 💓 💞 💕
-    pageTitle: "Will You Be My Valentine? 💝",
+    pageTitle: "Happy bithday randyy",
 
     // Floating emojis that appear in the background
     // Find more emojis at: https://emojipedia.org
     floatingEmojis: {
-        hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis
-        bears: ['🧸', '🐻']                       // Cute bear emojis
+        hearts: ['💗', '💓'],  // Heart emojis
     },
 
     // Questions and answers
     // Customize each question and its possible responses
     questions: {
         first: {
-            text: "Do you like me?",                                    // First interaction
+            text: "maaf ya karna telat ngucapinnya..",                                    // First interaction
             yesBtn: "Yes",                                             // Text for "Yes" button
             noBtn: "No",                                               // Text for "No" button
             secretAnswer: "I don't like you, I love you! ❤️"           // Secret hover message
         },
         second: {
-            text: "How much do you love me?",                          // For the love meter
-            startText: "This much!",                                   // Text before the percentage
-            nextBtn: "Next ❤️"                                         // Text for the next button
-        },
-        third: {
-            text: "Will you be my Valentine on February 14th, 2025? 🌹", // The big question!
+            text: "your birthday is on September 24, 2026!🌹", // The big question!
             yesBtn: "Yes!",                                             // Text for "Yes" button
             noBtn: "No"                                                 // Text for "No" button
         }
@@ -42,16 +36,15 @@ const CONFIG = {
     // Love meter messages
     // They show up depending on how far they slide the meter
     loveMessages: {
-        extreme: "WOOOOW You love me that much?? 🥰🚀💝",  // Shows when they go past 5000%
-        high: "To infinity and beyond! 🚀💝",              // Shows when they go past 1000%
-        normal: "And beyond! 🥰"                           // Shows when they go past 100%
+        high: "Selamat ulang tahun randy",              // Shows when they go past 1000%
+        normal: "Selamat ulang tahun randyy"                           // Shows when they go past 100%
     },
 
     // Messages that appear after they say "Yes!"
     celebration: {
-        title: "Yay! I'm the luckiest person in the world! 🎉💝💖💝💓",
-        message: "Now come get your gift, a big warm hug and a huge kiss!",
-        emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
+        title: "Selamat ulang tahunn cinakuu!",
+        message: "semogaa km panjang umur, sehat selalu, dimudahkan rezekinyaa ya, dipermudahkan segala urusannya, pokonya apapun yang kamu mau semoga terwujud yaa doa terbaik dari aku. makasi yaa randy selama ini uda baik sama akuu, semogaa km juga selalu dikelilingi orang orang baik yaa ✨🎂",
+        emojis: "🫰🏻✨🎂💕"  // These will bounce around
     },
 
     // Color scheme for the website
