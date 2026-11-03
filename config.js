@@ -1,4 +1,3 @@
-// ============================================
 // 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE HERE 💝
 // ============================================
 
@@ -14,7 +13,7 @@ const CONFIG = {
     // Floating emojis that appear in the background
     // Find more emojis at: https://emojipedia.org
     floatingEmojis: {
-        hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis
+        hearts: ['❤️', '💙', '🐵', '💚', '🐱'],  // Heart emojis
         bears: ['🌻', '🐱']                       // Cute bear emojis
     },
 
@@ -22,19 +21,19 @@ const CONFIG = {
     // Customize each question and its possible responses
     questions: {
         first: {
-            text: "me amas?",                                    // First interaction
-            yesBtn: "Si",                                             // Text for "Yes" button
-            noBtn: "No",                                               // Text for "No" button
+            text: "Un nuevo Mes siendo su novio es un placer para mi",                                    // First interaction
+            yesBtn: "busque boton secreto",                                             // Text for "Yes" button
+            noBtn: "pasteliyo",                                               // Text for "No" button
             secretAnswer: "Te amo muxisimo! 💙🐱"           // Secret hover message
         },
         second: {
-            text: "Cuanto crees que te amo yo?",                          // For the love meter
+            text: "Cuanto crees que te amo?",                          // For the love meter
             startText: "asi de muxo!",                                   // Text before the percentage
             nextBtn: "siguiente ❤️"                                         // Text for the next button
         },
         third: {
-            text: "", // The big question!
-            yesBtn: "Yes!",                                             // Text for "Yes" button
+            text: "Te amo y quisiera estar contigo siempre uste a mi lado donde va", // The big question!
+            yesBtn: "acepto",                                             // Text for "Yes" button
             noBtn: "No"                                                 // Text for "No" button
         }
     },
@@ -54,14 +53,19 @@ const CONFIG = {
         emojis: "🎁💙🤗💙"  // These will bounce around
     },
 
-    // Color scheme for the website
-    // Use https://colorhunt.co or https://coolors.co to find beautiful color combinations
+    // Color scheme for the website (Tonos verdes pasteles)
     colors: {
-        backgroundStart: "#ffafbd",      // Gradient start (try pastel colors for a soft look)
-        backgroundEnd: "#ffc3a0",        // Gradient end (should complement backgroundStart)
-        buttonBackground: "#ff6b6b",     // Button color (should stand out against the background)
-        buttonHover: "#ff8787",          // Button hover color (slightly lighter than buttonBackground)
-        textColor: "#ff4757"             // Text color (make sure it's readable!)
+        backgroundStart: "#a8e6cf",      // Gradiente inicio (verde claro)
+        backgroundEnd: "#dcedc1",        // Gradiente fin (verde menta suave)
+        buttonBackground: "#2ecc71",     // Color del botón
+        buttonHover: "#27ae60",          // Color del botón al pasar el mouse
+        textColor: "#1b4d3e"             // Color del texto (verde oscuro legible)
+    },
+
+    // Video especial al final de la página
+    footerVideo: {
+        enabled: true,
+        videoUrl: "https://player.cloudinary.com/embed/?cloud_name=btdvqmdn&public_id=image-to-video%2Fi2v_b638752c45ad40a983797cd8f161a950&fluid=true&controls=true"
     },
 
     // Animation settings
@@ -78,7 +82,7 @@ const CONFIG = {
     music: {
         enabled: true,                     // Music feature is enabled
         autoplay: true,                    // Try to autoplay (note: some browsers may block this)
-        musicUrl: "https://open.spotify.com/track/6RRfvkqYZjptjjqNHR5g8O?si=-7w4Djf0S0a5Co7QhPGwWg&utm_source=copy-link", // Music streaming URL
+        musicUrl: "https://res.cloudinary.com/btdvqmdn/video/upload/v1793714624/ssstik.io_1793714524048.mp3", // Music streaming URL
         startText: "🎵 Poner Musiquita",        // Button text to start music
         stopText: "🔇 parar Musica",         // Button text to stop music
         volume: 0.5                        // Volume level (0.0 to 1.0)
@@ -86,4 +90,4 @@ const CONFIG = {
 };
 
 // Don't modify anything below this line unless you know what you're doing
-window.VALENTINE_CONFIG = CONFIG; 
+window.VALENTINE_CONFIG = CONFIG;
