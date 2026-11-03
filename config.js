@@ -70,6 +70,12 @@ const CONFIG = {
         imageUrl: "https://res.cloudinary.com/btdvqmdn/image/upload/f_auto,q_auto/1000101593", // Reemplazar con el link directo de la imagen
         maxWidth: "150px"  // Tamaño pequeño para no tapar el texto
     },
+    // Video especial al final de la página
+    footerVideo: {
+        enabled: true,
+        // Tu link de embed de Cloudinary
+        videoUrl: "https://player.cloudinary.com/embed/?cloud_name=btdvqmdn&public_id=image-to-video%2Fi2v_b638752c45ad40a983797cd8f161a950&fluid=true&controls=true"
+    },
 
     // Animation settings
     // Adjust these if you want faster/slower animations
@@ -85,7 +91,7 @@ const CONFIG = {
     music: {
         enabled: true,                     // Music feature is enabled
         autoplay: true,                    // Try to autoplay (note: some browsers may block this)
-        musicUrl: "https://collection.cloudinary.com/btdvqmdn/2586770d5bbfc32b690e25208f261348", // Music streaming URL
+        musicUrl: "https://collection.cloudinary.com/btdvqmdn/https://res.cloudinary.com/btdvqmdn/video/upload/v1793714624/ssstik.io_1793714524048.mp3", // Music streaming URL
         startText: "🎵 Poner Musiquita",        // Button text to start music
         stopText: "🔇 parar Musica",         // Button text to stop music
         volume: 0.5                        // Volume level (0.0 to 1.0)
