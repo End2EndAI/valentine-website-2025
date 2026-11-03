@@ -7,8 +7,8 @@ const CONFIG = {
     valentineName: "Camila novia bella",
 
     // The title that appears in the browser tab
-    // You can use emojis! 💝 🐵 💙 💚 🙊
-    pageTitle: "feliz cumple mes 💝",
+    // You can use emojis! 💘 🐵 💙 💚 🙊
+    pageTitle: "Camila Y Matías 3 nov👩🏻‍❤️‍💋‍👨🏻",
 
     // Floating emojis that appear in the background
     // Find more emojis at: https://emojipedia.org
@@ -24,7 +24,7 @@ const CONFIG = {
             text: "Un nuevo Mes siendo su novio es un placer para mi",                                    // First interaction
             yesBtn: "busque boton secreto",                                             // Text for "Yes" button
             noBtn: "pasteliyo",                                               // Text for "No" button
-            secretAnswer: "Te amo muxisimo! 💙🐱"           // Secret hover message
+            secretAnswer: "Lo encontró culo buscador! 💙🐱"           // Secret hover message
         },
         second: {
             text: "Cuanto crees que te amo?",                          // For the love meter
@@ -32,7 +32,7 @@ const CONFIG = {
             nextBtn: "siguiente ❤️"                                         // Text for the next button
         },
         third: {
-            text: "Te amo y quisiera estar contigo siempre uste a mi lado donde va", // The big question!
+            text: "Te amo y quisiera estar contigo siempre uste a mi lado donde vaya con mucho amor esta página pa ud", // The big question!
             yesBtn: "acepto",                                             // Text for "Yes" button
             noBtn: "No"                                                 // Text for "No" button
         }
@@ -49,7 +49,7 @@ const CONFIG = {
     // Messages that appear after they say "Yes!"
     celebration: {
         title: "El mas suertudo del mundo! 🎉💙💘💙💘",
-        message: "un besiyo y un abrazo en ese culo de cumplee mes te amo Muxisimo!",
+        message: "un besiyo y un abrazo en ese culo de cumplee mes te amo Muxisimo! Camila & Matías novios x siempre",
         emojis: "🎁💙🤗💙"  // These will bounce around
     },
 
