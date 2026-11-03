@@ -88,8 +88,8 @@ body {
 
 .secret-answer {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    top: 20px;       /* Cambiado de bottom a top para colocarlo en la parte superior */
+    left: 20px;      /* Puedes cambiarlo a 'right: 20px;' si lo prefieres a la derecha */
     margin-top: 0;
     opacity: 0.2;
     transition: opacity 0.3s;
@@ -98,6 +98,7 @@ body {
     animation: subtle-hint 2s infinite alternate;
     animation-delay: 5s;
 }
+
 
 .secret-answer .cute-btn {
     font-size: 0.8rem;
